@@ -1,4 +1,8 @@
 node_modules/
 .DS_Store
+
+# Impeccable live mode: config is project settings and is tracked;
+# the injected script, journal and session state are local artifacts.
 .impeccable/shots/
-.impeccable/live/
+.impeccable/live/*
+!.impeccable/live/config.json

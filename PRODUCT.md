@@ -8,7 +8,17 @@ web
 
 ## Stack
 
-delegated — the user said "stack is up to you." Choice and rationale are recorded at build time.
+delegated — the user said "stack is up to you." Chosen and built: plain static HTML, CSS and
+JavaScript, with GSAP + ScrollTrigger vendored locally. No framework, no build step, no package
+manifest, no install required to run or deploy.
+
+Rationale: a single page with no application logic gains nothing from a framework, and a static
+bundle deploys to any host. GSAP is a real dependency rather than hand-rolled animation because the
+site's signature interaction is scroll-driven, which is what ScrollTrigger exists for.
+
+Deploy target is an open decision. The build is host-agnostic static files, so this constrains
+nothing — but Netlify or Vercel would resolve the contact-form gap below with built-in form
+handling, while GitHub Pages would not.
 
 ## Users
 
@@ -31,9 +41,12 @@ Visitors arrive predominantly from LinkedIn, frequently on mobile, often mid-con
 ## Capabilities and Constraints
 
 - Single-page marketing/positioning site. No CMS, no auth, no application logic.
-- Contact is a form (user's explicit choice). A static site cannot send mail on its own; a third-party form service is required, and its provider is an open decision.
+- Contact is a form (user's explicit choice). A static site cannot send mail on its own; a third-party form service is required, and its provider is an open decision. **Built state:** the form validates with real error, busy and success states, but its `ENDPOINT` constant in `assets/js/site.js` is empty, so it cannot send. It currently tells the visitor so and points them to LinkedIn. Until an endpoint is set, the form is honest but non-functional.
 - Email address and phone number are deliberately NOT published. LinkedIn is the only published direct channel.
 - GitHub profile is not published (user did not select it).
+- **No third-party runtime.** Fonts (Archivo, Martian Mono, Noto Sans SC) and GSAP are self-hosted; the CJK font is subset to the ten characters actually used. The page makes no external network request at runtime and works under a strict content-security policy. Future work must not reintroduce a CDN font or script link.
+- The site states "Sydney, Australia" in the hero caption, footer and meta description. That location remains **inferred, not confirmed** — see Evidence. It is the only unverified assertion on the page.
+- Role end dates are written in the past tense throughout. Exam Supervision Officer ends "2026" with no month, because the month is unknown.
 
 ## Brand Commitments
 
@@ -43,7 +56,7 @@ An existing professional poster establishes real identity equity and is a confir
 - Oversized condensed sans display type used as ghosted background scenery ("PROFESSIONAL").
 - Script signature wordmark for the name.
 - Confirmed lines: "Grounded in critical thinking. Guided by integrity." and "PRINCIPLE-DRIVEN — Analyst and Value Investor".
-- Headshot: cream suit, three-quarter pose, light warm-neutral background. Available at `assets/` once imported.
+- Headshot: cream suit, three-quarter pose, light warm-neutral background. Imported and derived from the poster at `assets/img/justin-portrait.webp` and `.jpg` — cropped clear of the poster's script signature, desaturated and warm-toned. The original poster is the only source; no other photography exists.
 
 These are commitments about identity, not a mandate for the site's visual world; the user explicitly asked for a bolder direction than a literal extension of the poster.
 
@@ -64,7 +77,8 @@ Absences that future work must not fabricate:
 - No investment track record, holdings, returns, or published thesis writing exists to show.
 - No released app. Hanzi Mind is in development with no App Store or Play Store presence, no users, and no download figures. JustTalk was Android, not iOS.
 - No clients, customers, testimonials, revenue figures, press, or awards.
-- Sydney/Australia base is inferred from the +61 number, University of Sydney, and W Hotels; confirm before stating it as fact.
+- Sydney/Australia base is **inferred** from the +61 number, University of Sydney, and W Hotels. The built site asserts it in three places; it has still never been confirmed by the user, who was asked and did not answer. Correct or remove it before the site goes public.
+- Primary audience priority is **undecided**. The user was asked whether employers or business partners matter more when the page has to choose, and did not answer. The site currently serves both, which is why no section is sharper than the others. Recorded as an open decision, not resolved by default.
 
 ## Product Principles
 

@@ -1,12 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Justin Winartha — Operations, Investing, Building</title>
 <meta name="description" content="Eight years running hotel rooms, revenue and night audit. Now building Hanzi Mind, studying markets, and moving into e-commerce. Sydney.">
 <meta name="theme-color" content="#17181A">
-<link rel="preconnect" href="/">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317181A'/%3E%3Crect x='5' y='9' width='22' height='6' fill='%23EDE7DB'/%3E%3Crect x='5' y='17' width='13' height='6' fill='%23D2891F'/%3E%3C/svg%3E">
+</head>
+<body>
 
 <!--
 IN TRANSIT — direction contract (seed 79b4e05a, form 3 of 7)
@@ -104,7 +108,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
         <a class="board__row" role="row" href="#building">
           <span class="board__dest" role="cell"><span class="flap" data-flap="BUILDING"></span></span>
-          <span class="board__detail" role="cell">Hanzi Mind &mdash; a Chinese-language app that teaches through the
+          <span class="board__detail" role="cell">Hanzi Mind: a Chinese-language app that teaches through the
             phone screen you already check.</span>
           <span class="board__status" role="cell"><span class="chip chip--live">In development</span></span>
         </a>
@@ -129,10 +133,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <section id="building" class="sect sect--build" aria-labelledby="building-h">
     <div class="wrap">
       <div class="build__intro">
-        <h2 id="building-h" class="sect__h sect__h--onboard">Hanzi Mind<span class="build__cn">雅</span></h2>
+        <h2 id="building-h" class="sect__h sect__h--onboard">Hanzi Mind<span class="build__cn" lang="zh-Hans">雅</span></h2>
         <p class="build__sub"><i>Yǎ</i> Widgets</p>
         <p class="build__body">You check your phone something like a hundred times a day. Hanzi Mind puts one
-          Chinese word in that glance — character, pinyin, meaning — on the home screen and the lock screen.
+          Chinese word in that glance, with its pinyin and its meaning, on the home screen and the lock screen.
           There is no session to open and no streak to defend. The repetition is already in your day; the app
           just puts something in it.</p>
         <p class="build__meta">
@@ -147,8 +151,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
             <div class="phone__time">9:41</div>
             <div class="phone__date">Monday, 3 August</div>
             <div class="widget">
-              <div class="widget__label">雅 WIDGETS</div>
-              <div class="widget__hz"><span class="flap flap--cn" data-flap-words="hz"></span></div>
+              <div class="widget__label"><span lang="zh-Hans">雅</span> WIDGETS</div>
+              <div class="widget__hz"><span class="flap flap--cn" lang="zh-Hans" data-flap-words="hz"></span></div>
               <div class="widget__py"><span class="flap" data-flap-words="py"></span></div>
               <div class="widget__en"><span class="flap" data-flap-words="en"></span></div>
             </div>
@@ -175,7 +179,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <li><i data-seg="5"></i><span>Swift <b>3%</b></span><em>iOS WidgetKit</em></li>
         </ul>
         <p class="stack__note">The last seven percent is the part that matters. Home and lock-screen widgets
-          cannot be drawn from Flutter — they are written natively, in Kotlin on Android and Swift on iOS,
+          cannot be drawn from Flutter. They are written natively, in Kotlin on Android and Swift on iOS,
           against each platform's own widget system.</p>
       </div>
     </div>
@@ -185,12 +189,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="wrap">
       <h2 id="record-h" class="sect__h">Service record</h2>
       <p class="sect__lede">Eight years of hotel operations. Inventory held against revenue targets, money
-        reconciled before open, and guests recovered in person — the same work an online business does, with
+        reconciled before open, and guests recovered in person. It is the same work an online business does, with
         the consequences arriving faster.</p>
 
       <ol class="record" aria-label="Career history, most recent first">
         <li class="record__row">
-          <span class="record__when">Jun 2025 &mdash; Apr 2026</span>
+          <span class="record__when">Jun 2025 &ndash; Apr 2026</span>
           <span class="record__what">
             <b>Room Controller &amp; Welcome Supervisor</b>
             <i>W Hotels</i>
@@ -200,7 +204,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Jun 2024 &mdash; Jun 2025</span>
+          <span class="record__when">Jun 2024 &ndash; Jun 2025</span>
           <span class="record__what">
             <b>Welcome Agent</b>
             <i>W Hotels</i>
@@ -209,7 +213,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">May 2024 &mdash; 2026</span>
+          <span class="record__when">May 2024 &ndash; 2026</span>
           <span class="record__what">
             <b>Exam Supervision Officer</b>
             <i>University of Sydney</i>
@@ -219,7 +223,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Oct &mdash; Nov 2023</span>
+          <span class="record__when">Oct &ndash; Nov 2023</span>
           <span class="record__what">
             <b>Assistant Night Manager</b>
             <i>Rydges Hotels &amp; Resorts</i>
@@ -229,7 +233,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Oct 2022 &mdash; Oct 2023</span>
+          <span class="record__when">Oct 2022 &ndash; Oct 2023</span>
           <span class="record__what">
             <b>Night Auditor</b>
             <i>Oaks Hotels, Resorts &amp; Suites</i>
@@ -239,7 +243,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Jan &mdash; Oct 2023</span>
+          <span class="record__when">Jan &ndash; Oct 2023</span>
           <span class="record__what">
             <b>Guest Service Agent</b>
             <i>Oaks Hotels, Resorts &amp; Suites</i>
@@ -249,7 +253,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Nov 2021 &mdash; Jul 2023</span>
+          <span class="record__when">Nov 2021 &ndash; Jul 2023</span>
           <span class="record__what">
             <b>Housekeeping</b>
             <i>Oaks Hotels, Resorts &amp; Suites</i>
@@ -258,17 +262,17 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Jun 2018 &mdash; Jul 2021</span>
+          <span class="record__when">Jun 2018 &ndash; Jul 2021</span>
           <span class="record__what">
             <b>Property Manager</b>
             <i>Airbnb</i>
-            <em>Ran listings end to end — tenants and landlords, maintenance, turnover, stock and open-house
+            <em>Ran listings end to end: tenants and landlords, maintenance, turnover, stock and open-house
               events. The closest thing to running a small business on this list.</em>
           </span>
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Oct 2017 &mdash; Feb 2019</span>
+          <span class="record__when">Oct 2017 &ndash; Feb 2019</span>
           <span class="record__what">
             <b>Team Supervisor</b>
             <i>Complex Solution</i>
@@ -277,7 +281,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
         <li class="record__row">
-          <span class="record__when">Oct 2017 &mdash; Feb 2018</span>
+          <span class="record__when">Oct 2017 &ndash; Feb 2018</span>
           <span class="record__what">
             <b>Crew Member</b>
             <i>McDonald&rsquo;s</i>
@@ -306,7 +310,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <div class="creds__item">
           <h3>JustTalk</h3>
           <p class="creds__org">2020 &middot; Android Studio, Java, Firebase</p>
-          <p>A messaging app built to WhatsApp&rsquo;s shape — real-time sync, auth, and message state.</p>
+          <p>A messaging app built to WhatsApp&rsquo;s shape: real-time sync, auth, and message state.</p>
         </div>
         <div class="creds__item">
           <h3>TravelBiz</h3>
@@ -321,8 +325,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="wrap contact">
       <div class="contact__copy">
         <h2 id="contact-h" class="sect__h sect__h--onboard">Final call</h2>
-        <p>If you are building something in commerce, markets or mobile — or you want an operator who has
-          actually held inventory and closed the books — I would like to hear about it.</p>
+        <p>If you are building something in commerce, markets or mobile, or you want an operator who has
+          actually held inventory and closed the books, I would like to hear about it.</p>
         <a class="linkedin" href="https://www.linkedin.com/in/justin-winartha-492599132/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico ico--fill"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
           Connect on LinkedIn
@@ -366,3 +370,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/site.js"></script>
+
+</body>
+</html>
