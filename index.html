@@ -1,332 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Justin Winartha — Operations, Investing, Building</title>
-<meta name="description" content="Eight years running hotel rooms, revenue and night audit. Now building Hanzi Mind, studying markets, and moving into e-commerce. Sydney.">
-<meta name="theme-color" content="#17181A">
+<meta name="description" content="Eight years running hotel rooms, revenue and night audit. Now building Hanzi Mind, studying markets, and moving into e-commerce. Australia.">
+<meta name="theme-color" content="#0A0A0C">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317181A'/%3E%3Crect x='5' y='9' width='22' height='6' fill='%23EDE7DB'/%3E%3Crect x='5' y='17' width='13' height='6' fill='%23D2891F'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0C'/%3E%3Cpath d='M11 9h10v11.5a5 5 0 0 1-10 0' stroke='%23E8A63C' stroke-width='2.6' fill='none'/%3E%3C/svg%3E">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong one.
+  (function () {
+    try {
+      var s = localStorage.getItem('jw-theme');
+      var t = s || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
 </head>
 <body>
 
 <!--
-IN TRANSIT — direction contract (seed 79b4e05a, form 3 of 7)
-THESIS: A career read as a departure board. Refuses the project-grid portfolio: nothing here is
-  "shipped work" pretending to be finished — every item carries an honest status, and status is
-  the design's grammar rather than its apology.
-OWN-WORLD: Bone concourse ground (#EDE7DB) carrying dark graphite board objects (#17181A).
-  Split-flap tiles, ruled data rows, mono column headers. Amber = live/now, petrol = scheduled,
-  slate = departed. Archivo (mechanical grotesque) + Martian Mono (data). No editorial serif.
-STORY: Visitor sees a man mid-transit, not mid-claim — hospitality DEPARTED, three destinations
-  boarding — believes the operating record is real and specific, and sends a message.
-FIRST VIEWPORT: Full-bleed graphite board. Name split-flaps into place at display scale, role
-  line cycles OPERATOR/ANALYST/BUILDER, two status rows state departed-from and boarding-to.
-  Amber contact action sits bottom-left of the board; portrait plate anchors the right.
-FORM: Split-flap departure board, candidate 3 of 7, seed key 79b4e05a.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+QUIET MACHINE — direction contract (brief-pinned, replaces IN TRANSIT / seed 79b4e05a)
+THESIS: A dark-first, grain-lit surface where the work sits in a bento of unequal cells. The
+  unequal sizing is the argument: Hanzi Mind is running and takes four times the room of a plan,
+  so the grid itself states what is real without a single adjective.
+OWN-WORLD: Near-black #0A0A0C or paper #F7F6F3, chosen by the visitor, with animated film grain
+  over both. Schibsted Grotesk set large and tight; Geist Mono for anything measured. Amber
+  #E8A63C survives the theme flip and is the only chroma on the page.
+STORY: Visitor lands on a name in near-silence, scrolls into a grid that shows the shape of the
+  work at a glance, reads the operating record as proof, and hits Contact, which never leaves.
+FIRST VIEWPORT: Centred name at display scale, one rotating role line, the creed, and a scroll
+  cue. Contact sits top right, pinned, with the theme toggle beside it. Grain moving throughout.
+FORM: Bento grid, pinned by the user's brief rather than rolled.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review and DESIGN.md
 -->
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
 
-<header class="rail">
-  <div class="rail__in">
-    <span class="rail__mark">JUSTIN WINARTHA</span>
-    <nav class="rail__nav" aria-label="Sections">
-      <a href="#departures">Departures</a>
-      <a href="#building">Building</a>
-      <a href="#record">Record</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <span class="rail__clock"><span id="clock" aria-live="off">--:--:--</span> <i>SYD</i></span>
+<header class="nav">
+  <a class="nav__mark" href="#top">
+    <span class="nav__initials">JW</span>
+    <span class="nav__name">Justin Winartha</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Sections">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+  </nav>
+
+  <div class="nav__actions">
+    <button class="toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
+      <svg class="toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></svg>
+      <svg class="toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
+    </button>
+    <a class="btn btn--accent nav__cta" href="#contact">Contact</a>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero" aria-labelledby="hero-name">
-    <div class="hero__board">
-      <div class="hero__copy">
-        <h1 id="hero-name" class="hero__name">
-          <span class="flap" data-flap="JUSTIN" data-tiles></span>
-          <span class="flap" data-flap="WINARTHA" data-tiles></span>
-        </h1>
+  <section class="hero" id="top">
+    <div class="hero__inner">
+      <p class="hero__avail">
+        <span class="pulse" aria-hidden="true"></span>
+        Open to conversations
+      </p>
 
-        <p class="hero__role">
-          <span class="flap flap--role" data-flap-cycle='["OPERATOR","ANALYST","BUILDER","VALUE INVESTOR"]'></span>
-        </p>
+      <h1 class="hero__name">Justin<span>Winartha</span></h1>
 
-        <p class="hero__creed">Grounded in critical thinking.<br>Guided by integrity.</p>
+      <p class="hero__role" aria-label="Operator, analyst, builder, value investor">
+        <span class="rotator" id="rotator" aria-hidden="true"></span>
+      </p>
 
-        <dl class="statusrow">
-          <div class="statusrow__item">
-            <dt>Departed</dt>
-            <dd>Hotel operations <span class="statusrow__yrs">2017&ndash;2026</span></dd>
-            <dd class="chip chip--past">Closed</dd>
-          </div>
-          <div class="statusrow__item">
-            <dt>Boarding</dt>
-            <dd>Building &middot; Investing &middot; E&#8209;commerce</dd>
-            <dd class="chip chip--live">Now</dd>
-          </div>
-        </dl>
+      <p class="hero__creed">Grounded in critical thinking.<br>Guided by integrity.</p>
 
-        <a class="btn btn--amber" href="#contact">
-          Start a conversation
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-        </a>
+      <a class="hero__cue" href="#work">
+        <span>See the work</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="sect" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sect__head">
+        <h2 class="sect__h" id="work-h">The work</h2>
+        <p class="sect__note">Sized by what is real. One of these is running; the rest are study,
+          plans, or finished coursework, and they are labelled as such.</p>
       </div>
 
-      <figure class="hero__plate">
+      <div class="bento">
+
+        <article class="cell cell--feature" aria-labelledby="c-hanzi">
+          <div class="cell__body">
+            <span class="tag tag--live">In development</span>
+            <h3 class="cell__h" id="c-hanzi">Hanzi&nbsp;Mind<span class="cell__cn" lang="zh-Hans">雅</span></h3>
+            <p class="cell__p">You check your phone something like a hundred times a day. Hanzi Mind
+              puts one Chinese word in that glance, with its pinyin and its meaning, on the home
+              screen and the lock screen. No session to open, no streak to defend — the repetition is
+              already in your day.</p>
+            <dl class="spec">
+              <div><dt>Built with</dt><dd>Flutter</dd></div>
+              <div><dt>Widgets</dt><dd>Kotlin &amp; Swift, native</dd></div>
+              <div><dt>Status</dt><dd>Unreleased</dd></div>
+            </dl>
+          </div>
+
+          <div class="cell__demo" aria-hidden="true">
+            <div class="phone">
+              <div class="phone__screen">
+                <div class="phone__clock">9:41</div>
+                <div class="phone__date">Monday, 3 August</div>
+                <div class="widget">
+                  <div class="widget__top"><span lang="zh-Hans">雅</span> Widgets</div>
+                  <div class="widget__hz" id="w-hz" lang="zh-Hans">你好</div>
+                  <div class="widget__py" id="w-py">nǐ hǎo</div>
+                  <div class="widget__en" id="w-en">hello</div>
+                </div>
+                <div class="phone__bar"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cell cell--wide" aria-labelledby="c-stack">
+          <h3 class="cell__h cell__h--sm" id="c-stack">What it is made of</h3>
+          <div class="bars" role="img" aria-label="Dart 80 percent, JavaScript 7 percent, TypeScript 6 percent, Kotlin 4 percent, Swift 3 percent">
+            <span class="bars__seg" style="--pct:80"></span>
+            <span class="bars__seg" style="--pct:7"></span>
+            <span class="bars__seg" style="--pct:6"></span>
+            <span class="bars__seg" style="--pct:4"></span>
+            <span class="bars__seg" style="--pct:3"></span>
+          </div>
+          <ul class="legend">
+            <li><i data-s="1"></i>Dart <b>80%</b></li>
+            <li><i data-s="2"></i>JavaScript <b>7%</b></li>
+            <li><i data-s="3"></i>TypeScript <b>6%</b></li>
+            <li><i data-s="4"></i>Kotlin <b>4%</b></li>
+            <li><i data-s="5"></i>Swift <b>3%</b></li>
+          </ul>
+          <p class="cell__p cell__p--sm">The last seven percent is the part that matters. Home and
+            lock-screen widgets cannot be drawn from Flutter; they are written natively against each
+            platform's own widget system.</p>
+        </article>
+
+        <article class="cell" aria-labelledby="c-invest">
+          <span class="tag">Studying</span>
+          <h3 class="cell__h cell__h--sm" id="c-invest">Value investing</h3>
+          <p class="cell__p cell__p--sm">Financial Markets, Yale University via Coursera. Behavioural
+            finance, risk, and the machinery underneath the price.</p>
+        </article>
+
+        <article class="cell" aria-labelledby="c-ecom">
+          <span class="tag">Planned</span>
+          <h3 class="cell__h cell__h--sm" id="c-ecom">E&#8209;commerce</h3>
+          <p class="cell__p cell__p--sm">A direct-to-customer venture, sourced and fulfilled end to
+            end. Groundwork stage.</p>
+        </article>
+
+        <article class="cell cell--stat">
+          <p class="stat__n" data-count="40000" data-prefix="$" data-suffix="+">$40,000+</p>
+          <p class="stat__l">Reconciled nightly as night auditor, to the cent, with checkout
+            satisfaction held at 98%.</p>
+        </article>
+
+        <article class="cell" aria-labelledby="c-justtalk">
+          <span class="tag tag--done">2020</span>
+          <h3 class="cell__h cell__h--sm" id="c-justtalk">JustTalk</h3>
+          <p class="cell__p cell__p--sm">A messaging app built to WhatsApp's shape: real-time sync,
+            auth, and message state. Android Studio, Java, Firebase.</p>
+        </article>
+
+        <article class="cell" aria-labelledby="c-travelbiz">
+          <span class="tag tag--done">Coursework</span>
+          <h3 class="cell__h cell__h--sm" id="c-travelbiz">TravelBiz</h3>
+          <p class="cell__p cell__p--sm">A travel agency site, built end to end. WordPress,
+            JavaScript, HTML, CSS.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="sect sect--about" id="about" aria-labelledby="about-h">
+    <div class="wrap about">
+      <figure class="about__portrait">
         <picture>
           <source srcset="assets/img/justin-portrait.webp" type="image/webp">
-          <img src="assets/img/justin-portrait.jpg" width="880" height="1790"
-               alt="Justin Winartha, standing, in a light suit." decoding="async" fetchpriority="high">
+          <img src="assets/img/justin-portrait.jpg" width="880" height="1790" loading="lazy"
+               decoding="async" alt="Justin Winartha, standing, in a light suit.">
         </picture>
-        <figcaption>
-          <span>Sydney, Australia</span>
-          <span>B.IT &middot; Charles Sturt</span>
-        </figcaption>
       </figure>
-    </div>
-  </section>
 
-  <section id="departures" class="sect sect--departures" aria-labelledby="departures-h">
-    <div class="wrap">
-      <h2 id="departures-h" class="sect__h">Three destinations</h2>
-      <p class="sect__lede">Where the next decade goes. One of them is already running; the other two
-        are honest about being early.</p>
+      <div class="about__copy">
+        <h2 class="sect__h" id="about-h">About</h2>
+        <p class="about__lead">I spent eight years running hotels — holding room inventory against
+          revenue targets, closing the books before open, and fixing things in front of the person
+          they went wrong for.</p>
+        <p>That work is not a detour from what I am doing now, it is the reason I can do it. An
+          online store is inventory, margin, and logistics under a deadline, which is the job I have
+          already been doing, only with the consequences arriving faster. I am putting that behind
+          three things: building software, learning to value businesses properly, and getting a
+          direct-to-customer venture off the ground.</p>
+        <p>None of them have arrived yet. I would rather say that plainly than dress up a plan as a
+          track record.</p>
 
-      <div class="board" role="table" aria-label="Destinations and status">
-        <div class="board__head" role="row">
-          <span role="columnheader">Destination</span>
-          <span role="columnheader">Detail</span>
-          <span role="columnheader">Status</span>
-        </div>
-
-        <a class="board__row" role="row" href="#building">
-          <span class="board__dest" role="cell"><span class="flap" data-flap="BUILDING"></span></span>
-          <span class="board__detail" role="cell">Hanzi Mind: a Chinese-language app that teaches through the
-            phone screen you already check.</span>
-          <span class="board__status" role="cell"><span class="chip chip--live">In development</span></span>
-        </a>
-
-        <div class="board__row" role="row">
-          <span class="board__dest" role="cell"><span class="flap" data-flap="INVESTING"></span></span>
-          <span class="board__detail" role="cell">Value investing, studied deliberately. Financial Markets,
-            Yale University via Coursera.</span>
-          <span class="board__status" role="cell"><span class="chip chip--study">Studying</span></span>
-        </div>
-
-        <div class="board__row" role="row">
-          <span class="board__dest" role="cell"><span class="flap" data-flap="E-COMMERCE"></span></span>
-          <span class="board__detail" role="cell">A direct-to-customer venture, sourced and fulfilled end to end.
-            Groundwork stage.</span>
-          <span class="board__status" role="cell"><span class="chip chip--sched">Scheduled</span></span>
-        </div>
+        <dl class="facts">
+          <div><dt>Based</dt><dd>Australia</dd></div>
+          <div><dt>Degree</dt><dd>B.IT, Charles Sturt</dd></div>
+          <div><dt>Focus</dt><dd>Software, markets, commerce</dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
-  <section id="building" class="sect sect--build" aria-labelledby="building-h">
+  <section class="sect" id="experience" aria-labelledby="exp-h">
     <div class="wrap">
-      <div class="build__intro">
-        <h2 id="building-h" class="sect__h sect__h--onboard">Hanzi Mind<span class="build__cn" lang="zh-Hans">雅</span></h2>
-        <p class="build__sub"><i>Yǎ</i> Widgets</p>
-        <p class="build__body">You check your phone something like a hundred times a day. Hanzi Mind puts one
-          Chinese word in that glance, with its pinyin and its meaning, on the home screen and the lock screen.
-          There is no session to open and no streak to defend. The repetition is already in your day; the app
-          just puts something in it.</p>
-        <p class="build__meta">
-          <span class="chip chip--live">In development</span>
-          <span class="build__note">Not yet released.</span>
-        </p>
+      <div class="sect__head">
+        <h2 class="sect__h" id="exp-h">Experience</h2>
+        <p class="sect__note">Eight years, all of it operational, all of it finished.</p>
       </div>
 
-      <div class="build__demo">
-        <div class="phone" aria-hidden="true">
-          <div class="phone__screen">
-            <div class="phone__time">9:41</div>
-            <div class="phone__date">Monday, 3 August</div>
-            <div class="widget">
-              <div class="widget__label"><span lang="zh-Hans">雅</span> WIDGETS</div>
-              <div class="widget__hz"><span class="flap flap--cn" lang="zh-Hans" data-flap-words="hz"></span></div>
-              <div class="widget__py"><span class="flap" data-flap-words="py"></span></div>
-              <div class="widget__en"><span class="flap" data-flap-words="en"></span></div>
-            </div>
-            <div class="phone__dock"></div>
+      <ol class="roles">
+        <li class="role">
+          <span class="role__yr">2025 &ndash; 2026</span>
+          <div class="role__main">
+            <h3>Room Controller &amp; Welcome Supervisor</h3>
+            <p class="role__org">W Hotels</p>
+            <p class="role__d">Held saleable room inventory against revenue and occupancy targets, ran
+              group arrivals and departures, and allocated upgrades across Revenue, Front Desk,
+              Housekeeping and Engineering.</p>
           </div>
-        </div>
-        <p class="build__caption">Lock-screen widget, shown running.</p>
-      </div>
-
-      <div class="build__stack">
-        <h3 class="stack__h">What it is made of</h3>
-        <div class="stack__bar" role="img" aria-label="Dart 80 percent, JavaScript 7 percent, TypeScript 6 percent, Kotlin 4 percent, Swift 3 percent">
-          <span class="stack__seg" data-pct="80" style="--pct:80"></span>
-          <span class="stack__seg" data-pct="7"  style="--pct:7"></span>
-          <span class="stack__seg" data-pct="6"  style="--pct:6"></span>
-          <span class="stack__seg" data-pct="4"  style="--pct:4"></span>
-          <span class="stack__seg" data-pct="3"  style="--pct:3"></span>
-        </div>
-        <ul class="stack__key">
-          <li><i data-seg="1"></i><span>Dart <b>80%</b></span><em>Flutter core</em></li>
-          <li><i data-seg="2"></i><span>JavaScript <b>7%</b></span><em>Tooling</em></li>
-          <li><i data-seg="3"></i><span>TypeScript <b>6%</b></span><em>Tooling</em></li>
-          <li><i data-seg="4"></i><span>Kotlin <b>4%</b></span><em>Android widget</em></li>
-          <li><i data-seg="5"></i><span>Swift <b>3%</b></span><em>iOS WidgetKit</em></li>
-        </ul>
-        <p class="stack__note">The last seven percent is the part that matters. Home and lock-screen widgets
-          cannot be drawn from Flutter. They are written natively, in Kotlin on Android and Swift on iOS,
-          against each platform's own widget system.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="record" class="sect sect--record" aria-labelledby="record-h">
-    <div class="wrap">
-      <h2 id="record-h" class="sect__h">Service record</h2>
-      <p class="sect__lede">Eight years of hotel operations. Inventory held against revenue targets, money
-        reconciled before open, and guests recovered in person. It is the same work an online business does, with
-        the consequences arriving faster.</p>
-
-      <ol class="record" aria-label="Career history, most recent first">
-        <li class="record__row">
-          <span class="record__when">Jun 2025 &ndash; Apr 2026</span>
-          <span class="record__what">
-            <b>Room Controller &amp; Welcome Supervisor</b>
-            <i>W Hotels</i>
-            <em>Held saleable room inventory against revenue and occupancy targets, ran group arrivals and
-              departures, and allocated upgrades across Revenue, Front Desk, Housekeeping and Engineering.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
         </li>
-        <li class="record__row">
-          <span class="record__when">Jun 2024 &ndash; Jun 2025</span>
-          <span class="record__what">
-            <b>Welcome Agent</b>
-            <i>W Hotels</i>
-            <em>Front of house on OPERA PMS and GXP, to a luxury brand standard.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2024 &ndash; 2025</span>
+          <div class="role__main">
+            <h3>Welcome Agent</h3>
+            <p class="role__org">W Hotels</p>
+            <p class="role__d">Front of house on OPERA PMS and GXP, to a luxury brand standard.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">May 2024 &ndash; 2026</span>
-          <span class="record__what">
-            <b>Exam Supervision Officer</b>
-            <i>University of Sydney</i>
-            <em>Ran examination venues and computer-based delivery under strict procedure, identity
-              verification and academic-integrity conditions.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2024 &ndash; 2026</span>
+          <div class="role__main">
+            <h3>Exam Supervision Officer</h3>
+            <p class="role__org">University of Sydney</p>
+            <p class="role__d">Ran examination venues and computer-based delivery under strict
+              procedure, identity verification and academic-integrity conditions.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Oct &ndash; Nov 2023</span>
-          <span class="record__what">
-            <b>Assistant Night Manager</b>
-            <i>Rydges Hotels &amp; Resorts</i>
-            <em>Audited every financial transaction nightly on Oracle PMS, reconciling room, food and beverage
-              and miscellaneous revenue before open.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2023</span>
+          <div class="role__main">
+            <h3>Assistant Night Manager</h3>
+            <p class="role__org">Rydges Hotels &amp; Resorts</p>
+            <p class="role__d">Audited every financial transaction nightly on Oracle PMS, reconciling
+              room, food and beverage and miscellaneous revenue before open.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Oct 2022 &ndash; Oct 2023</span>
-          <span class="record__what">
-            <b>Night Auditor</b>
-            <i>Oaks Hotels, Resorts &amp; Suites</i>
-            <em>Reconciled nightly billing and vendor payments exceeding $40,000, keeping records and receipts
-              to the cent. Checkout satisfaction held at 98%.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2022 &ndash; 2023</span>
+          <div class="role__main">
+            <h3>Night Auditor</h3>
+            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
+            <p class="role__d">Reconciled nightly billing and vendor payments exceeding $40,000,
+              keeping records and receipts to the cent. Checkout satisfaction held at 98%.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Jan &ndash; Oct 2023</span>
-          <span class="record__what">
-            <b>Guest Service Agent</b>
-            <i>Oaks Hotels, Resorts &amp; Suites</i>
-            <em>Arrivals, departures, payments and complaint recovery, coordinating housekeeping and
-              maintenance behind the desk.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2023</span>
+          <div class="role__main">
+            <h3>Guest Service Agent</h3>
+            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
+            <p class="role__d">Arrivals, departures, payments and complaint recovery, coordinating
+              housekeeping and maintenance behind the desk.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Nov 2021 &ndash; Jul 2023</span>
-          <span class="record__what">
-            <b>Housekeeping</b>
-            <i>Oaks Hotels, Resorts &amp; Suites</i>
-            <em>Held a 9 out of 10 guest-reviewed cleaning standard.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2021 &ndash; 2023</span>
+          <div class="role__main">
+            <h3>Housekeeping</h3>
+            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
+            <p class="role__d">Held a 9 out of 10 guest-reviewed cleaning standard.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Jun 2018 &ndash; Jul 2021</span>
-          <span class="record__what">
-            <b>Property Manager</b>
-            <i>Airbnb</i>
-            <em>Ran listings end to end: tenants and landlords, maintenance, turnover, stock and open-house
-              events. The closest thing to running a small business on this list.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2018 &ndash; 2021</span>
+          <div class="role__main">
+            <h3>Property Manager</h3>
+            <p class="role__org">Airbnb</p>
+            <p class="role__d">Ran listings end to end: tenants and landlords, maintenance, turnover,
+              stock and open-house events. The closest thing to running a small business on this list.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Oct 2017 &ndash; Feb 2019</span>
-          <span class="record__what">
-            <b>Team Supervisor</b>
-            <i>Complex Solution</i>
-            <em>Inducted and trained new staff, set the day plan, and covered the shifts nobody else could.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2017 &ndash; 2019</span>
+          <div class="role__main">
+            <h3>Team Supervisor</h3>
+            <p class="role__org">Complex Solution</p>
+            <p class="role__d">Inducted and trained new staff, set the day plan, and covered the
+              shifts nobody else could.</p>
+          </div>
         </li>
-        <li class="record__row">
-          <span class="record__when">Oct 2017 &ndash; Feb 2018</span>
-          <span class="record__what">
-            <b>Crew Member</b>
-            <i>McDonald&rsquo;s</i>
-            <em>Where it started.</em>
-          </span>
-          <span class="record__tag"><span class="chip chip--past">Departed</span></span>
+        <li class="role">
+          <span class="role__yr">2017 &ndash; 2018</span>
+          <div class="role__main">
+            <h3>Crew Member</h3>
+            <p class="role__org">McDonald's</p>
+            <p class="role__d">Where it started.</p>
+          </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="sect sect--creds" aria-labelledby="creds-h">
-    <div class="wrap">
-      <h2 id="creds-h" class="sect__h">Training and earlier work</h2>
-      <div class="creds">
-        <div class="creds__item">
-          <h3>Bachelor of Information Technology</h3>
-          <p class="creds__org">Charles Sturt University</p>
-          <p>Specialised in software and website development.</p>
-        </div>
-        <div class="creds__item">
-          <h3>Financial Markets</h3>
-          <p class="creds__org">Yale University &middot; Coursera</p>
-          <p>Behavioural finance, risk, and the machinery underneath the price.</p>
-        </div>
-        <div class="creds__item">
-          <h3>JustTalk</h3>
-          <p class="creds__org">2020 &middot; Android Studio, Java, Firebase</p>
-          <p>A messaging app built to WhatsApp&rsquo;s shape: real-time sync, auth, and message state.</p>
-        </div>
-        <div class="creds__item">
-          <h3>TravelBiz</h3>
-          <p class="creds__org">WordPress, JavaScript, HTML, CSS</p>
-          <p>A travel agency site, built end to end.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="sect sect--contact" aria-labelledby="contact-h">
+  <section class="sect sect--contact" id="contact" aria-labelledby="contact-h">
     <div class="wrap contact">
       <div class="contact__copy">
-        <h2 id="contact-h" class="sect__h sect__h--onboard">Final call</h2>
-        <p>If you are building something in commerce, markets or mobile, or you want an operator who has
-          actually held inventory and closed the books, I would like to hear about it.</p>
+        <h2 class="sect__h sect__h--xl" id="contact-h">Let's talk.</h2>
+        <p>If you are building something in commerce, markets or mobile, or you want an operator who
+          has actually held inventory and closed the books, I would like to hear about it.</p>
         <a class="linkedin" href="https://www.linkedin.com/in/justin-winartha-492599132/" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true" class="ico ico--fill"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
           Connect on LinkedIn
@@ -346,12 +344,11 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         </div>
         <div class="field">
           <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" rows="5" required></textarea>
+          <textarea id="f-msg" name="message" rows="4" required></textarea>
           <p class="field__err" data-err-for="f-msg"></p>
         </div>
-        <button class="btn btn--amber btn--wide" type="submit" data-idle="Send message" data-busy="Sending…">
+        <button class="btn btn--accent btn--wide" type="submit" data-idle="Send message" data-busy="Sending…">
           <span data-btn-label>Send message</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
         </button>
         <p class="form__status" role="status" aria-live="polite"></p>
       </form>
@@ -362,7 +359,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <footer class="foot">
   <div class="wrap foot__in">
     <span>Justin Winartha</span>
-    <span>Sydney, Australia</span>
     <span class="foot__creed">Grounded in critical thinking. Guided by integrity.</span>
   </div>
 </footer>

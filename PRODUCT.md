@@ -44,9 +44,9 @@ Visitors arrive predominantly from LinkedIn, frequently on mobile, often mid-con
 - Contact is a form (user's explicit choice). A static site cannot send mail on its own; a third-party form service is required, and its provider is an open decision. **Built state:** the form validates with real error, busy and success states, but its `ENDPOINT` constant in `assets/js/site.js` is empty, so it cannot send. It currently tells the visitor so and points them to LinkedIn. Until an endpoint is set, the form is honest but non-functional.
 - Email address and phone number are deliberately NOT published. LinkedIn is the only published direct channel.
 - GitHub profile is not published (user did not select it).
-- **No third-party runtime.** Fonts (Archivo, Martian Mono, Noto Sans SC) and GSAP are self-hosted; the CJK font is subset to the ten characters actually used. The page makes no external network request at runtime and works under a strict content-security policy. Future work must not reintroduce a CDN font or script link.
-- The site states "Sydney, Australia" in the hero caption, footer and meta description. That location remains **inferred, not confirmed** — see Evidence. It is the only unverified assertion on the page.
-- Role end dates are written in the past tense throughout. Exam Supervision Officer ends "2026" with no month, because the month is unknown.
+- **No third-party runtime.** Fonts (Schibsted Grotesk, Geist Mono, Noto Sans SC) and GSAP are self-hosted; the CJK font is subset to the ten characters actually used. The page makes no external network request at runtime and works under a strict content-security policy. Future work must not reintroduce a CDN font or script link.
+- Location is stated as **Australia**, confirmed by the user. The city is not asserted anywhere on the page; only the University of Sydney employment implies it, which is a fact in its own right.
+- Role end dates are written in the past tense throughout, and all end months are now known.
 
 ## Brand Commitments
 
@@ -64,7 +64,7 @@ These are commitments about identity, not a mandate for the site's visual world;
 
 Real and usable:
 
-- **Career record (2017–Apr 2026), all past tense.** Room Controller / Welcome Supervisor, W Hotels (Jun 2025 – Apr 2026) — room inventory for revenue and occupancy, group arrivals/departures, upgrade allocation across Revenue/Front Desk/Housekeeping/Engineering, pre-arrival planning. Welcome Agent, W Hotels (Jun 2024 – Jun 2025) — OPERA PMS, GXP. Exam Supervision Officer, University of Sydney (May 2024 – 2026). Assistant Night Manager, Rydges (Oct–Nov 2023) — Oracle PMS, nightly financial audit. Guest Service Agent, Oaks (Jan–Oct 2023). Night Auditor, Oaks (Oct 2022 – Oct 2023) — nightly reconciliation exceeding $40,000, 98% guest satisfaction. Housekeeping, Oaks (Nov 2021 – Jul 2023) — 9/10 cleaning score. Property Manager, Airbnb (Jun 2018 – Jul 2021). Team Supervisor, Complex Solution (Oct 2017 – Feb 2019). Crew Member, McDonald's (Oct 2017 – Feb 2018).
+- **Career record (2017–Apr 2026), all past tense.** Room Controller / Welcome Supervisor, W Hotels (Jun 2025 – Apr 2026) — room inventory for revenue and occupancy, group arrivals/departures, upgrade allocation across Revenue/Front Desk/Housekeeping/Engineering, pre-arrival planning. Welcome Agent, W Hotels (Jun 2024 – Jun 2025) — OPERA PMS, GXP. Exam Supervision Officer, University of Sydney (May 2024 – Apr 2026). Assistant Night Manager, Rydges (Oct–Nov 2023) — Oracle PMS, nightly financial audit. Guest Service Agent, Oaks (Jan–Oct 2023). Night Auditor, Oaks (Oct 2022 – Oct 2023) — nightly reconciliation exceeding $40,000, 98% guest satisfaction. Housekeeping, Oaks (Nov 2021 – Jul 2023) — 9/10 cleaning score. Property Manager, Airbnb (Jun 2018 – Jul 2021). Team Supervisor, Complex Solution (Oct 2017 – Feb 2019). Crew Member, McDonald's (Oct 2017 – Feb 2018).
 - **Education.** Charles Sturt University, Bachelor of Information Technology, specialised in Software and Website Development.
 - **Certification.** Financial Markets — Yale University via Coursera.
 - **University projects.** JustTalk, a WhatsApp-style messaging app (Android Studio, Firebase, Java, ~2020). TravelBiz, a travel agency website (WordPress, JavaScript, HTML, CSS, JavaFX).
@@ -77,7 +77,6 @@ Absences that future work must not fabricate:
 - No investment track record, holdings, returns, or published thesis writing exists to show.
 - No released app. Hanzi Mind is in development with no App Store or Play Store presence, no users, and no download figures. JustTalk was Android, not iOS.
 - No clients, customers, testimonials, revenue figures, press, or awards.
-- Sydney/Australia base is **inferred** from the +61 number, University of Sydney, and W Hotels. The built site asserts it in three places; it has still never been confirmed by the user, who was asked and did not answer. Correct or remove it before the site goes public.
 - Primary audience priority is **undecided**. The user was asked whether employers or business partners matter more when the page has to choose, and did not answer. The site currently serves both, which is why no section is sharper than the others. Recorded as an open decision, not resolved by default.
 
 ## Product Principles

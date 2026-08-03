@@ -1,7 +1,7 @@
 # Justin Winartha — personal site
 
-A single-page personal site built as a split-flap departure board. Static HTML, CSS and JavaScript
-with GSAP; no build step, no framework, no dependencies to install.
+A single-page personal site: a dark/light, grain-lit surface with a bento grid of work. Static HTML,
+CSS and JavaScript with GSAP; no build step, no framework, no dependencies to install.
 
 ## Run it
 
@@ -24,9 +24,9 @@ Vercel. There is nothing to compile.
 
 ```
 index.html              the page
-assets/css/site.css     design tokens and all styling
-assets/js/site.js       split-flap engine, scroll choreography, form
-assets/fonts/           Archivo, Martian Mono, Noto Sans SC (self-hosted, subset)
+assets/css/site.css     theme tokens and all styling
+assets/js/site.js       theme, film grain, scroll choreography, form
+assets/fonts/           Schibsted Grotesk, Geist Mono, Noto Sans SC (self-hosted, subset)
 assets/img/             portrait, webp + jpg
 assets/vendor/          GSAP 3.15 + ScrollTrigger, vendored locally
 PRODUCT.md              product truth — who this is for and what is confirmed
@@ -42,26 +42,25 @@ runtime dependencies and works behind a strict content-security policy.
    server. Sign up for a form service (Formspree, Basin, Netlify Forms) and set `ENDPOINT` at the
    bottom of `assets/js/site.js` to the URL it gives you. Until then the form tells visitors to use
    LinkedIn instead, which is honest but is not a substitute.
-2. **Confirm the location.** The page states "Sydney, Australia" in the hero caption and the footer.
-   That was inferred from the +61 number and the University of Sydney and W Hotels roles, not
-   confirmed directly. Correct or remove it if it is wrong.
-3. **Re-read the dates.** Every role is written in the past tense, with Room Controller ending
-   April 2026 and Exam Supervision Officer ending "2026" — replace that with the real month.
+2. **Decide the audience.** The page currently serves prospective employers and prospective
+   partners equally. Sharpening it toward one would make the work section considerably stronger.
 
 ## Editing content
 
 The page is hand-written HTML; edit `index.html` directly. Two conventions matter, and `DESIGN.md`
 explains the rest:
 
-- **Every item carries a status.** `chip--live`, `chip--sched`, `chip--study`, `chip--past`. An item
-  with no status does not belong on this board.
-- **Nothing appears here that `PRODUCT.md` does not record as confirmed.** The board's credibility
+- **Cell size states what is real.** The bento span is the claim: the only project actually running
+  is 2×2, plans and coursework are 1×1. Give every new item a status badge too — `tag--live`,
+  `tag`, `tag--done`.
+- **Nothing appears here that `PRODUCT.md` does not record as confirmed.** The page's credibility
   rests entirely on its statuses being true — no shipped app, no founded company, no track record
   until those exist.
 
 ## Accessibility
 
-WCAG AA contrast on both grounds, keyboard-operable throughout with a ground-aware focus ring, and
-`prefers-reduced-motion` honoured everywhere — under reduced motion the split-flap text renders
-instantly and all content stays visible. The split-flap cells are `aria-hidden` with the whole word
-carried on the container, so a screen reader reads "Justin Winartha" rather than spelling it out.
+WCAG AA contrast in both themes, keyboard-operable throughout, and `prefers-reduced-motion` honoured
+everywhere — under reduced motion the grain stops moving, nothing rotates or counts, and all content
+stays visible rather than waiting on a reveal. The theme is applied before first paint so there is no
+flash of the wrong ground, and Chinese text carries `lang="zh-Hans"` so screen readers pronounce it
+correctly.

@@ -1,121 +1,330 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-03T00:00:00Z",
-  "title": "Design System: In Transit",
+  "generatedAt": "2026-08-03T13:31:12Z",
+  "title": "Design System: Quiet Machine",
   "extensions": {
     "colorMeta": {
-      "bone":       { "role": "neutral", "displayName": "Concourse Bone", "tonalRamp": ["#EDE7DB", "#E4DCCB", "#D8CEB9"] },
-      "board":      { "role": "surface", "displayName": "Board Graphite", "tonalRamp": ["#101113", "#17181A", "#212327", "#2C2F34", "#33363B", "#3A3D42", "#4A4E55"] },
-      "ink":        { "role": "text",    "displayName": "Ink", "tonalRamp": ["#14100C", "#17140F", "#5E5D58"] },
-      "on-board":   { "role": "text",    "displayName": "Board Type", "tonalRamp": ["#EDE7DB", "#A5A29A"] },
-      "amber":      { "role": "primary", "displayName": "Signal Amber", "tonalRamp": ["#E8A63C", "#D2891F", "#85510A"] },
-      "petrol":     { "role": "accent",  "displayName": "Scheduled Petrol", "tonalRamp": ["#4FA8AD", "#1E5F63"] },
-      "series":     { "role": "accent",  "displayName": "Language Series", "tonalRamp": ["#D2891F", "#4FA8AD", "#7C8B94", "#B4652F", "#EDE7DB"] },
-      "device":     { "role": "surface", "displayName": "Device Illustration", "tonalRamp": ["#0B0C0D", "#0E1012", "#101214", "#16181B", "#1A1C1F", "#2B2F36", "#9EA3AB", "#F2EFE9"] },
-      "error":      { "role": "error",   "displayName": "Validation", "tonalRamp": ["#F0937C", "#E0755C"] },
-      "shadow":     { "role": "neutral", "displayName": "Depth & Edge", "tonalRamp": ["#000", "#000000", "rgba(0,0,0,.75)", "rgba(0,0,0,.6)", "rgba(0,0,0,.45)", "rgba(20,16,12,.55)", "rgba(255,255,255,.06)"] }
+      "accent": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "tonalRamp": [
+          "#F2BC63",
+          "#E8A63C",
+          "#D98E1F",
+          "#8F5B08",
+          "#17120A"
+        ]
+      },
+      "dark-bg": {
+        "role": "surface",
+        "displayName": "Night Ground",
+        "tonalRamp": [
+          "#0A0A0C",
+          "#101014",
+          "#141419",
+          "#1B1B21",
+          "#26262E",
+          "#34343E"
+        ]
+      },
+      "dark-text": {
+        "role": "text",
+        "displayName": "Night Type",
+        "tonalRamp": [
+          "#F2F2F5",
+          "#9B9BA6"
+        ]
+      },
+      "light-bg": {
+        "role": "surface",
+        "displayName": "Paper Ground",
+        "tonalRamp": [
+          "#FFFFFF",
+          "#F7F6F3",
+          "#F4F2ED",
+          "#F1EFEA",
+          "#E2DFD7",
+          "#CFCBC0"
+        ]
+      },
+      "light-text": {
+        "role": "text",
+        "displayName": "Paper Type",
+        "tonalRamp": [
+          "#14141A",
+          "#5C5C66"
+        ]
+      },
+      "series": {
+        "role": "accent",
+        "displayName": "Language Series",
+        "tonalRamp": [
+          "#E8A63C",
+          "#4FA8AD",
+          "#7C8B94",
+          "#B4652F",
+          "#9B9BA6"
+        ]
+      },
+      "device": {
+        "role": "surface",
+        "displayName": "Device Illustration",
+        "tonalRamp": [
+          "#0B0B0F",
+          "#0D0D11",
+          "#131318",
+          "#17171D",
+          "#24242B",
+          "#2E2E38",
+          "#9C9CA8",
+          "#F4F3F7"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Validation",
+        "tonalRamp": [
+          "#E8836A",
+          "#E0755C",
+          "#B33F22"
+        ]
+      },
+      "shadow": {
+        "role": "neutral",
+        "displayName": "Depth & Edge",
+        "tonalRamp": [
+          "#000",
+          "#000000",
+          "rgba(0,0,0,.9)",
+          "rgba(0,0,0,.7)",
+          "rgba(30,26,18,.4)",
+          "rgba(255,255,255,.07)",
+          "rgba(242,242,245,.95)",
+          "rgba(242,242,245,.55)"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Board Display", "purpose": "The name at board scale, rendered as split-flap tiles. Capped at 5rem." },
-      "heading": { "displayName": "Section Heading", "purpose": "Section titles. Same mechanical weight as display, one step down." },
-      "body":    { "displayName": "Body", "purpose": "Prose. Measure held to 60-65ch." },
-      "data":    { "displayName": "Board Data", "purpose": "Machine output only — times, dates, statuses, column headers, captions. Never a costume for 'technical'." },
-      "hanzi":   { "displayName": "Hanzi", "purpose": "The widget and the 雅 in the project title. Font is subset to the ten characters actually used." }
+      "display": {
+        "displayName": "Hero Display",
+        "purpose": "The name, alone in the first viewport. Deliberately past a normal heading ceiling; earned because nothing else shares the space."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Section titles."
+      },
+      "stat": {
+        "displayName": "Stat",
+        "purpose": "The single numeric cell. Proportional numerals, never tabular — tabular gives the comma a full figure width."
+      },
+      "card": {
+        "displayName": "Feature Card",
+        "purpose": "The feature bento cell's heading."
+      },
+      "card-sm": {
+        "displayName": "Card",
+        "purpose": "Small bento cells and experience-row roles."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Anything measured or labelled — years, specs, field names, badges. Never a costume for prose."
+      },
+      "eyebrow-mono": {
+        "displayName": "Rotator",
+        "purpose": "The hero's rotating role line only."
+      },
+      "hanzi": {
+        "displayName": "Hanzi",
+        "purpose": "The widget demo. Font subset to the ten characters actually used."
+      }
     },
     "shadows": [
-      { "name": "board-panel", "value": "0 24px 60px -28px rgba(20,16,12,.55), 0 2px 0 #000", "purpose": "The graphite board resting on the bone concourse." },
-      { "name": "flap-cell",   "value": "0 2px 5px rgba(0,0,0,.45)", "purpose": "Each split-flap tile as a discrete piece of hardware." },
-      { "name": "phone",       "value": "0 30px 60px -24px rgba(0,0,0,.75), inset 0 1px 0 rgba(255,255,255,.06)", "purpose": "The device in the build section, with a top edge highlight." }
+      {
+        "name": "rest",
+        "value": "0 24px 50px -30px rgba(0,0,0,.9)",
+        "purpose": "Cards and the device on the dark ground."
+      },
+      {
+        "name": "rest-light",
+        "value": "0 22px 44px -30px rgba(30,26,18,.4)",
+        "purpose": "The same lift on paper, warmer and shallower."
+      },
+      {
+        "name": "accent-lift",
+        "value": "0 6px 18px -8px color-mix(in srgb, var(--accent) 70%, transparent)",
+        "purpose": "The primary button, tinted by its own fill."
+      },
+      {
+        "name": "device-edge",
+        "value": "inset 0 1px 0 rgba(255,255,255,.07)",
+        "purpose": "Top edge highlight on the phone shell."
+      }
     ],
     "motion": [
-      { "name": "ease-exit",   "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Default easing for state transitions and hovers." },
-      { "name": "flap-settle", "value": "power3.out over 0.62s, per-character stagger 0.028-0.07s", "purpose": "The split-flap churn settling on its target character." },
-      { "name": "reveal",      "value": "expo.out over 0.7s, stagger 0.06s from opacity 0 / y 12px", "purpose": "Scroll reveal, batched by ScrollTrigger, fires once." },
-      { "name": "blip",        "value": "2.4s infinite, opacity 1 to .25 at 74-88%", "purpose": "The live status dot blinking what is imminent." }
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Default easing for every transition."
+      },
+      {
+        "name": "grain",
+        "value": "7s steps(1) infinite, 8 discrete offsets under 1.5%",
+        "purpose": "Film grain. Transform only, so nothing repaints."
+      },
+      {
+        "name": "reveal",
+        "value": "expo.out 0.85s, stagger 0.07s, from opacity 0 / y 22px",
+        "purpose": "Scroll reveal, batched, fires once."
+      },
+      {
+        "name": "rotate",
+        "value": "0.32s power2.in out, 0.5s expo.out in, with a 4px blur",
+        "purpose": "The hero role line swapping words."
+      },
+      {
+        "name": "pulse",
+        "value": "2.6s infinite ring expanding to 0.5rem",
+        "purpose": "The availability dot."
+      },
+      {
+        "name": "count",
+        "value": "expo.out 1.8s to the target integer",
+        "purpose": "The single stat counting up once on entry."
+      }
     ],
     "breakpoints": [
-      { "name": "xs", "value": "34em" },
-      { "name": "sm", "value": "40em" },
-      { "name": "md", "value": "48em" },
-      { "name": "lg", "value": "52em" },
-      { "name": "xl", "value": "56em" },
-      { "name": "2xl", "value": "60em" },
-      { "name": "3xl", "value": "62em" }
+      {
+        "name": "xs",
+        "value": "34em"
+      },
+      {
+        "name": "sm",
+        "value": "40em"
+      },
+      {
+        "name": "md",
+        "value": "48em"
+      },
+      {
+        "name": "lg",
+        "value": "52em"
+      },
+      {
+        "name": "xl",
+        "value": "56em"
+      },
+      {
+        "name": "2xl",
+        "value": "68em"
+      },
+      {
+        "name": "3xl",
+        "value": "72em"
+      }
     ]
   },
   "components": [
     {
-      "name": "Split-Flap Text",
-      "kind": "custom",
-      "refersTo": "flap-cell",
-      "description": "The system's signature. Per-character cells churn through a charset and settle. Container carries the accessible name; cells are aria-hidden.",
-      "html": "<span class=\"ds-flap\" role=\"text\" aria-label=\"BUILDING\"><span class=\"ds-flap-c\" aria-hidden=\"true\">B</span><span class=\"ds-flap-c\" aria-hidden=\"true\">U</span><span class=\"ds-flap-c\" aria-hidden=\"true\">I</span></span>",
-      "css": ".ds-flap { display: inline-flex; gap: 2px; font-weight: 800; letter-spacing: -.03em; } .ds-flap-c { display: inline-block; background: linear-gradient(180deg, #2C2F34 0 calc(50% - 1px), #101113 calc(50% - 1px) calc(50% + 1px), #212327 calc(50% + 1px) 100%); color: #EDE7DB; padding: .08em .1em .12em; min-width: .74em; text-align: center; border-radius: 2px; box-shadow: 0 2px 5px rgba(0,0,0,.45); font-variant-numeric: tabular-nums; }"
+      "name": "Bento Cell",
+      "kind": "card",
+      "refersTo": "cell",
+      "description": "The grid unit. Its span states how real the thing is — the feature cell is 2x2 because it is the only project actually running.",
+      "html": "<article class=\"ds-cell\"><span class=\"ds-tag\">Studying</span><h3>Value investing</h3><p>Financial Markets, Yale University via Coursera.</p></article>",
+      "css": ".ds-cell { position: relative; display: flex; flex-direction: column; gap: .75rem; padding: 1.5rem; border: 1px solid #26262E; border-radius: 22px; background: #141419; color: #F2F2F5; overflow: hidden; transition: border-color .3s cubic-bezier(.16,1,.3,1); } .ds-cell:hover { border-color: #34343E; } .ds-cell h3 { margin: 0; font: 700 1.1875rem/1.25 'Schibsted Grotesk', sans-serif; letter-spacing: -.025em; padding-right: 5.5rem; } .ds-cell p { margin: 0; color: #9B9BA6; font-size: .9375rem; }"
     },
     {
-      "name": "Status Chip",
+      "name": "Status Badge",
       "kind": "chip",
-      "refersTo": "chip-live",
-      "description": "The status vocabulary. Live blinks its dot; past and scheduled do not. Outlined in currentColor, never filled.",
-      "html": "<span class=\"ds-chip ds-chip-live\">In development</span>",
-      "css": ".ds-chip { display: inline-flex; align-items: center; gap: .4em; font: 500 .625rem/1 'Martian Mono', monospace; letter-spacing: .1em; text-transform: uppercase; padding: .45em .6em; border: 1px solid currentColor; border-radius: 2px; white-space: nowrap; } .ds-chip::before { content: \"\"; width: .4em; height: .4em; background: currentColor; border-radius: 50%; } .ds-chip-live { color: #D2891F; } .ds-chip-live::before { animation: ds-blip 2.4s cubic-bezier(.16,1,.3,1) infinite; } @keyframes ds-blip { 0%, 62%, 100% { opacity: 1; } 74%, 88% { opacity: .25; } } @media (prefers-reduced-motion: reduce) { .ds-chip-live::before { animation: none; } }"
+      "refersTo": "tag",
+      "description": "Pinned to the cell's top-right corner. Never stacked above a heading — a label above a title is an eyebrow, and this system does not use them.",
+      "html": "<span class=\"ds-tag ds-tag-live\">In development</span>",
+      "css": ".ds-tag { position: absolute; top: 1.5rem; right: 1.5rem; display: inline-flex; align-items: center; gap: .4em; padding: .3em .6em; border: 1px solid #34343E; border-radius: 999px; background: #1B1B21; font: 500 .6875rem/1 'Geist Mono', monospace; color: #9B9BA6; white-space: nowrap; } .ds-tag-live { color: #E8A63C; border-color: rgba(232,166,60,.45); } .ds-tag-live::before { content: \"\"; width: .38em; height: .38em; border-radius: 50%; background: #E8A63C; }"
     },
     {
-      "name": "Primary Button",
+      "name": "Accent Button",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "The single page action. Amber on graphite; the arrow advances on hover.",
-      "html": "<a class=\"ds-btn\" href=\"#contact\">Start a conversation <svg viewBox=\"0 0 24 24\" class=\"ds-ico\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; gap: .75rem; padding: .75rem 1.5rem; border: 0; border-radius: 2px; background: #D2891F; color: #17140F; font: 600 .8125rem/1 Archivo, sans-serif; text-decoration: none; cursor: pointer; transition: background .2s cubic-bezier(.16,1,.3,1); } .ds-btn:hover { background: #E8A63C; } .ds-btn:active { transform: translateY(1px); } .ds-ico { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: square; stroke-linejoin: miter; transition: transform .25s cubic-bezier(.16,1,.3,1); } .ds-btn:hover .ds-ico { transform: translateX(3px); }"
+      "refersTo": "button-accent",
+      "description": "The single page action, pinned top right in the nav and repeated at the foot of the contact form.",
+      "html": "<a class=\"ds-btn\" href=\"#contact\">Contact</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .6rem 1.1rem; border: 0; border-radius: 999px; background: #E8A63C; color: #17120A; font: 600 .875rem/1 'Schibsted Grotesk', sans-serif; letter-spacing: -.01em; text-decoration: none; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(232,166,60,.7); transition: transform .2s cubic-bezier(.16,1,.3,1), background .2s; } .ds-btn:hover { background: #F2BC63; transform: translateY(-1px); }"
     },
     {
-      "name": "Board Row",
+      "name": "Grain Layer",
       "kind": "custom",
-      "refersTo": "chip-scheduled",
-      "description": "A three-column data row: destination at display scale, detail as prose, status right-aligned. Collapses to a single stack below 52em.",
-      "html": "<a class=\"ds-row\" href=\"#building\"><span class=\"ds-dest\">BUILDING</span><span class=\"ds-detail\">Hanzi Mind — a Chinese-language app.</span><span class=\"ds-status\"><span class=\"ds-chip ds-chip-live\">In development</span></span></a>",
-      "css": ".ds-row { display: grid; grid-template-columns: 1fr; gap: .5rem 1.5rem; padding: 1rem 0; border-bottom: 1px solid #D8CEB9; text-decoration: none; color: #14100C; transition: background .2s cubic-bezier(.16,1,.3,1); } @media (min-width: 52em) { .ds-row { grid-template-columns: 16rem 1fr 10rem; align-items: baseline; } .ds-status { text-align: right; } } .ds-row:hover { background: #E4DCCB; } .ds-row:hover .ds-dest { color: #85510A; } .ds-dest { font-weight: 800; font-size: clamp(1.375rem, 3.2vw, 2rem); letter-spacing: -.02em; line-height: 1; } .ds-detail { color: #5E5D58; max-width: 48ch; }"
+      "refersTo": "cell",
+      "description": "Runtime-generated noise tile animated by transform only. The same tile reads as light bloom on black and paper tooth on white.",
+      "html": "<div class=\"ds-grain\" aria-hidden=\"true\"></div>",
+      "css": ".ds-grain { position: fixed; top: -60%; left: -60%; width: 220%; height: 220%; z-index: 100; pointer-events: none; opacity: .085; mix-blend-mode: overlay; background-repeat: repeat; will-change: transform; animation: ds-grain 7s steps(1) infinite; } @keyframes ds-grain { 0%,100% { transform: translate(0,0); } 25% { transform: translate(.9%,-1.4%); } 50% { transform: translate(1.4%,.7%); } 75% { transform: translate(1.1%,-1.1%); } } @media (prefers-reduced-motion: reduce) { .ds-grain { animation: none; } }"
     },
     {
-      "name": "Text Input",
-      "kind": "input",
-      "refersTo": "input-text",
-      "description": "Form field on graphite. Invalid state borders in the error tone and pairs with a mono message below.",
-      "html": "<div class=\"ds-field\"><label for=\"x\">Email</label><input id=\"x\" type=\"email\"><p class=\"ds-err\">That address is missing something.</p></div>",
-      "css": ".ds-field { display: grid; gap: .5rem; } .ds-field label { font: 500 .625rem/1 'Martian Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: #A5A29A; } .ds-field input { font: 400 .9375rem/1.5 Archivo, sans-serif; color: #EDE7DB; background: #212327; border: 1px solid #3A3D42; border-radius: 2px; padding: .75rem; width: 100%; transition: border-color .2s, background .2s; } .ds-field input:hover { border-color: #4A4E55; } .ds-field input:focus { background: #2C2F34; border-color: #D2891F; outline: 2px solid #E8A63C; outline-offset: 3px; } .ds-field[data-invalid] input { border-color: #E0755C; } .ds-err { margin: 0; font: 500 .6875rem/1.4 'Martian Mono', monospace; color: #F0937C; }"
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "toggle",
+      "description": "Circular icon button beside the CTA. The theme is applied by an inline head script before first paint so there is no flash of the wrong theme.",
+      "html": "<button class=\"ds-toggle\" type=\"button\" aria-label=\"Switch to light theme\"><svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/></svg></button>",
+      "css": ".ds-toggle { width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border: 1px solid #26262E; border-radius: 50%; background: transparent; color: #9B9BA6; cursor: pointer; transition: color .2s, border-color .2s, background .2s; } .ds-toggle:hover { color: #F2F2F5; border-color: #34343E; background: #141419; } .ds-toggle svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }"
     }
   ],
   "narrative": {
-    "northStar": "In Transit",
-    "overview": "The surface is a split-flap departure board, and that is the information architecture rather than a decorative metaphor. Every item carries a status — DEPARTED for a closed chapter, IN DEVELOPMENT for work under way, SCHEDULED for a plan not yet started — so a subject with more direction than shipped output states the gap plainly instead of apologising for it. The physical model is a concourse, not a control room: the page ground is bone, warm and readable on a phone in daylight, and the graphite boards sit on it as objects with the shadow and the flap seam to prove it. Light and dark are two materials with fixed jobs, never a theme toggle. Type is mechanical rather than editorial — Archivo for anything a person wrote, Martian Mono for anything a machine printed.",
+    "northStar": "Quiet Machine",
+    "overview": "The page is dark by default and grain-lit throughout, and the visitor can flip it to paper. Both grounds are real designs rather than a filter over one another: each has its own surface ladder, border weights, and accent value. The organising idea is that size is the argument — the work sits in a bento of deliberately unequal cells, and the sizing is the honest claim. Hanzi Mind is the only thing actually running, so it occupies four times the area of a plan; coursework gets a small square. Nothing has to say which item is more real, because the grid already did. Typography is minimal and set hard, and there is exactly one hue on the page: an amber carried over from the subject's existing brand that survives the theme flip, which is what keeps a two-theme site from feeling like two sites.",
     "keyCharacteristics": [
-      "Status is the grammar, not an afterthought — every item on the board declares one",
-      "Two grounds with fixed jobs: bone is the room, graphite is the board object",
-      "Every dual-ground colour has two values, chosen for contrast rather than convenience",
-      "Mono is reserved for machine output; it is never a costume for 'technical'",
-      "The signature interaction is real split-flap mechanics, not an imitation of them"
+      "Cell size encodes how real the work is — remove the hierarchy and the page starts lying",
+      "Two complete themes, not one theme with a filter over it",
+      "One hue only; the accent's fill is shared across themes, its text value is not",
+      "Grain is a real generated layer animated by transform, never a texture screenshot",
+      "Status lives in a corner badge, because this system has no eyebrows"
     ],
     "rules": [
-      { "name": "The Two-Ground Rule", "body": "Amber and petrol each carry two values. Amber #D2891F reaches 6.06:1 on graphite and is the only one permitted there; on bone it falls to 2.3:1 and must become amber-ink #85510A at 5.39:1. Petrol inverts the same way. Any component that can appear on both grounds declares both values.", "section": "colors" },
-      { "name": "Focus Follows the Surface", "body": "A --focus custom property resolves to amber-ink at :root and amber-hi on every dark region, so the focus ring never disappears into its own background.", "section": "colors" },
-      { "name": "Machine Output Is Mono", "body": "Times, dates, statuses, employers, column headers and captions are Martian Mono. Prose is Archivo. If a person wrote it, it is not mono.", "section": "typography" },
-      { "name": "Images Do Not Set Height", "body": "The hero portrait is absolutely positioned inside a flex-basis-zero picture so the copy column governs the board's height. Left to its intrinsic 1:2 aspect it drags the hero past the fold.", "section": "elevation" },
-      { "name": "Headers Need Their Columns", "body": "Column headers are display:none below the breakpoint where the columns exist. Labels for collapsed columns are noise, not structure.", "section": "elevation" },
-      { "name": "Only Confirmed Facts", "body": "Nothing appears on this page that PRODUCT.md does not record as confirmed. The board's credibility rests entirely on its statuses being true.", "section": "typography" }
+      {
+        "name": "Size Is The Argument",
+        "body": "Bento spans are assigned by how real the thing is, not by composition. The only running project is 2x2; plans and coursework are 1x1. Any new cell must earn its span the same way.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Accent Has Two Values",
+        "body": "--accent (#E8A63C) is the fill and is identical in both themes. --accent-tx is the text value and must change: #E8A63C is 9.1:1 on near-black but 2.3:1 on paper, so light drops to #8F5B08 at 5.2:1.",
+        "section": "colors"
+      },
+      {
+        "name": "One Hue",
+        "body": "Amber is the only brand hue. The three chart colours are a categorical data series confined to the language composition bar and must not leak into UI chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "Mono Means Measured",
+        "body": "Geist Mono is for years, specs, labels, badges and field names. Schibsted Grotesk is for anything a person wrote. Mono is never used to make prose look technical.",
+        "section": "typography"
+      },
+      {
+        "name": "No Eyebrows",
+        "body": "Status is a badge pinned to a corner, never a label stacked above a heading. Headings reserve a right-hand gutter so the two cannot collide.",
+        "section": "typography"
+      },
+      {
+        "name": "Theme Before Paint",
+        "body": "An inline script in <head> writes data-theme before first paint. Any future theme work must preserve that ordering or the page flashes the wrong ground.",
+        "section": "colors"
+      },
+      {
+        "name": "Grain Is Atmosphere",
+        "body": "Keep the grain layer at or below .1 opacity and animate transform only. Above that it reads as dirt, and animating anything else forces a repaint every frame.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do give every new item a status — an item with no status does not belong on this board",
-      "Do pick the amber and petrol value from the ground the element sits on",
-      "Do use mono for machine output and Archivo for everything a person wrote",
-      "Do gate every animation behind prefers-reduced-motion and keep text visible by default",
-      "Do draw icons as SVG at stroke-width 1.75 with square caps and miter joins"
+      "Do size bento cells by how real the thing is",
+      "Do pick the accent's text value from the active theme",
+      "Do put status in a corner badge, never above a heading",
+      "Do gate motion behind prefers-reduced-motion and keep revealed content visible by default",
+      "Do draw icons as SVG at stroke-width 1.7 with round caps"
     ],
     "donts": [
-      "Don't let an image's intrinsic aspect set a section's height",
-      "Don't show column headers for columns that have collapsed at that breakpoint",
-      "Don't state anything the product record does not confirm",
-      "Don't add card grids — the container here is the ruled row, and nested cards are always wrong",
-      "Don't use amber on the bone ground for text; it fails contrast at 2.3:1"
+      "Don't introduce a second hue",
+      "Don't add shadow to create hierarchy — use surface level and border weight",
+      "Don't nest cards inside bento cells",
+      "Don't state anything the product record does not confirm; the cell statuses are load-bearing",
+      "Don't let the grain go above .1 opacity"
     ]
   }
 }
