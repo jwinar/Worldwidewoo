@@ -1,46 +1,74 @@
 ---
-name: Justin Winartha — The Rack
-description: A petrol-dark key rack where bone tags hang on brass hooks and swing under live pendulum physics.
+name: Justin Winartha — The Night Audit
+description: One night shift as a page. Scroll is time, 23:00 to 06:00, and the ground colour moves through it without a seam.
 colors:
-  field: "#0C2B30"
-  field-lo: "#081F23"
-  field-hi: "#123A40"
-  field-edge: "#17474E"
-  bone: "#EDE7D9"
-  bone-2: "#DBD2BE"
-  bone-dim: "#A9B5B0"
-  ink: "#14211F"
-  ink-2: "#4A5A56"
-  brass: "#C9A227"
-  brass-hi: "#E0BC46"
-  brass-lo: "#8A6E19"
-  brass-cord: "#7A6116"
-  oxblood: "#8C3131"
-  oxblood-lt: "#C36A6A"
+  hour-2300: "#131A2B"
+  hour-0040: "#0A0E1A"
+  hour-0230: "#05070E"
+  hour-0410: "#100B1C"
+  hour-0520: "#3B2436"
+  hour-0600: "#EFE3D2"
+  fg-2300: "#ECE7DE"
+  fg-0040: "#E4E0D8"
+  fg-0230: "#DCD9D3"
+  fg-0410: "#E2DBD6"
+  fg-0520: "#F4EAE0"
+  fg-0600: "#1C1611"
+  dim-2300: "#8B93A8"
+  dim-0040: "#7A8298"
+  dim-0230: "#7C8497"
+  dim-0410: "#857C93"
+  dim-0520: "#B99CA8"
+  dim-0600: "#6B5D4E"
+  accent-tungsten: "#D89A4E"
+  accent-cold: "#8FA6CC"
+  accent-ember: "#C98A6A"
+  accent-sunrise: "#F0A85F"
+  accent-day: "#9A4415"
+  ink-on-accent: "#12100C"
+  ink-on-cold: "#0A0E1A"
+  ink-on-day: "#FFF7EE"
+  device-shell: "#14101C"
+  device-face: "#F2ECE4"
+  device-ink: "#171310"
+  device-dim: "#5E5347"
+  error: "#A8341A"
   confirm: "#2F6B4F"
 typography:
-  name:
+  clock:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "clamp(4.5rem, 17vw, 13rem)"
+    fontWeight: 500
+    lineHeight: 0.82
+    letterSpacing: "-0.06em"
+  statement-xl:
     fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 7vw, 3.4rem)"
-    fontWeight: 800
-    lineHeight: 0.92
-    letterSpacing: "-0.045em"
-  name-sm:
+    fontSize: "clamp(3rem, 12vw, 9rem)"
+    fontWeight: 700
+    lineHeight: 1.04
+    letterSpacing: "-0.06em"
+  opening:
     fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.75rem, 9vw, 2.5rem)"
-    fontWeight: 800
-    lineHeight: 0.92
+    fontSize: "clamp(2rem, 6.4vw, 5rem)"
+    fontWeight: 700
+    lineHeight: 1.02
     letterSpacing: "-0.045em"
+  say:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.75rem, 5.2vw, 4rem)"
+    fontWeight: 700
+    lineHeight: 1.06
+    letterSpacing: "-0.04em"
   section:
     fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.875rem, 5vw, 3.25rem)"
-    fontWeight: 800
-    lineHeight: 1.02
+    fontSize: "clamp(1.875rem, 5vw, 3.5rem)"
+    fontWeight: 700
+    lineHeight: 1.04
     letterSpacing: "-0.04em"
-  door:
+  work-title:
     fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.375rem, 2.6vw, 1.875rem)"
-    fontWeight: 800
+    fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
+    fontWeight: 700
     lineHeight: 1.1
     letterSpacing: "-0.035em"
   entry:
@@ -48,98 +76,97 @@ typography:
     fontSize: "1.125rem"
     fontWeight: 700
     lineHeight: 1.25
-    letterSpacing: "-0.025em"
-  tag-face:
-    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 800
-    lineHeight: 1
-    letterSpacing: "-0.03em"
-  key-no:
-    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 800
-    lineHeight: 1
     letterSpacing: "-0.02em"
-  clock:
-    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 700
+  seal:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "clamp(1.25rem, 3.4vw, 2rem)"
+    fontWeight: 500
     lineHeight: 1
-    letterSpacing: "-0.05em"
+    letterSpacing: "0.3em"
+  balance:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "clamp(1rem, 2.4vw, 1.5rem)"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "-0.02em"
+  ledger:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "clamp(.8125rem, 1.5vw, .9375rem)"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "-0.02em"
+  device-clock:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "2rem"
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: "-0.04em"
+  hanzi:
+    fontFamily: "'Noto Sans SC', 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.6rem"
+    fontWeight: 700
+    lineHeight: 1.3
+    letterSpacing: "normal"
   lead:
     fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.0625rem, 2vw, 1.3125rem)"
-    fontWeight: 400
-    lineHeight: 1.45
-    letterSpacing: "normal"
-  rack-line:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(.9375rem, 1.6vw, 1.0625rem)"
+    fontSize: "clamp(.9375rem,1.6vw,1.125rem)"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
   body:
     fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1rem"
+    fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
-  body-sm:
+  body-base:
     fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.9375rem"
+    fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
   ui:
     fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 600
+    lineHeight: 1
+    letterSpacing: "normal"
+  ui-sm:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: "-0.01em"
+  meta:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "0.8125rem"
     fontWeight: 500
     lineHeight: 1.5
-    letterSpacing: "normal"
-  meta:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.8125rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "normal"
-  label:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 400
-    lineHeight: 1.4
-    letterSpacing: "normal"
-  tag-sub:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.6875rem"
-    fontWeight: 400
-    lineHeight: 1.4
-    letterSpacing: "0.02em"
+    letterSpacing: "0.04em"
   stamp:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.625rem"
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "0.16em"
+  stamp-sm:
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
+    fontSize: "0.6875rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.14em"
   stamp-xs:
-    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace"
     fontSize: "0.5rem"
     fontWeight: 400
     lineHeight: 1
-    letterSpacing: "0.18em"
-  hanzi:
-    fontFamily: "'Noto Sans SC', 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.75rem"
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: "normal"
+    letterSpacing: "0.16em"
 rounded:
-  stamp: "2px"
-  tag: "3px"
-  sm: "4px"
-  md: "8px"
-  device: "1.6rem"
-  hook: "50%"
+  none: "0"
+  hairline: "3px"
+  widget: "0.8rem"
+  device: "1.4rem"
+  pill: "999px"
 spacing:
   s1: "0.25rem"
   s2: "0.5rem"
@@ -150,164 +177,151 @@ spacing:
   s7: "3rem"
   s8: "4rem"
   s9: "6rem"
-  s10: "8rem"
+  s10: "9rem"
+  s11: "14rem"
 components:
-  tag-face:
-    backgroundColor: "{colors.bone}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.tag}"
-    padding: "1.5rem 0.75rem 0.7rem"
-  tag-face-name:
-    backgroundColor: "{colors.bone}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.tag}"
-    padding: "1.9rem 1.4rem 1.4rem"
-  compartment:
-    backgroundColor: "{colors.field-lo}"
-    textColor: "{colors.bone}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.s5}"
-  stamp:
-    backgroundColor: "{colors.bone}"
-    textColor: "{colors.ink-2}"
-    rounded: "{rounded.stamp}"
-    padding: "0.5em 0.7em 0.4em"
-    typography: "{typography.stamp}"
-  stamp-live:
-    backgroundColor: "{colors.bone}"
-    textColor: "{colors.oxblood}"
-    rounded: "{rounded.stamp}"
-  cta:
-    backgroundColor: "{colors.brass}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.tag}"
-    padding: "0.5rem 0.9rem"
-  cta-hover:
-    backgroundColor: "{colors.brass-hi}"
-    textColor: "{colors.ink}"
-  ledger:
-    backgroundColor: "{colors.bone}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "{spacing.s5}"
-  sign-button:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.bone}"
-    rounded: "{rounded.sm}"
-    padding: "0.8rem 1rem"
-  sign-button-hover:
-    backgroundColor: "{colors.oxblood}"
-    textColor: "{colors.bone}"
+  send-button:
+    backgroundColor: "{colors.fg-0600}"
+    textColor: "{colors.hour-0600}"
+    rounded: "{rounded.pill}"
+    padding: "0.8rem 2rem"
+    typography: "{typography.ui}"
+  send-button-hover:
+    backgroundColor: "{colors.accent-day}"
+    textColor: "{colors.ink-on-day}"
+  field:
+    backgroundColor: "transparent"
+    textColor: "{colors.fg-0600}"
+    rounded: "{rounded.none}"
+    padding: "0.4rem 0"
+  ledger-row:
+    backgroundColor: "transparent"
+    textColor: "{colors.fg-0230}"
+    rounded: "{rounded.none}"
+    padding: "0.75rem 0"
+    typography: "{typography.ledger}"
+  ledger-balance:
+    backgroundColor: "transparent"
+    textColor: "{colors.accent-cold}"
+    rounded: "{rounded.none}"
+    padding: "1rem 0 0"
+    typography: "{typography.balance}"
+  widget:
+    backgroundColor: "{colors.device-face}"
+    textColor: "{colors.device-ink}"
+    rounded: "{rounded.widget}"
+    padding: "0.75rem"
 ---
 
-# Design System: The Rack
+# Design System: The Night Audit
 
 ## Overview
 
-The surface is the key rack Justin worked behind for eight years, turned into the index of what he
-is opening next. The compartments do not hold hotel rooms; they hold his next moves. That single
-inversion is the whole system: hospitality is where the authority came from, never the identity, and
-the page can lean hard on the operating record without trapping him inside it.
+The page is one night shift. Scroll position maps to time — 23:00 at the top, 06:00 at the bottom —
+and every visual decision descends from that single mapping. The career transition the site exists
+to communicate is never argued in copy; it is the sunrise.
 
-Everything descends from one physical fact — **a tag hangs, and a hanging thing swings**. The first
-viewport is a brass rail with seven bone tags on it, each a damped pendulum with its own natural
-frequency, and the visitor's cursor is a force applied to them. Nothing on this page fades up on
-scroll. The motion is a simulation the visitor disturbs, and it settles on its own.
+This means the page has **no section backgrounds**. Each chapter declares the colour of its hour and
+the ground is interpolated continuously between consecutive chapters, so the page gets lighter the
+way a night actually does rather than cutting from one panel to the next. A clock in the header
+reads the same scroll position back to the visitor, which is what makes the mapping legible instead
+of merely atmospheric.
 
-The rendering is deliberately **graphic rather than skeuomorphic**. There is no imitation brass, no
-bevelled metal, no embossed leather — those are the tells of a machine imitating a material it
-cannot actually render. Tags are flat bone rectangles with a punched hole. Depth comes from two
-honest sources only: real cast shadow, and real motion.
+There is exactly one pinned moment, the audit, and it is **scrubbed rather than played**: the
+visitor's scroll posts each ledger line and settles the balance. A sequence that plays on entry is
+decoration; a sequence that cannot advance without the visitor is the mechanism.
 
 ## Colors
 
-Committed strategy: the petrol field owns the page, and everything else is an object placed on it.
+The palette is not a set — it is a **path**. Six hour-stops, each with its own ground, foreground,
+secondary and accent, interpolated between.
 
-| Token | Role |
-|---|---|
-| `field` `#0C2B30` | The wall. The dominant surface, 60%+ of the page. |
-| `field-lo` `#081F23` | Recessed — compartment interiors, alternate bands, the punched hole. |
-| `field-hi` `#123A40` | Raised, and the top of the hero's radial pool. |
-| `field-edge` `#17474E` | Hairlines and borders. |
-| `bone` `#EDE7D9` | Every tag face, and the ledger. The only large light field. |
-| `ink` / `ink-2` | Type on bone. |
-| `brass` `#C9A227` | The rail, hooks, cords, key numbers, the primary action. |
-| `oxblood` `#8C3131` | Live and in-progress. Also the focused field and the button's hover. |
+| Hour | Ground | Accent | What it is |
+|---|---|---|---|
+| 23:00 | `#131A2B` | `#D89A4E` tungsten | Lobby light still on |
+| 00:40 | `#0A0E1A` | `#D89A4E` tungsten | The desk, everyone gone up |
+| 02:30 | `#05070E` | `#8FA6CC` cold | The dead hours, and the audit |
+| 04:10 | `#100B1C` | `#C98A6A` ember | The first warmth back |
+| 05:20 | `#3B2436` | `#F0A85F` sunrise | First light |
+| 06:00 | `#EFE3D2` | `#9A4415` day | Daylight |
 
-**Bone is a material, not a background.** It appears only where something is a physical card in this
-world — a tag face, the register page. Never use it as a section ground; the field owns the page and
-bone objects sit on it.
+**Dawn never crossfades, and this is a hard rule.** Interpolating the ground dark→light while
+interpolating text light→dark makes the two cross and meet: measured, contrast collapsed to
+**1.31:1** at that crossing, which is invisible text. No continuous interpolation of both can avoid
+it. The 06:00 chapter therefore owns an opaque ground and *arrives* over the night. Any future
+inversion must do the same.
 
-**Brass carries structure, oxblood carries state.** A brass element is part of the rack — rail, hook,
-cord, number, the action that hangs from the header. An oxblood element is a status. Do not swap them.
+Contrast is verified by sampling the interpolated palette across the whole scroll, not at fixed
+stops, because the readable values are the ones *between* the stops. Current worst case across 44
+samples: 4.88:1 secondary, 11.86:1 primary.
 
 ## Typography
 
-Bricolage Grotesque is stamped: names, section heads, tag faces, key numbers, register entries. It
-is set heavy (700–800) with hard negative tracking, tightening as it grows (−0.025em on entries,
-−0.045em on the name). Familjen Grotesk does all the reading, plus every label and stamp, where it
-runs small with wide positive tracking (0.16–0.18em) — the two directions of tracking are what keep
-one voice from blurring into the other. No monospace anywhere; this world stamps and engraves, it
-does not print terminal output.
+Three families with strictly separated jobs.
+
+- **JetBrains Mono** — everything measured. The clock, the ledger, folio numbers, timestamps,
+  labels, the seal. Always `tabular-nums`. This is measurement, not a technical costume: the page is
+  literally about counting money at night.
+- **Bricolage Grotesque** (700 only) — statement. The opening line, the big scroll-stopping
+  sentences, section heads, work titles. Tracking tightens as size grows, to `-0.06em` on the
+  largest.
+- **Familjen Grotesk** — reading, and UI. Body copy at 56ch, buttons, form fields.
+
+Mono labels run wide (0.14–0.3em positive tracking); display runs tight (negative). The two opposing
+directions are what keep the voices distinct at a glance.
 
 ## Layout
 
-Content width is `min(100% - 2.5rem, 74rem)`, gutters widening at 48em. A 4px base runs `--s1`–`--s10`.
+Content is `min(100% - 2.5rem, 72rem)`, widening its gutter at 48em. The audit narrows to `54rem`
+because a ledger reads better in a column. A 4px base runs `--s1`–`--s11`; chapters are separated by
+`--s10` (9rem) of vertical padding, which is what gives the page its air.
 
-**The rack is absolutely positioned against a rail.** Each tag carries four custom properties set
-inline — `--x` (position along the rail), `--drop` (cord length), `--w` (face width) and `--tilt`
-(resting angle) — and everything else, including the physics, derives from those.
+**Two chapters must fill the viewport**: the 23:00 opening and the 06:00 dawn, both `min-height:
+100svh`. Dawn shorter than the viewport ends the page on a split screen and halves the payoff — that
+was a real defect, not a hypothetical.
 
-**Below 48em the rack restages rather than shrinks.** Seven tags cannot share a phone: four are
-hidden, and the three that remain stack *vertically* — two short tags high, the name hanging clear
-beneath them — so nothing competes for the same horizontal band. Scaling all seven down would have
-produced a collision, not a layout.
+The audit pins only at `≥48em`. On a phone the ledger is taller than the viewport, so pinning it
+would run rows under the fixed header; narrow screens play the same scrubbed sequence unpinned.
 
 ## Elevation & Depth
 
-Three shadows, each with real offset and blur; no zero-offset halos anywhere.
+This world is almost flat. Depth comes from the ground moving, not from stacked surfaces. Two
+shadows only, both on the device illustration: `0 30px 60px -30px rgba(0,0,0,.85)` for the phone and
+`0 10px 22px -12px` for the widget on its screen. Everything else — chapters, ledger, form — sits
+directly on the ground with hairline rules built from `color-mix` of the live `--dim`, so the rules
+track the hour with everything else.
 
-- Tag face: `0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25)` — the second layer is the card's own thickness.
-- Compartment: `inset 0 10px 22px -12px rgba(0,0,0,.9)` — an inset, because a compartment is a hole in the wall, not a card on it.
-- Ledger and device: `0 24px 50px -26px rgba(0,0,0,.9)`.
-
-The compartment's inset shadow plus its brass top lip is the whole recess effect. That is the
-system's one structural trick and it must not be replaced with a raised card.
+The header carries a scrim built from the live `--bg`, so it stays legible over whatever is passing
+underneath without needing an opaque plate.
 
 ## Shapes
 
-Radii are tight and physical: `2px` stamps, `3px` tag faces, `4px` buttons, `8px` compartments and
-the ledger. Only the device illustration (`1.6rem`) and the hooks (`50%`) go round, because those
-objects are round in life. Nothing else is soft.
-
-Icons are authored SVG. The hooks are stroked circles, the punched holes are filled circles in
-`field-lo` — drawn, never glyphs.
+Effectively unrounded: `0` on ledger rows and form fields, `3px` on the skip link, `999px` on the
+one button. Only the device illustration rounds properly (`1.4rem` shell, `0.8rem` widget), because
+that object is round in life. Form fields are ruled lines with a bottom border only — never boxes.
 
 ## Components
 
-**Tag** — a hook, a cord of `--drop` height, and a bone face with a punched hole. `transform-origin`
-is `50% 0` at the hook, so rotating the element swings the cord and the face together, which is why
-the cords visibly lean with their tags. This is the system's atom; anything that can hang should be
-one.
+**Chapter** (`.ch[data-ch]`) — the unit of the page. Carries `data-bg`, `data-fg`, `data-dim`,
+`data-accent`: one stop on the path. It also sets those as CSS variables on itself, so with
+JavaScript disabled the page is still a correct, readable sequence of coloured sections; the engine
+adds `.smooth`, chapters go transparent, and the body takes over the interpolation.
 
-**Compartment** (`.key`) — a recess: `field-lo` ground, brass top lip, inset shadow, square top
-corners and rounded bottom. Explicitly **not** a card, and the page must not reintroduce card-shaped
-containers for content.
+**Ledger** — mono, tabular, right-aligned figures. Rows start at `opacity: 0.12` and post as the
+scrub advances. Charged and Settled cancel; Balance lands on `$0.00` above a 2px accent rule; the
+seal fades in last.
 
-**Stamp** — the status, rendered as a small bone tag with its own punched hole, sitting in the
-compartment's lip row.
-
-**Ledger** (`.ledger`) — the contact form as a register page: bone ground, fields as ruled lines with
-a bottom border only, no boxes. The submit button reads "Sign in", not "Submit".
+**Masked line** (`.ln`) — SplitText splits to lines with `mask: 'lines'` and each line rides up out
+of its clip. Text stays selectable and screen-reader intact.
 
 ## Do's and Don'ts
 
-- **Do** hang anything that can hang, and give it `--x`, `--drop`, `--w` and `--tilt`.
-- **Do** keep bone for objects only; the field owns the page.
-- **Do** use brass for structure and oxblood for state, never interchangeably.
-- **Do** clamp swing to ±13° — past that a tag stops being readable, and readability outranks the toy.
-- **Do** let the physics loop sleep. It parks when every tag is within 0.02° of rest and wakes on the next disturbance; an idle page must cost nothing.
-- **Don't** imitate materials. No gradient brass, no bevels, no embossing. Depth is shadow and motion.
-- **Don't** reintroduce card containers, project grids, or scroll-triggered fade-ups; the world refuses all three.
-- **Don't** add a second light field. One bone object per region at most.
-- **Don't** state anything PRODUCT.md does not record as confirmed — the tag labels are load-bearing.
+- **Do** add a chapter by adding an hour-stop, and check contrast *between* stops, not just at them.
+- **Do** keep mono for measured things only, and always `tabular-nums`.
+- **Do** scrub sequences that tell a story; play only what is genuinely ambient.
+- **Do** let the opening and the dawn fill the viewport.
+- **Don't** interpolate ground and text through an inversion — the crossing is unreadable. Arrive instead.
+- **Don't** give a chapter its own background panel; the ground is continuous and owns the page.
+- **Don't** pin anything taller than the viewport, and never on a phone.
+- **Don't** add a loader or anything that gates reading — this page is read from LinkedIn in under a minute.
+- **Don't** state what PRODUCT.md does not confirm. The ledger figures are labelled representative on the page precisely because they are.

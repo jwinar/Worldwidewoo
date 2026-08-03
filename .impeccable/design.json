@@ -1,113 +1,116 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-03T14:20:00Z",
-  "title": "Design System: The Rack",
+  "generatedAt": "2026-08-03T15:40:00Z",
+  "title": "Design System: The Night Audit",
   "extensions": {
     "colorMeta": {
-      "field":    { "role": "surface", "displayName": "Petrol Field", "tonalRamp": ["#081F23", "#0C2B30", "#123A40", "#17474E"] },
-      "bone":     { "role": "surface", "displayName": "Tag Bone", "tonalRamp": ["#EDE7D9", "#DBD2BE", "#A9B5B0"] },
-      "ink":      { "role": "text",    "displayName": "Stamped Ink", "tonalRamp": ["#14211F", "#4A5A56"] },
-      "brass":    { "role": "primary", "displayName": "Brass", "tonalRamp": ["#E0BC46", "#C9A227", "#8A6E19", "#7A6116"] },
-      "oxblood":  { "role": "accent",  "displayName": "Oxblood", "tonalRamp": ["#C36A6A", "#8C3131"] },
-      "confirm":  { "role": "success", "displayName": "Signed", "tonalRamp": ["#2F6B4F"] },
-      "shadow":   { "role": "neutral", "displayName": "Depth", "tonalRamp": ["#000", "#000000", "rgba(0,0,0,.9)", "rgba(0,0,0,.85)", "rgba(0,0,0,.7)", "rgba(0,0,0,.6)", "rgba(0,0,0,.5)", "rgba(0,0,0,.25)", "rgba(255,255,255,.03)"] }
+      "ground":  { "role": "surface", "displayName": "The Hours", "tonalRamp": ["#05070E", "#0A0E1A", "#100B1C", "#131A2B", "#3B2436", "#EFE3D2"] },
+      "fg":      { "role": "text",    "displayName": "Type Through The Night", "tonalRamp": ["#1C1611", "#DCD9D3", "#E2DBD6", "#E4E0D8", "#ECE7DE", "#F4EAE0"] },
+      "dim":     { "role": "text",    "displayName": "Secondary Through The Night", "tonalRamp": ["#6B5D4E", "#7A8298", "#7C8497", "#857C93", "#8B93A8", "#B99CA8"] },
+      "accent":  { "role": "primary", "displayName": "Hour Accent", "tonalRamp": ["#8FA6CC", "#9A4415", "#C98A6A", "#D89A4E", "#F0A85F", "#12100C", "#0A0E1A", "#FFF7EE"] },
+      "device":  { "role": "surface", "displayName": "Device Illustration", "tonalRamp": ["#14101C", "#171310", "#5E5347", "#F2ECE4"] },
+      "status":  { "role": "error",   "displayName": "Validation", "tonalRamp": ["#A8341A", "#2F6B4F"] },
+      "shadow":  { "role": "neutral", "displayName": "Depth", "tonalRamp": ["#000", "#000000", "rgba(0,0,0,.85)", "rgba(0,0,0,.8)"] }
     },
     "typographyMeta": {
-      "name":     { "displayName": "Name Tag", "purpose": "The largest tag face, centre of the rack. Nothing else uses this size." },
-      "section":  { "displayName": "Section", "purpose": "Section headings, stamped." },
-      "tag-face": { "displayName": "Tag Face", "purpose": "The word stamped on a small hanging tag." },
-      "entry":    { "displayName": "Register Entry", "purpose": "A role in the register." },
-      "stamp":    { "displayName": "Stamp", "purpose": "Status and labels. Small, wide-tracked, never bold." },
-      "hanzi":    { "displayName": "Hanzi", "purpose": "The widget demo. Font subset to the ten characters used." }
+      "clock":   { "displayName": "The Clock", "purpose": "The hero device. Reads scroll position back as time, 23:00 to 06:00. Always tabular." },
+      "ledger":  { "displayName": "Ledger", "purpose": "The audit's figures. Mono and tabular because they are money being counted, not a technical costume." },
+      "say":     { "displayName": "Statement", "purpose": "The scroll-stopping sentences. Bricolage 700 only; the family carries no other weight on this page." },
+      "stamp":   { "displayName": "Stamp", "purpose": "Hour markers and labels. Wide positive tracking, the opposite direction to the display face." },
+      "hanzi":   { "displayName": "Hanzi", "purpose": "The widget demo. Subset to the ten characters used." }
     },
     "shadows": [
-      { "name": "tag",         "value": "0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25)", "purpose": "A tag hanging off the wall; the second layer is the card's own thickness." },
-      { "name": "compartment", "value": "inset 0 10px 22px -12px rgba(0,0,0,.9), inset 0 -1px 0 rgba(255,255,255,.03)", "purpose": "A recess in the rack wall. Inset, because a compartment is a hole, not a card." },
-      { "name": "object",      "value": "0 24px 50px -26px rgba(0,0,0,.9)", "purpose": "The ledger page and the device illustration." },
-      { "name": "stamp",       "value": "0 6px 14px -8px rgba(0,0,0,.9)", "purpose": "The small status tag inside a compartment lip." },
-      { "name": "rail",        "value": "0 2px 6px rgba(0,0,0,.5)", "purpose": "The brass rail casting onto the wall." }
+      { "name": "device", "value": "0 30px 60px -30px rgba(0,0,0,.85)", "purpose": "The phone illustration — the only object on the page that floats." },
+      { "name": "widget", "value": "0 10px 22px -12px rgba(0,0,0,.8)", "purpose": "The widget sitting on the phone's screen." }
     ],
     "motion": [
-      { "name": "pendulum",  "value": "a\" = -k(a - rest) - d·a'  with k = 2600/L and d = 1.35 + min(L,260)/460", "purpose": "Every hanging tag. Stiffness falls with cord length, so a long tag swings slower than a short one and the wall never moves in unison." },
-      { "name": "pointer",   "value": "impulse = pointerVx * 0.013 * falloff^2 * (140/L), radius 380px", "purpose": "The cursor is a force, not a trigger. Nearer and lighter tags move further." },
-      { "name": "scroll",    "value": "impulse = clamp(dy, -26, 26) * 1.7 * (140/L)", "purpose": "Scrolling knocks the whole rail at once." },
-      { "name": "clamp",     "value": "±13deg off rest, bouncing at -0.35 velocity", "purpose": "Past 13 degrees a tag stops being readable; the limit bleeds the swing rather than stopping it dead." },
-      { "name": "sleep",     "value": "park below 0.02deg and 0.02deg/s, wake on disturbance", "purpose": "An idle page must cost nothing. The loop stops roughly 8s after load." },
-      { "name": "lift",      "value": "700ms cubic-bezier(.16,1,.3,1), 45ms stagger", "purpose": "The only conventional reveal on the page, used below the fold where physics has nothing to act on." }
+      { "name": "scroll",   "value": "Lenis lerp 0.095, wheelMultiplier 0.95, synced to the GSAP ticker via lenis.raf(t*1000) and lenis.on('scroll', ScrollTrigger.update)", "purpose": "The scroll feel itself. Skipped entirely on coarse pointers so phones keep native scrolling." },
+      { "name": "hours",    "value": "linear RGB interpolation between consecutive chapter stops, sampled at scrollY + innerHeight*0.5", "purpose": "The continuous ground. Read point is mid-viewport so the colour matches what is actually being read." },
+      { "name": "reveal",   "value": "SplitText lines with mask, yPercent 115 to 0, expo.out 1.05s, stagger 0.075, once", "purpose": "Masked line reveals. The genre's signature gesture." },
+      { "name": "audit",    "value": "pinned 2400px, scrub 0.6, rows staggered 0.9s apart with figures counting on power2.out", "purpose": "The one scrubbed sequence. It cannot advance without the visitor, which is the point." },
+      { "name": "headswap", "value": "discrete class toggle when dawn's top passes 72px, colour transition 0.25s", "purpose": "A switch, never a fade — fading the header through the inversion would cross the unreadable midpoint." }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "48em" },
-      { "name": "md", "value": "52em" },
-      { "name": "lg", "value": "56em" },
-      { "name": "xl", "value": "60em" }
+      { "name": "xs", "value": "32em" },
+      { "name": "sm", "value": "40em" },
+      { "name": "md", "value": "44em" },
+      { "name": "lg", "value": "48em" },
+      { "name": "xl", "value": "56em" }
     ]
   },
   "components": [
     {
-      "name": "Hanging Tag",
+      "name": "Chapter",
       "kind": "custom",
-      "refersTo": "tag-face",
-      "description": "The system's atom: a hook, a cord, and a punched bone face. transform-origin sits at the hook so rotation swings cord and face together.",
-      "html": "<div class=\"ds-tag\" style=\"--x:50%;--drop:120px;--w:150px;--tilt:-2deg\"><span class=\"ds-hook\"></span><span class=\"ds-cord\"></span><span class=\"ds-face\"><b>Building</b><i>Hanzi Mind</i></span></div>",
-      "css": ".ds-tag { position: absolute; top: 0; left: var(--x); width: var(--w); margin-left: calc(var(--w) / -2); transform-origin: 50% 0; transform: rotate(var(--tilt)); display: flex; flex-direction: column; align-items: center; will-change: transform; } .ds-hook { width: 13px; height: 13px; border: 2px solid #C9A227; border-radius: 50%; margin-top: -6px; } .ds-cord { width: 2px; height: var(--drop); background: linear-gradient(#C9A227, #7A6116); } .ds-face { position: relative; width: 100%; background: #EDE7D9; color: #14211F; border-radius: 3px; padding: 1.5rem .75rem .7rem; text-align: center; box-shadow: 0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25); } .ds-face::before { content: \"\"; position: absolute; top: .5rem; left: 50%; translate: -50% 0; width: 9px; height: 9px; border-radius: 50%; background: #081F23; box-shadow: inset 0 1px 2px rgba(0,0,0,.6); } .ds-face b { display: block; font: 800 1.0625rem/1 'Bricolage Grotesque', sans-serif; letter-spacing: -.03em; } .ds-face i { font-style: normal; font-size: .6875rem; color: #4A5A56; }"
-    },
-    {
-      "name": "Compartment",
-      "kind": "card",
-      "refersTo": "compartment",
-      "description": "A recess in the rack wall, not a card. Brass lip on the top edge, inset shadow, square top corners.",
-      "html": "<article class=\"ds-comp\"><div class=\"ds-lip\"><span class=\"ds-no\">01</span><span class=\"ds-stamp\">In development</span></div><h3>Hanzi Mind</h3></article>",
-      "css": ".ds-comp { background: #081F23; border: 1px solid #17474E; border-top: 2px solid #C9A227; border-radius: 0 0 8px 8px; box-shadow: inset 0 10px 22px -12px rgba(0,0,0,.9); padding: 1.5rem; color: #EDE7D9; } .ds-lip { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #17474E; } .ds-no { font: 800 1.25rem/1 'Bricolage Grotesque', sans-serif; color: #C9A227; } .ds-comp h3 { margin: 1rem 0 0; font: 800 1.875rem/1.1 'Bricolage Grotesque', sans-serif; letter-spacing: -.035em; }"
-    },
-    {
-      "name": "Stamp",
-      "kind": "chip",
-      "refersTo": "stamp",
-      "description": "Status as a small bone tag with its own punched hole, hanging in the compartment lip.",
-      "html": "<span class=\"ds-stamp ds-stamp-live\">In development</span>",
-      "css": ".ds-stamp { position: relative; font: 400 .625rem/1 'Familjen Grotesk', sans-serif; letter-spacing: .16em; text-transform: uppercase; padding: .5em .7em .4em; border-radius: 2px; background: #EDE7D9; color: #4A5A56; box-shadow: 0 6px 14px -8px rgba(0,0,0,.9); } .ds-stamp::before { content: \"\"; position: absolute; top: 3px; left: 50%; translate: -50% 0; width: 5px; height: 5px; border-radius: 50%; background: #081F23; } .ds-stamp-live { color: #8C3131; box-shadow: 0 6px 14px -8px rgba(0,0,0,.9), 0 0 0 1.5px #8C3131; }"
+      "refersTo": "ledger-row",
+      "description": "One hour-stop on the path. Declares its colours as data attributes for the engine and as CSS variables for itself, so the page is a correct readable sequence with JavaScript disabled.",
+      "html": "<section class=\"ds-ch\" data-ch data-bg=\"#05070E\" data-fg=\"#DCD9D3\" data-dim=\"#7C8497\" data-accent=\"#8FA6CC\"><p class=\"ds-stamp\">02:30 — the audit</p></section>",
+      "css": ".ds-ch { position: relative; background: var(--ch-bg); color: var(--ch-fg); --fg: var(--ch-fg); --dim: var(--ch-dim); --accent: var(--ch-accent); padding: 9rem 0; } html.smooth .ds-ch { background: transparent; } .ds-stamp { margin: 0 0 2rem; font: 400 .75rem/1 'JetBrains Mono', monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); }"
     },
     {
       "name": "Ledger",
+      "kind": "custom",
+      "refersTo": "ledger-row",
+      "description": "The audit. Rows start dim and post as the scrub advances; charged and settled cancel; the balance lands on zero above an accent rule.",
+      "html": "<div class=\"ds-ledger\"><div class=\"ds-row\"><span>Rooms</span><span>A-1180</span><span class=\"ds-fig\">$28,410.00</span></div><div class=\"ds-row ds-bal\"><span>Balance</span><span></span><span class=\"ds-fig\">$0.00</span></div></div>",
+      "css": ".ds-ledger { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; } .ds-row { display: grid; grid-template-columns: 1fr 6rem auto; gap: .5rem 1rem; padding: .75rem 0; border-bottom: 1px solid color-mix(in srgb, var(--dim) 28%, transparent); font-size: .9375rem; } .ds-row span:last-child { text-align: right; } .ds-bal { border-bottom: 0; border-top: 2px solid var(--accent); margin-top: .5rem; padding-top: 1rem; font-size: 1.5rem; color: var(--accent); }"
+    },
+    {
+      "name": "Masked Line",
+      "kind": "custom",
+      "refersTo": "ledger-row",
+      "description": "SplitText line masking. Each line rides up out of its clip; text stays selectable and screen-reader intact, and is fully visible if the script never runs.",
+      "html": "<p class=\"ln\">Everyone else has gone up.</p>",
+      "css": ".ln__mask { overflow: hidden; display: block; } /* JS: SplitText.create(el, { type: 'lines', mask: 'lines' }) then gsap.from(split.lines, { yPercent: 115, ease: 'expo.out' }) */"
+    },
+    {
+      "name": "Send Button",
+      "kind": "button",
+      "refersTo": "send-button",
+      "description": "The single action, in daylight at the foot of the page.",
+      "html": "<button class=\"ds-send\">Send</button>",
+      "css": ".ds-send { justify-self: start; background: #1C1611; color: #EFE3D2; border: 0; border-radius: 999px; padding: .8rem 2rem; font: 600 .9375rem/1 'Familjen Grotesk', sans-serif; cursor: pointer; transition: background .25s cubic-bezier(.16,1,.3,1), color .25s; } .ds-send:hover { background: #9A4415; color: #FFF7EE; }"
+    },
+    {
+      "name": "Ruled Field",
       "kind": "input",
-      "refersTo": "ledger",
-      "description": "The contact form as a register page. Fields are ruled lines, not boxes; the button reads 'Sign in'.",
-      "html": "<form class=\"ds-ledger\"><div class=\"ds-line\"><label for=\"n\">Name</label><input id=\"n\"></div><button class=\"ds-sign\">Sign in</button></form>",
-      "css": ".ds-ledger { background: #EDE7D9; border-radius: 8px; padding: 1.5rem; box-shadow: 0 24px 50px -26px rgba(0,0,0,.9); } .ds-line { display: grid; gap: .2rem; padding-bottom: 1rem; } .ds-line label { font: 400 .625rem/1 'Familjen Grotesk', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #4A5A56; } .ds-line input { font: 400 1rem/1.5 'Familjen Grotesk', sans-serif; color: #14211F; background: transparent; border: 0; border-bottom: 1px solid #DBD2BE; border-radius: 0; padding: .35rem 0; width: 100%; } .ds-line input:focus { outline: 0; border-bottom-color: #8C3131; } .ds-sign { width: 100%; background: #14211F; color: #EDE7D9; border: 0; border-radius: 4px; padding: .8rem 1rem; font: 600 .9375rem/1 'Familjen Grotesk', sans-serif; cursor: pointer; } .ds-sign:hover { background: #8C3131; }"
+      "refersTo": "field",
+      "description": "Form fields are ruled lines, never boxes — the page is a ledger.",
+      "html": "<div class=\"ds-fld\"><label for=\"e\">Email</label><input id=\"e\" type=\"email\"></div>",
+      "css": ".ds-fld { display: grid; gap: .5rem; } .ds-fld label { font: 400 .6875rem/1 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); } .ds-fld input { font: 400 1rem/1.5 'Familjen Grotesk', sans-serif; color: var(--fg); background: transparent; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--dim) 55%, transparent); border-radius: 0; padding: .4rem 0; width: 100%; } .ds-fld input:focus { outline: 0; border-bottom-color: var(--accent); }"
     }
   ],
   "narrative": {
-    "northStar": "The Rack",
-    "overview": "The surface is the key rack Justin worked behind for eight years, turned into the index of what he is opening next. The compartments do not hold hotel rooms; they hold his next moves. That inversion is the whole system: hospitality is where the authority came from, never the identity, so the page can lean hard on the operating record without trapping him inside it. Everything descends from one physical fact — a tag hangs, and a hanging thing swings. The first viewport is a brass rail carrying seven bone tags, each a damped pendulum with its own natural frequency, and the visitor's cursor is a force applied to them. Nothing fades up on scroll. The rendering is graphic rather than skeuomorphic: no imitation brass, no bevels, no embossing, because those are the tells of a machine imitating a material it cannot render. Depth comes from two honest sources only — real cast shadow and real motion.",
+    "northStar": "The Night Audit",
+    "overview": "The page is one night shift. Scroll position maps to time — 23:00 at the top, 06:00 at the bottom — and every visual decision descends from that mapping. The career transition the site exists to communicate is never argued in copy; it is the sunrise. This means the page has no section backgrounds: each chapter declares the colour of its hour and the ground is interpolated continuously between them, so it gets lighter the way a night does rather than cutting between panels. A clock in the header reads the scroll position back, which makes the mapping legible instead of merely atmospheric. There is exactly one pinned moment, the audit, and it is scrubbed rather than played — the visitor's scroll posts each ledger line and settles the balance.",
     "keyCharacteristics": [
-      "A tag hangs, and a hanging thing swings — every other decision descends from that",
-      "The cursor is a force applied to a simulation, not a trigger that plays a timeline",
-      "Graphic, never skeuomorphic: depth is shadow and motion, never imitation material",
-      "Compartments are recesses with inset shadow, explicitly not cards",
-      "Bone is a material for objects; the petrol field owns the page"
+      "Scroll is time; the palette is a path between six hour-stops, not a set",
+      "No section backgrounds — one continuous ground that the whole page shares",
+      "The one pinned sequence is scrubbed, so it cannot advance without the visitor",
+      "Mono is used for money and time, which is measurement rather than costume",
+      "Nothing gates reading: no loader, and native scroll on touch"
     ],
     "rules": [
-      { "name": "Everything That Hangs Is A Tag", "body": "A hook, a cord of --drop height, a punched bone face, and transform-origin at the hook. Any new hanging element uses this atom and takes --x, --drop, --w and --tilt.", "section": "elevation" },
-      { "name": "Bone Is An Object", "body": "Bone appears only where something is physically a card in this world — a tag face, the register page. Never a section ground. The field owns the page and bone objects sit on it.", "section": "colors" },
-      { "name": "Brass Is Structure, Oxblood Is State", "body": "Brass elements are part of the rack: rail, hook, cord, key number, the primary action. Oxblood elements are statuses. Never swap them.", "section": "colors" },
-      { "name": "Readability Outranks The Toy", "body": "Swing is clamped to ±13 degrees off rest. Past that a tag stops being readable, and the limit bleeds velocity rather than stopping it dead.", "section": "elevation" },
-      { "name": "The Loop Must Sleep", "body": "Physics parks when every tag is within 0.02 degrees of rest and wakes on the next disturbance. An idle page costs nothing; a simulation that runs forever is a battery bug.", "section": "elevation" },
-      { "name": "Restage, Don't Shrink", "body": "Below 48em four tags are hidden and the remaining three stack vertically rather than scaling down. Seven scaled tags on a phone is a collision, not a layout.", "section": "elevation" },
-      { "name": "Two Directions Of Tracking", "body": "Bricolage tightens as it grows (to -0.045em); Familjen labels widen (to 0.18em). The opposing directions are what keep one voice from blurring into the other.", "section": "typography" }
+      { "name": "Dawn Arrives, It Never Crossfades", "body": "Interpolating ground dark-to-light while interpolating text light-to-dark makes them cross and meet; measured contrast at that crossing was 1.31:1. The 06:00 chapter owns an opaque ground and arrives over the night. Any future inversion must do the same, and the header switches by class rather than fading for the same reason.", "section": "colors" },
+      { "name": "Check Between The Stops", "body": "The readable values are the interpolated ones, so contrast is sampled across the whole scroll rather than at the chapter stops. Worst case currently 4.88:1 secondary, 11.86:1 primary, across 44 samples.", "section": "colors" },
+      { "name": "Scrub What Tells A Story", "body": "A sequence that plays on entry is decoration. The audit is scrubbed so the visitor posts each line and settles the balance themselves; that participation is the whole reason the moment lands.", "section": "elevation" },
+      { "name": "Two Chapters Fill The Viewport", "body": "The 23:00 opening and the 06:00 dawn are both min-height 100svh. A dawn shorter than the viewport ends the page on a split screen and halves the payoff.", "section": "elevation" },
+      { "name": "Never Pin Taller Than The Viewport", "body": "The ledger exceeds a phone's height, so pinning it there runs rows under the fixed header. The pin is gated to 48em and up; narrow screens play the same scrubbed sequence unpinned.", "section": "elevation" },
+      { "name": "Two Directions Of Tracking", "body": "Mono labels run wide (0.14 to 0.3em); the display face runs tight (to -0.06em). The opposing directions keep the two voices distinct at a glance.", "section": "typography" }
     ],
     "dos": [
-      "Do hang anything that can hang",
-      "Do keep bone for objects only; the field owns the page",
-      "Do use brass for structure and oxblood for state",
-      "Do clamp the swing and let the loop sleep",
-      "Do draw hooks and holes as real shapes, never glyphs"
+      "Do add a chapter by adding an hour-stop, and check contrast between stops",
+      "Do keep mono for measured things only, always tabular",
+      "Do let the opening and the dawn fill the viewport",
+      "Do keep every reveal's content visible if the script never runs",
+      "Do skip smooth scroll on coarse pointers"
     ],
     "donts": [
-      "Don't imitate materials — no gradient brass, no bevels, no embossing",
-      "Don't reintroduce card containers, project grids, or scroll-triggered fade-ups",
-      "Don't add a second large light field; one bone object per region at most",
-      "Don't use monospace; this world stamps and engraves",
-      "Don't state anything the product record does not confirm"
+      "Don't interpolate ground and text through an inversion",
+      "Don't give a chapter its own background panel",
+      "Don't pin anything taller than the viewport, and never on a phone",
+      "Don't add a loader or anything that gates reading",
+      "Don't state what the product record does not confirm"
     ]
   }
 }
