@@ -1,7 +1,8 @@
 # Justin Winartha — personal site
 
-A single-page personal site: a dark/light, grain-lit surface with a bento grid of work. Static HTML,
-CSS and JavaScript with GSAP; no build step, no framework, no dependencies to install.
+A single-page personal site built as a hotel key rack: bone tags hanging on brass hooks that swing
+under a live pendulum simulation. Static HTML, CSS and JavaScript with **no dependencies at all** —
+no framework, no build step, no libraries to install.
 
 ## Run it
 
@@ -24,17 +25,16 @@ Vercel. There is nothing to compile.
 
 ```
 index.html              the page
-assets/css/site.css     theme tokens and all styling
-assets/js/site.js       theme, film grain, scroll choreography, form
-assets/fonts/           Schibsted Grotesk, Geist Mono, Noto Sans SC (self-hosted, subset)
+assets/css/site.css     design tokens and all styling
+assets/js/site.js       pendulum physics, widget, reveals, register form
+assets/fonts/           Bricolage Grotesque, Familjen Grotesk, Noto Sans SC (self-hosted, subset)
 assets/img/             portrait, webp + jpg
-assets/vendor/          GSAP 3.15 + ScrollTrigger, vendored locally
 PRODUCT.md              product truth — who this is for and what is confirmed
 DESIGN.md               the design system, recorded from the built page
 ```
 
-Fonts and GSAP are self-hosted rather than loaded from a CDN, so the page has no third-party
-runtime dependencies and works behind a strict content-security policy.
+Fonts are self-hosted rather than loaded from a CDN and there is no JavaScript library, so the page
+has no third-party runtime at all and works behind a strict content-security policy.
 
 ## Before this goes live
 
@@ -50,17 +50,20 @@ runtime dependencies and works behind a strict content-security policy.
 The page is hand-written HTML; edit `index.html` directly. Two conventions matter, and `DESIGN.md`
 explains the rest:
 
-- **Cell size states what is real.** The bento span is the claim: the only project actually running
-  is 2×2, plans and coursework are 1×1. Give every new item a status badge too — `tag--live`,
-  `tag`, `tag--done`.
+- **Anything that hangs is a tag.** A hook, a cord of `--drop` height, and a punched bone face, with
+  four inline custom properties: `--x`, `--drop`, `--w`, `--tilt`. The physics reads those.
+- **Compartments are recesses, not cards.** `.key` has a brass top lip and an inset shadow. Do not
+  turn it back into a raised card — `DESIGN.md` explains why.
 - **Nothing appears here that `PRODUCT.md` does not record as confirmed.** The page's credibility
   rests entirely on its statuses being true — no shipped app, no founded company, no track record
   until those exist.
 
 ## Accessibility
 
-WCAG AA contrast in both themes, keyboard-operable throughout, and `prefers-reduced-motion` honoured
-everywhere — under reduced motion the grain stops moving, nothing rotates or counts, and all content
-stays visible rather than waiting on a reveal. The theme is applied before first paint so there is no
-flash of the wrong ground, and Chinese text carries `lang="zh-Hans"` so screen readers pronounce it
-correctly.
+WCAG AA contrast across all thirteen text pairs, keyboard-operable throughout with a brass focus
+ring, and `prefers-reduced-motion` fully honoured — under reduced motion the physics loop never
+starts, the tags hang at their resting angles, and all content is visible without waiting on a
+reveal. Chinese text carries `lang="zh-Hans"` so screen readers pronounce it correctly.
+
+The physics loop parks itself roughly eight seconds after load, once every tag is within 0.02° of
+rest, and wakes only on a disturbance — an idle page costs nothing.

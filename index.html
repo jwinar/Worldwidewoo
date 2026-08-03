@@ -1,356 +1,334 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Justin Winartha — Operations, Investing, Building</title>
-<meta name="description" content="Eight years running hotel rooms, revenue and night audit. Now building Hanzi Mind, studying markets, and moving into e-commerce. Australia.">
-<meta name="theme-color" content="#0A0A0C">
+<meta name="description" content="Eight years holding hotel room inventory, revenue and night audit. Now building Hanzi Mind, studying markets, and opening a store. Australia.">
+<meta name="theme-color" content="#0C2B30">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0A0C'/%3E%3Cpath d='M11 9h10v11.5a5 5 0 0 1-10 0' stroke='%23E8A63C' stroke-width='2.6' fill='none'/%3E%3C/svg%3E">
-<script>
-  // Set the theme before first paint so there is no flash of the wrong one.
-  (function () {
-    try {
-      var s = localStorage.getItem('jw-theme');
-      var t = s || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      document.documentElement.setAttribute('data-theme', t);
-    } catch (e) {}
-  })();
-</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230C2B30'/%3E%3Ccircle cx='16' cy='9' r='3' fill='none' stroke='%23C9A227' stroke-width='2'/%3E%3Crect x='10' y='13' width='12' height='12' rx='1.5' fill='%23EDE7D9'/%3E%3C/svg%3E">
 </head>
 <body>
 
 <!--
-QUIET MACHINE — direction contract (brief-pinned, replaces IN TRANSIT / seed 79b4e05a)
-THESIS: A dark-first, grain-lit surface where the work sits in a bento of unequal cells. The
-  unequal sizing is the argument: Hanzi Mind is running and takes four times the room of a plan,
-  so the grid itself states what is real without a single adjective.
-OWN-WORLD: Near-black #0A0A0C or paper #F7F6F3, chosen by the visitor, with animated film grain
-  over both. Schibsted Grotesk set large and tight; Geist Mono for anything measured. Amber
-  #E8A63C survives the theme flip and is the only chroma on the page.
-STORY: Visitor lands on a name in near-silence, scrolls into a grid that shows the shape of the
-  work at a glance, reads the operating record as proof, and hits Contact, which never leaves.
-FIRST VIEWPORT: Centred name at display scale, one rotating role line, the creed, and a scroll
-  cue. Contact sits top right, pinned, with the theme toggle beside it. Grain moving throughout.
-FORM: Bento grid, pinned by the user's brief rather than rolled.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review and DESIGN.md
+THE RACK — direction contract (seed 3caee2fd, grounded candidate 7 of 7, mode persuade)
+THESIS: The key rack Justin worked behind, turned into the index of what he is opening next. The
+  compartments hold his next moves, not hotel rooms — hospitality is where the authority came
+  from, never the identity. Refuses the project-card grid and the scroll-triggered fade.
+OWN-WORLD: A deep petrol field (#0C2B30) carrying bone tags (#EDE7D9) on brass hooks, oxblood for
+  what is closed. Graphic, not skeuomorphic: no imitation metal, no bevels. Depth comes from real
+  cast shadow and real motion. Bricolage Grotesque stamped hard; Familjen Grotesk for reading.
+STORY: Visitor perturbs a wall of hanging tags, reads what each one opens, finds the operating
+  record dense and specific underneath, and signs the register.
+FIRST VIEWPORT: A rail across the upper third with seven tags hanging at varied lengths, all
+  swinging under live spring physics from the cursor. The largest, centre, is stamped with his
+  name. One line of copy sits bottom-left; the contact tag hangs in the header, top right.
+FORM: The hotel key rack and guest register, candidate 7 of 7, seed key 3caee2fd.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->
 
 <a class="skip" href="#main">Skip to content</a>
-<div class="grain" aria-hidden="true"></div>
 
-<header class="nav">
-  <a class="nav__mark" href="#top">
-    <span class="nav__initials">JW</span>
-    <span class="nav__name">Justin Winartha</span>
-  </a>
-
-  <nav class="nav__links" aria-label="Sections">
-    <a href="#work">Work</a>
+<header class="head">
+  <a class="head__mark" href="#top">Justin&nbsp;Winartha</a>
+  <nav class="head__nav" aria-label="Sections">
+    <a href="#keys">Keys</a>
+    <a href="#register">Register</a>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
   </nav>
-
-  <div class="nav__actions">
-    <button class="toggle" id="theme-toggle" type="button" aria-label="Switch to light theme">
-      <svg class="toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></svg>
-      <svg class="toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/></svg>
-    </button>
-    <a class="btn btn--accent nav__cta" href="#contact">Contact</a>
-  </div>
+  <a class="head__cta" href="#contact">Sign the register</a>
 </header>
 
 <main id="main">
 
-  <section class="hero" id="top">
-    <div class="hero__inner">
-      <p class="hero__avail">
-        <span class="pulse" aria-hidden="true"></span>
-        Open to conversations
-      </p>
+  <section class="rack" id="top" aria-labelledby="rack-h">
+    <h1 class="vh" id="rack-h">Justin Winartha — operator, analyst, builder, value investor</h1>
 
-      <h1 class="hero__name">Justin<span>Winartha</span></h1>
+    <div class="rack__rail" aria-hidden="true"></div>
 
-      <p class="hero__role" aria-label="Operator, analyst, builder, value investor">
-        <span class="rotator" id="rotator" aria-hidden="true"></span>
-      </p>
+    <div class="rack__wall" id="wall">
+      <div class="tag" data-tag style="--x:6%;  --drop:132px; --w:116px; --tilt:-4deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm"><b>2017</b><i>Where it started</i></span>
+      </div>
 
-      <p class="hero__creed">Grounded in critical thinking.<br>Guided by integrity.</p>
+      <div class="tag" data-tag style="--x:17%; --drop:252px; --w:150px; --tilt:3deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm"><b>8 yrs</b><i>Hotel operations</i></span>
+      </div>
 
-      <a class="hero__cue" href="#work">
-        <span>See the work</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
+      <div class="tag" data-tag style="--x:28%; --drop:158px; --w:134px; --tilt:-2deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm tag__face--shut"><b>Closed</b><i>Apr 2026</i></span>
+      </div>
+
+      <div class="tag tag--name" data-tag style="--x:50%; --drop:206px; --w:min(78vw, 420px); --tilt:0deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--name">
+          <span class="tag__no">No. 01</span>
+          <span class="tag__name">Justin<br>Winartha</span>
+          <span class="tag__role" id="role">Operator</span>
+        </span>
+      </div>
+
+      <a class="tag" data-tag href="#keys" aria-label="Hanzi Mind, in development" style="--x:73%; --drop:168px; --w:154px; --tilt:4deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm tag__face--live"><b>Building</b><i>Hanzi Mind</i></span>
       </a>
+
+      <a class="tag" data-tag href="#keys" aria-label="Value investing, studying" style="--x:85%; --drop:292px; --w:128px; --tilt:-3deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm"><b>Markets</b><i>Studying</i></span>
+      </a>
+
+      <a class="tag" data-tag href="#keys" aria-label="The store, planned" style="--x:95%; --drop:118px; --w:120px; --tilt:2deg">
+        <span class="tag__hook"></span><span class="tag__cord"></span>
+        <span class="tag__face tag__face--sm"><b>Store</b><i>Planned</i></span>
+      </a>
+    </div>
+
+    <div class="rack__foot">
+      <p class="rack__line">I spent eight years holding room inventory against revenue targets and
+        closing the books before open. These are the doors they open next.</p>
+      <p class="rack__hint" aria-hidden="true">Move the tags</p>
     </div>
   </section>
 
-  <section class="sect" id="work" aria-labelledby="work-h">
+  <section class="sect" id="keys" aria-labelledby="keys-h">
     <div class="wrap">
-      <div class="sect__head">
-        <h2 class="sect__h" id="work-h">The work</h2>
-        <p class="sect__note">Sized by what is real. One of these is running; the rest are study,
-          plans, or finished coursework, and they are labelled as such.</p>
-      </div>
+      <h2 class="sect__h" id="keys-h">What the keys open</h2>
+      <p class="sect__note">Three doors, at three different stages. The labels are accurate, not
+        aspirational.</p>
 
-      <div class="bento">
+      <div class="keys">
 
-        <article class="cell cell--feature" aria-labelledby="c-hanzi">
-          <div class="cell__body">
-            <span class="tag tag--live">In development</span>
-            <h3 class="cell__h" id="c-hanzi">Hanzi&nbsp;Mind<span class="cell__cn" lang="zh-Hans">雅</span></h3>
-            <p class="cell__p">You check your phone something like a hundred times a day. Hanzi Mind
-              puts one Chinese word in that glance, with its pinyin and its meaning, on the home
-              screen and the lock screen. No session to open, no streak to defend — the repetition is
-              already in your day.</p>
-            <dl class="spec">
+        <article class="key key--lead" aria-labelledby="k-hanzi">
+          <div class="key__plate">
+            <span class="key__no">01</span>
+            <span class="stamp stamp--live">In development</span>
+          </div>
+          <div class="key__body">
+            <h3 id="k-hanzi">Hanzi Mind<span class="key__cn" lang="zh-Hans">雅</span></h3>
+            <p>You check your phone something like a hundred times a day. Hanzi Mind puts one Chinese
+              word in that glance, with its pinyin and its meaning, on the home screen and the lock
+              screen. No session to open, no streak to defend.</p>
+            <dl class="kv">
               <div><dt>Built with</dt><dd>Flutter</dd></div>
-              <div><dt>Widgets</dt><dd>Kotlin &amp; Swift, native</dd></div>
-              <div><dt>Status</dt><dd>Unreleased</dd></div>
+              <div><dt>Widgets</dt><dd>Kotlin and Swift, native</dd></div>
+              <div><dt>Released</dt><dd>Not yet</dd></div>
             </dl>
+            <p class="key__aside">Home and lock-screen widgets cannot be drawn from Flutter. They are
+              written natively against each platform's own widget system — seven percent of the code
+              and the reason the idea works at all.</p>
           </div>
 
-          <div class="cell__demo" aria-hidden="true">
-            <div class="phone">
-              <div class="phone__screen">
-                <div class="phone__clock">9:41</div>
-                <div class="phone__date">Monday, 3 August</div>
-                <div class="widget">
-                  <div class="widget__top"><span lang="zh-Hans">雅</span> Widgets</div>
-                  <div class="widget__hz" id="w-hz" lang="zh-Hans">你好</div>
-                  <div class="widget__py" id="w-py">nǐ hǎo</div>
-                  <div class="widget__en" id="w-en">hello</div>
-                </div>
-                <div class="phone__bar"></div>
+          <div class="key__demo" aria-hidden="true">
+            <div class="glass">
+              <div class="glass__time">9:41</div>
+              <div class="glass__date">Monday, 3 August</div>
+              <div class="card">
+                <span class="card__top"><span lang="zh-Hans">雅</span> Widgets</span>
+                <span class="card__hz" id="w-hz" lang="zh-Hans">你好</span>
+                <span class="card__py" id="w-py">nǐ hǎo</span>
+                <span class="card__en" id="w-en">hello</span>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="cell cell--wide" aria-labelledby="c-stack">
-          <h3 class="cell__h cell__h--sm" id="c-stack">What it is made of</h3>
-          <div class="bars" role="img" aria-label="Dart 80 percent, JavaScript 7 percent, TypeScript 6 percent, Kotlin 4 percent, Swift 3 percent">
-            <span class="bars__seg" style="--pct:80"></span>
-            <span class="bars__seg" style="--pct:7"></span>
-            <span class="bars__seg" style="--pct:6"></span>
-            <span class="bars__seg" style="--pct:4"></span>
-            <span class="bars__seg" style="--pct:3"></span>
+        <article class="key" aria-labelledby="k-mkt">
+          <div class="key__plate">
+            <span class="key__no">02</span>
+            <span class="stamp">Studying</span>
           </div>
-          <ul class="legend">
-            <li><i data-s="1"></i>Dart <b>80%</b></li>
-            <li><i data-s="2"></i>JavaScript <b>7%</b></li>
-            <li><i data-s="3"></i>TypeScript <b>6%</b></li>
-            <li><i data-s="4"></i>Kotlin <b>4%</b></li>
-            <li><i data-s="5"></i>Swift <b>3%</b></li>
-          </ul>
-          <p class="cell__p cell__p--sm">The last seven percent is the part that matters. Home and
-            lock-screen widgets cannot be drawn from Flutter; they are written natively against each
-            platform's own widget system.</p>
+          <div class="key__body">
+            <h3 id="k-mkt">Value investing</h3>
+            <p>Financial Markets, Yale University via Coursera. Behavioural finance, risk, and the
+              machinery underneath the price. No track record to show yet, and I will not pretend
+              otherwise.</p>
+          </div>
         </article>
 
-        <article class="cell" aria-labelledby="c-invest">
-          <span class="tag">Studying</span>
-          <h3 class="cell__h cell__h--sm" id="c-invest">Value investing</h3>
-          <p class="cell__p cell__p--sm">Financial Markets, Yale University via Coursera. Behavioural
-            finance, risk, and the machinery underneath the price.</p>
-        </article>
-
-        <article class="cell" aria-labelledby="c-ecom">
-          <span class="tag">Planned</span>
-          <h3 class="cell__h cell__h--sm" id="c-ecom">E&#8209;commerce</h3>
-          <p class="cell__p cell__p--sm">A direct-to-customer venture, sourced and fulfilled end to
-            end. Groundwork stage.</p>
-        </article>
-
-        <article class="cell cell--stat">
-          <p class="stat__n" data-count="40000" data-prefix="$" data-suffix="+">$40,000+</p>
-          <p class="stat__l">Reconciled nightly as night auditor, to the cent, with checkout
-            satisfaction held at 98%.</p>
-        </article>
-
-        <article class="cell" aria-labelledby="c-justtalk">
-          <span class="tag tag--done">2020</span>
-          <h3 class="cell__h cell__h--sm" id="c-justtalk">JustTalk</h3>
-          <p class="cell__p cell__p--sm">A messaging app built to WhatsApp's shape: real-time sync,
-            auth, and message state. Android Studio, Java, Firebase.</p>
-        </article>
-
-        <article class="cell" aria-labelledby="c-travelbiz">
-          <span class="tag tag--done">Coursework</span>
-          <h3 class="cell__h cell__h--sm" id="c-travelbiz">TravelBiz</h3>
-          <p class="cell__p cell__p--sm">A travel agency site, built end to end. WordPress,
-            JavaScript, HTML, CSS.</p>
+        <article class="key" aria-labelledby="k-store">
+          <div class="key__plate">
+            <span class="key__no">03</span>
+            <span class="stamp">Planned</span>
+          </div>
+          <div class="key__body">
+            <h3 id="k-store">The store</h3>
+            <p>A direct-to-customer venture, sourced and fulfilled end to end. Groundwork stage —
+              the part I already know how to do is the inventory and the margin.</p>
+          </div>
         </article>
 
       </div>
     </div>
   </section>
 
-  <section class="sect sect--about" id="about" aria-labelledby="about-h">
+  <section class="sect sect--reg" id="register" aria-labelledby="reg-h">
+    <div class="wrap">
+      <h2 class="sect__h" id="reg-h">The register</h2>
+      <p class="sect__note">Eight years, all of it operational, all of it closed. Every line is a
+        room I was responsible for.</p>
+
+      <ol class="reg">
+        <li class="reg__row">
+          <span class="reg__no">10</span>
+          <span class="reg__yr">2025&ndash;26</span>
+          <span class="reg__what">
+            <b>Room Controller &amp; Welcome Supervisor</b><i>W Hotels</i>
+            <em>Held saleable room inventory against revenue and occupancy targets, ran group
+              arrivals and departures, and allocated upgrades across Revenue, Front Desk,
+              Housekeeping and Engineering.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">09</span>
+          <span class="reg__yr">2024&ndash;25</span>
+          <span class="reg__what">
+            <b>Welcome Agent</b><i>W Hotels</i>
+            <em>Front of house on OPERA PMS and GXP, to a luxury brand standard.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">08</span>
+          <span class="reg__yr">2024&ndash;26</span>
+          <span class="reg__what">
+            <b>Exam Supervision Officer</b><i>University of Sydney</i>
+            <em>Ran examination venues and computer-based delivery under strict procedure, identity
+              verification and academic-integrity conditions.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">07</span>
+          <span class="reg__yr">2023</span>
+          <span class="reg__what">
+            <b>Assistant Night Manager</b><i>Rydges Hotels &amp; Resorts</i>
+            <em>Audited every financial transaction nightly on Oracle PMS, reconciling room, food
+              and beverage and miscellaneous revenue before open.</em>
+          </span>
+        </li>
+        <li class="reg__row reg__row--mark">
+          <span class="reg__no">06</span>
+          <span class="reg__yr">2022&ndash;23</span>
+          <span class="reg__what">
+            <b>Night Auditor</b><i>Oaks Hotels, Resorts &amp; Suites</i>
+            <em>Reconciled nightly billing and vendor payments exceeding <b class="fig">$40,000</b>,
+              keeping records and receipts to the cent. Checkout satisfaction held at
+              <b class="fig">98%</b>.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">05</span>
+          <span class="reg__yr">2023</span>
+          <span class="reg__what">
+            <b>Guest Service Agent</b><i>Oaks Hotels, Resorts &amp; Suites</i>
+            <em>Arrivals, departures, payments and complaint recovery, coordinating housekeeping and
+              maintenance behind the desk.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">04</span>
+          <span class="reg__yr">2021&ndash;23</span>
+          <span class="reg__what">
+            <b>Housekeeping</b><i>Oaks Hotels, Resorts &amp; Suites</i>
+            <em>Held a 9 out of 10 guest-reviewed cleaning standard.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">03</span>
+          <span class="reg__yr">2018&ndash;21</span>
+          <span class="reg__what">
+            <b>Property Manager</b><i>Airbnb</i>
+            <em>Ran listings end to end: tenants and landlords, maintenance, turnover, stock and
+              open-house events. The closest thing to running a small business on this list.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">02</span>
+          <span class="reg__yr">2017&ndash;19</span>
+          <span class="reg__what">
+            <b>Team Supervisor</b><i>Complex Solution</i>
+            <em>Inducted and trained new staff, set the day plan, and covered the shifts nobody
+              else could.</em>
+          </span>
+        </li>
+        <li class="reg__row">
+          <span class="reg__no">01</span>
+          <span class="reg__yr">2017&ndash;18</span>
+          <span class="reg__what">
+            <b>Crew Member</b><i>McDonald&rsquo;s</i>
+            <em>Where it started.</em>
+          </span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sect" id="about" aria-labelledby="about-h">
     <div class="wrap about">
-      <figure class="about__portrait">
+      <figure class="about__pic">
         <picture>
           <source srcset="assets/img/justin-portrait.webp" type="image/webp">
           <img src="assets/img/justin-portrait.jpg" width="880" height="1790" loading="lazy"
                decoding="async" alt="Justin Winartha, standing, in a light suit.">
         </picture>
       </figure>
-
       <div class="about__copy">
-        <h2 class="sect__h" id="about-h">About</h2>
-        <p class="about__lead">I spent eight years running hotels — holding room inventory against
-          revenue targets, closing the books before open, and fixing things in front of the person
-          they went wrong for.</p>
-        <p>That work is not a detour from what I am doing now, it is the reason I can do it. An
-          online store is inventory, margin, and logistics under a deadline, which is the job I have
-          already been doing, only with the consequences arriving faster. I am putting that behind
-          three things: building software, learning to value businesses properly, and getting a
-          direct-to-customer venture off the ground.</p>
-        <p>None of them have arrived yet. I would rather say that plainly than dress up a plan as a
-          track record.</p>
-
-        <dl class="facts">
+        <h2 class="sect__h" id="about-h">Behind the desk</h2>
+        <p class="about__lead">An online store is inventory, margin and logistics under a deadline.
+          That is the job I have already been doing — only with the consequences arriving faster.</p>
+        <p>Hotels taught me the parts nobody photographs: what it costs when the count is wrong,
+          how to close a night so the numbers survive daylight, and how to stand in front of the
+          person something went wrong for. I have a Bachelor of Information Technology, so the
+          building side is not new either — it just took me a while to point the two at the same
+          thing.</p>
+        <p>None of the three doors have opened yet. I would rather say so plainly than dress a plan
+          up as a track record.</p>
+        <dl class="about__facts">
           <div><dt>Based</dt><dd>Australia</dd></div>
           <div><dt>Degree</dt><dd>B.IT, Charles Sturt</dd></div>
-          <div><dt>Focus</dt><dd>Software, markets, commerce</dd></div>
+          <div><dt>Earlier</dt><dd>JustTalk &middot; TravelBiz</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <section class="sect" id="experience" aria-labelledby="exp-h">
-    <div class="wrap">
-      <div class="sect__head">
-        <h2 class="sect__h" id="exp-h">Experience</h2>
-        <p class="sect__note">Eight years, all of it operational, all of it finished.</p>
-      </div>
-
-      <ol class="roles">
-        <li class="role">
-          <span class="role__yr">2025 &ndash; 2026</span>
-          <div class="role__main">
-            <h3>Room Controller &amp; Welcome Supervisor</h3>
-            <p class="role__org">W Hotels</p>
-            <p class="role__d">Held saleable room inventory against revenue and occupancy targets, ran
-              group arrivals and departures, and allocated upgrades across Revenue, Front Desk,
-              Housekeeping and Engineering.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2024 &ndash; 2025</span>
-          <div class="role__main">
-            <h3>Welcome Agent</h3>
-            <p class="role__org">W Hotels</p>
-            <p class="role__d">Front of house on OPERA PMS and GXP, to a luxury brand standard.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2024 &ndash; 2026</span>
-          <div class="role__main">
-            <h3>Exam Supervision Officer</h3>
-            <p class="role__org">University of Sydney</p>
-            <p class="role__d">Ran examination venues and computer-based delivery under strict
-              procedure, identity verification and academic-integrity conditions.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2023</span>
-          <div class="role__main">
-            <h3>Assistant Night Manager</h3>
-            <p class="role__org">Rydges Hotels &amp; Resorts</p>
-            <p class="role__d">Audited every financial transaction nightly on Oracle PMS, reconciling
-              room, food and beverage and miscellaneous revenue before open.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2022 &ndash; 2023</span>
-          <div class="role__main">
-            <h3>Night Auditor</h3>
-            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
-            <p class="role__d">Reconciled nightly billing and vendor payments exceeding $40,000,
-              keeping records and receipts to the cent. Checkout satisfaction held at 98%.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2023</span>
-          <div class="role__main">
-            <h3>Guest Service Agent</h3>
-            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
-            <p class="role__d">Arrivals, departures, payments and complaint recovery, coordinating
-              housekeeping and maintenance behind the desk.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2021 &ndash; 2023</span>
-          <div class="role__main">
-            <h3>Housekeeping</h3>
-            <p class="role__org">Oaks Hotels, Resorts &amp; Suites</p>
-            <p class="role__d">Held a 9 out of 10 guest-reviewed cleaning standard.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2018 &ndash; 2021</span>
-          <div class="role__main">
-            <h3>Property Manager</h3>
-            <p class="role__org">Airbnb</p>
-            <p class="role__d">Ran listings end to end: tenants and landlords, maintenance, turnover,
-              stock and open-house events. The closest thing to running a small business on this list.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2017 &ndash; 2019</span>
-          <div class="role__main">
-            <h3>Team Supervisor</h3>
-            <p class="role__org">Complex Solution</p>
-            <p class="role__d">Inducted and trained new staff, set the day plan, and covered the
-              shifts nobody else could.</p>
-          </div>
-        </li>
-        <li class="role">
-          <span class="role__yr">2017 &ndash; 2018</span>
-          <div class="role__main">
-            <h3>Crew Member</h3>
-            <p class="role__org">McDonald's</p>
-            <p class="role__d">Where it started.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="sect sect--contact" id="contact" aria-labelledby="contact-h">
-    <div class="wrap contact">
-      <div class="contact__copy">
-        <h2 class="sect__h sect__h--xl" id="contact-h">Let's talk.</h2>
+  <section class="sect sect--sign" id="contact" aria-labelledby="sign-h">
+    <div class="wrap sign">
+      <div class="sign__copy">
+        <h2 class="sect__h" id="sign-h">Sign the register</h2>
         <p>If you are building something in commerce, markets or mobile, or you want an operator who
-          has actually held inventory and closed the books, I would like to hear about it.</p>
-        <a class="linkedin" href="https://www.linkedin.com/in/justin-winartha-492599132/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico ico--fill"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
-          Connect on LinkedIn
+          has actually held inventory and closed the books, leave your name and I will come back
+          to you.</p>
+        <a class="sign__li" href="https://www.linkedin.com/in/justin-winartha-492599132/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg>
+          Or find me on LinkedIn
         </a>
       </div>
 
-      <form class="form" id="contact-form" novalidate>
-        <div class="field">
+      <form class="ledger" id="contact-form" novalidate>
+        <div class="ledger__line">
           <label for="f-name">Name</label>
           <input id="f-name" name="name" type="text" autocomplete="name" required>
-          <p class="field__err" data-err-for="f-name"></p>
+          <p class="ledger__err" data-err-for="f-name"></p>
         </div>
-        <div class="field">
+        <div class="ledger__line">
           <label for="f-email">Email</label>
           <input id="f-email" name="email" type="email" autocomplete="email" required>
-          <p class="field__err" data-err-for="f-email"></p>
+          <p class="ledger__err" data-err-for="f-email"></p>
         </div>
-        <div class="field">
-          <label for="f-msg">Message</label>
-          <textarea id="f-msg" name="message" rows="4" required></textarea>
-          <p class="field__err" data-err-for="f-msg"></p>
+        <div class="ledger__line">
+          <label for="f-msg">Business</label>
+          <textarea id="f-msg" name="message" rows="3" required></textarea>
+          <p class="ledger__err" data-err-for="f-msg"></p>
         </div>
-        <button class="btn btn--accent btn--wide" type="submit" data-idle="Send message" data-busy="Sending…">
-          <span data-btn-label>Send message</span>
+        <button class="sign__btn" type="submit" data-idle="Sign in" data-busy="Signing…">
+          <span data-btn-label>Sign in</span>
         </button>
-        <p class="form__status" role="status" aria-live="polite"></p>
+        <p class="ledger__status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -363,8 +341,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </footer>
 
-<script src="assets/vendor/gsap.min.js"></script>
-<script src="assets/vendor/ScrollTrigger.min.js"></script>
 <script src="assets/js/site.js"></script>
 
 </body>

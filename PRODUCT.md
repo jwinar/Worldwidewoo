@@ -9,12 +9,12 @@ web
 ## Stack
 
 delegated — the user said "stack is up to you." Chosen and built: plain static HTML, CSS and
-JavaScript, with GSAP + ScrollTrigger vendored locally. No framework, no build step, no package
-manifest, no install required to run or deploy.
+JavaScript with no dependencies whatsoever. No framework, no build step, no package manifest, no
+vendored library, no install required to run or deploy.
 
 Rationale: a single page with no application logic gains nothing from a framework, and a static
-bundle deploys to any host. GSAP is a real dependency rather than hand-rolled animation because the
-site's signature interaction is scroll-driven, which is what ScrollTrigger exists for.
+bundle deploys to any host. The signature interaction is a damped-pendulum simulation written by
+hand in about eighty lines, so no animation library is carried either.
 
 Deploy target is an open decision. The build is host-agnostic static files, so this constrains
 nothing — but Netlify or Vercel would resolve the contact-form gap below with built-in form
@@ -44,7 +44,7 @@ Visitors arrive predominantly from LinkedIn, frequently on mobile, often mid-con
 - Contact is a form (user's explicit choice). A static site cannot send mail on its own; a third-party form service is required, and its provider is an open decision. **Built state:** the form validates with real error, busy and success states, but its `ENDPOINT` constant in `assets/js/site.js` is empty, so it cannot send. It currently tells the visitor so and points them to LinkedIn. Until an endpoint is set, the form is honest but non-functional.
 - Email address and phone number are deliberately NOT published. LinkedIn is the only published direct channel.
 - GitHub profile is not published (user did not select it).
-- **No third-party runtime.** Fonts (Schibsted Grotesk, Geist Mono, Noto Sans SC) and GSAP are self-hosted; the CJK font is subset to the ten characters actually used. The page makes no external network request at runtime and works under a strict content-security policy. Future work must not reintroduce a CDN font or script link.
+- **No third-party runtime, and now no runtime dependency at all.** Fonts (Bricolage Grotesque, Familjen Grotesk, Noto Sans SC) are self-hosted and the CJK face is subset to the ten characters actually used. GSAP was removed when the animation became a hand-written physics simulation; the page ships zero third-party JavaScript, makes no external network request at runtime, and works under a strict content-security policy. Future work must not reintroduce a CDN font or script link.
 - Location is stated as **Australia**, confirmed by the user. The city is not asserted anywhere on the page; only the University of Sydney employment implies it, which is a fact in its own right.
 - Role end dates are written in the past tense throughout, and all end months are now known.
 

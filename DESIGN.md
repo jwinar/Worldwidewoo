@@ -1,160 +1,145 @@
 ---
-name: Justin Winartha — Quiet Machine
-description: A dark-first, grain-lit personal site where unequal bento cells state what is real and what is only planned.
+name: Justin Winartha — The Rack
+description: A petrol-dark key rack where bone tags hang on brass hooks and swing under live pendulum physics.
 colors:
-  accent: "#E8A63C"
-  accent-2: "#F2BC63"
-  accent-ink: "#17120A"
-  accent-text-dark: "#E8A63C"
-  accent-text-light: "#8F5B08"
-  dark-bg: "#0A0A0C"
-  dark-bg-2: "#101014"
-  dark-surface: "#141419"
-  dark-surface-2: "#1B1B21"
-  dark-border: "#26262E"
-  dark-border-2: "#34343E"
-  dark-text: "#F2F2F5"
-  dark-text-2: "#9B9BA6"
-  light-bg: "#F7F6F3"
-  light-bg-2: "#F1EFEA"
-  light-surface: "#FFFFFF"
-  light-surface-2: "#F4F2ED"
-  light-border: "#E2DFD7"
-  light-border-2: "#CFCBC0"
-  light-text: "#14141A"
-  light-text-2: "#5C5C66"
-  series-teal: "#4FA8AD"
-  series-steel: "#7C8B94"
-  series-rust: "#B4652F"
-  error-dark: "#E8836A"
-  error-light: "#B33F22"
-  error-border: "#E0755C"
+  field: "#0C2B30"
+  field-lo: "#081F23"
+  field-hi: "#123A40"
+  field-edge: "#17474E"
+  bone: "#EDE7D9"
+  bone-2: "#DBD2BE"
+  bone-dim: "#A9B5B0"
+  ink: "#14211F"
+  ink-2: "#4A5A56"
+  brass: "#C9A227"
+  brass-hi: "#E0BC46"
+  brass-lo: "#8A6E19"
+  brass-cord: "#7A6116"
+  oxblood: "#8C3131"
+  oxblood-lt: "#C36A6A"
+  confirm: "#2F6B4F"
 typography:
-  display:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 13vw, 9.5rem)"
-    fontWeight: 900
-    lineHeight: 0.86
-    letterSpacing: "-0.055em"
+  name:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2rem, 7vw, 3.4rem)"
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: "-0.045em"
+  name-sm:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.75rem, 9vw, 2.5rem)"
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: "-0.045em"
   section:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 5.5vw, 3.5rem)"
-    fontWeight: 700
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.875rem, 5vw, 3.25rem)"
+    fontWeight: 800
     lineHeight: 1.02
-    letterSpacing: "-0.045em"
-  section-xl:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.5rem, 8vw, 5rem)"
-    fontWeight: 700
-    lineHeight: 1.02
-    letterSpacing: "-0.045em"
-  stat:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.75rem, 7vw, 4.25rem)"
-    fontWeight: 900
-    lineHeight: 1
-    letterSpacing: "-0.05em"
-  card:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.5rem, 3vw, 2.125rem)"
-    fontWeight: 700
+    letterSpacing: "-0.04em"
+  door:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.375rem, 2.6vw, 1.875rem)"
+    fontWeight: 800
     lineHeight: 1.1
     letterSpacing: "-0.035em"
-  card-sm:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.1875rem"
+  entry:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.125rem"
     fontWeight: 700
     lineHeight: 1.25
     letterSpacing: "-0.025em"
-  lead:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.0625rem, 2vw, 1.375rem)"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "normal"
-  creed:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1rem, 2vw, 1.25rem)"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "normal"
-  body:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.65
-    letterSpacing: "normal"
-  body-sm:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 400
-    lineHeight: 1.65
-    letterSpacing: "normal"
-  ui:
-    fontFamily: "'Schibsted Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 600
+  tag-face:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 800
     lineHeight: 1
-    letterSpacing: "-0.01em"
-  mono-lg:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "0.8125rem"
-    fontWeight: 400
-    lineHeight: 1.5
-    letterSpacing: "normal"
-  mono:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "0.75rem"
-    fontWeight: 500
-    lineHeight: 1.4
-    letterSpacing: "0.01em"
-  mono-sm:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "0.6875rem"
-    fontWeight: 500
+    letterSpacing: "-0.03em"
+  key-no:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 800
     lineHeight: 1
-    letterSpacing: "0.01em"
-  mono-xs:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "0.625rem"
-    fontWeight: 400
-    lineHeight: 1
-    letterSpacing: "0.02em"
-  mono-micro:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "0.5rem"
-    fontWeight: 500
-    lineHeight: 1
-    letterSpacing: "0.1em"
-  eyebrow-mono:
-    fontFamily: "'Geist Mono', 'Noto Sans SC', ui-monospace, 'SFMono-Regular', monospace"
-    fontSize: "clamp(0.8125rem, 2vw, 1rem)"
-    fontWeight: 500
-    lineHeight: 1.4
-    letterSpacing: "0.16em"
-  device-clock:
-    fontFamily: "'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif"
+    letterSpacing: "-0.02em"
+  clock:
+    fontFamily: "'Bricolage Grotesque', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
     fontSize: "2.25rem"
     fontWeight: 700
     lineHeight: 1
     letterSpacing: "-0.05em"
+  lead:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.0625rem, 2vw, 1.3125rem)"
+    fontWeight: 400
+    lineHeight: 1.45
+    letterSpacing: "normal"
+  rack-line:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(.9375rem, 1.6vw, 1.0625rem)"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
+  body:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
+  body-sm:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "normal"
+  ui:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 500
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  meta:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 400
+    lineHeight: 1.5
+    letterSpacing: "normal"
+  label:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "normal"
+  tag-sub:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.6875rem"
+    fontWeight: 400
+    lineHeight: 1.4
+    letterSpacing: "0.02em"
+  stamp:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.625rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.16em"
+  stamp-xs:
+    fontFamily: "'Familjen Grotesk', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.5rem"
+    fontWeight: 400
+    lineHeight: 1
+    letterSpacing: "0.18em"
   hanzi:
-    fontFamily: "'Noto Sans SC', 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "'Noto Sans SC', 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.75rem"
     fontWeight: 700
     lineHeight: 1.25
     letterSpacing: "normal"
 rounded:
-  swatch: "2px"
-  xs: "4px"
-  sm: "8px"
-  md: "14px"
-  lg: "22px"
-  pill: "999px"
-  circle: "50%"
-  widget: "0.95rem"
-  device-screen: "1.5rem"
-  device: "1.85rem"
+  stamp: "2px"
+  tag: "3px"
+  sm: "4px"
+  md: "8px"
+  device: "1.6rem"
+  hook: "50%"
 spacing:
   s1: "0.25rem"
   s2: "0.5rem"
@@ -167,180 +152,162 @@ spacing:
   s9: "6rem"
   s10: "8rem"
 components:
-  button-accent:
-    backgroundColor: "{colors.accent}"
-    textColor: "{colors.accent-ink}"
-    rounded: "{rounded.pill}"
-    padding: "0.6rem 1.1rem"
-    typography: "{typography.ui}"
-  button-accent-hover:
-    backgroundColor: "{colors.accent-2}"
-    textColor: "{colors.accent-ink}"
-  cell:
-    backgroundColor: "{colors.dark-surface}"
-    textColor: "{colors.dark-text}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.s5}"
-  cell-feature:
-    backgroundColor: "{colors.dark-surface}"
-    textColor: "{colors.dark-text}"
-    rounded: "{rounded.lg}"
-    padding: "{spacing.s6}"
-  tag:
-    backgroundColor: "{colors.dark-surface-2}"
-    textColor: "{colors.dark-text-2}"
-    rounded: "{rounded.pill}"
-    padding: "0.3em 0.6em"
-    typography: "{typography.mono-sm}"
-  tag-live:
-    backgroundColor: "{colors.dark-surface-2}"
-    textColor: "{colors.accent-text-dark}"
-    rounded: "{rounded.pill}"
-  input-text:
-    backgroundColor: "{colors.dark-surface}"
-    textColor: "{colors.dark-text}"
+  tag-face:
+    backgroundColor: "{colors.bone}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.tag}"
+    padding: "1.5rem 0.75rem 0.7rem"
+  tag-face-name:
+    backgroundColor: "{colors.bone}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.tag}"
+    padding: "1.9rem 1.4rem 1.4rem"
+  compartment:
+    backgroundColor: "{colors.field-lo}"
+    textColor: "{colors.bone}"
     rounded: "{rounded.md}"
-    padding: "0.7rem 0.85rem"
-  input-text-focus:
-    backgroundColor: "{colors.dark-surface-2}"
-    textColor: "{colors.dark-text}"
-  toggle:
-    backgroundColor: "transparent"
-    textColor: "{colors.dark-text-2}"
-    rounded: "{rounded.circle}"
-    size: "2.25rem"
+    padding: "{spacing.s5}"
+  stamp:
+    backgroundColor: "{colors.bone}"
+    textColor: "{colors.ink-2}"
+    rounded: "{rounded.stamp}"
+    padding: "0.5em 0.7em 0.4em"
+    typography: "{typography.stamp}"
+  stamp-live:
+    backgroundColor: "{colors.bone}"
+    textColor: "{colors.oxblood}"
+    rounded: "{rounded.stamp}"
+  cta:
+    backgroundColor: "{colors.brass}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.tag}"
+    padding: "0.5rem 0.9rem"
+  cta-hover:
+    backgroundColor: "{colors.brass-hi}"
+    textColor: "{colors.ink}"
+  ledger:
+    backgroundColor: "{colors.bone}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.md}"
+    padding: "{spacing.s5}"
+  sign-button:
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.bone}"
+    rounded: "{rounded.sm}"
+    padding: "0.8rem 1rem"
+  sign-button-hover:
+    backgroundColor: "{colors.oxblood}"
+    textColor: "{colors.bone}"
 ---
 
-# Design System: Quiet Machine
+# Design System: The Rack
 
 ## Overview
 
-The page is dark by default and grain-lit throughout, and the visitor can flip it to paper. Both
-grounds are real designs, not a filter over one another: each has its own surface ladder, its own
-border weights, and its own accent value.
+The surface is the key rack Justin worked behind for eight years, turned into the index of what he
+is opening next. The compartments do not hold hotel rooms; they hold his next moves. That single
+inversion is the whole system: hospitality is where the authority came from, never the identity, and
+the page can lean hard on the operating record without trapping him inside it.
 
-The organising idea is that **size is the argument**. The work sits in a bento of deliberately
-unequal cells, and the sizing is not a compositional whim — it is the honest claim. Hanzi Mind is
-the only thing actually running, so it occupies four times the area of a plan. Coursework gets a
-small square. Nothing has to say "this one is more real than that one", because the grid already
-did. This is what keeps the layout from being decorative: remove the size hierarchy and the page
-starts lying.
+Everything descends from one physical fact — **a tag hangs, and a hanging thing swings**. The first
+viewport is a brass rail with seven bone tags on it, each a damped pendulum with its own natural
+frequency, and the visitor's cursor is a force applied to them. Nothing on this page fades up on
+scroll. The motion is a simulation the visitor disturbs, and it settles on its own.
 
-Typography is minimal and set hard — Schibsted Grotesk at heavy weights with tight negative
-tracking, Geist Mono for anything measured or labelled. There is exactly one hue on the page. Amber
-carried over from the subject's existing brand, and it survives the theme flip, which is what keeps
-a two-theme site from feeling like two sites.
+The rendering is deliberately **graphic rather than skeuomorphic**. There is no imitation brass, no
+bevelled metal, no embossed leather — those are the tells of a machine imitating a material it
+cannot actually render. Tags are flat bone rectangles with a punched hole. Depth comes from two
+honest sources only: real cast shadow, and real motion.
 
 ## Colors
 
-Two complete themes, switched by `data-theme` on `<html>`, plus one accent shared by both.
+Committed strategy: the petrol field owns the page, and everything else is an object placed on it.
 
-| Role | Dark | Light |
-|---|---|---|
-| Page ground | `#0A0A0C` | `#F7F6F3` |
-| Alternate band | `#101014` | `#F1EFEA` |
-| Card surface | `#141419` | `#FFFFFF` |
-| Raised surface | `#1B1B21` | `#F4F2ED` |
-| Hairline | `#26262E` | `#E2DFD7` |
-| Stronger border | `#34343E` | `#CFCBC0` |
-| Primary text | `#F2F2F5` | `#14141A` |
-| Secondary text | `#9B9BA6` | `#5C5C66` |
-| Accent text | `#E8A63C` | `#8F5B08` |
+| Token | Role |
+|---|---|
+| `field` `#0C2B30` | The wall. The dominant surface, 60%+ of the page. |
+| `field-lo` `#081F23` | Recessed — compartment interiors, alternate bands, the punched hole. |
+| `field-hi` `#123A40` | Raised, and the top of the hero's radial pool. |
+| `field-edge` `#17474E` | Hairlines and borders. |
+| `bone` `#EDE7D9` | Every tag face, and the ledger. The only large light field. |
+| `ink` / `ink-2` | Type on bone. |
+| `brass` `#C9A227` | The rail, hooks, cords, key numbers, the primary action. |
+| `oxblood` `#8C3131` | Live and in-progress. Also the focused field and the button's hover. |
 
-**The accent has two jobs and two values.** `--accent` (#E8A63C) is the *fill* — buttons, dots,
-bar segments — and stays identical in both themes so the brand does not shift. `--accent-tx` is the
-*text* value, and it must change: #E8A63C reads 9.1:1 on near-black but only 2.3:1 on paper, so the
-light theme drops to #8F5B08 (5.2:1). Never set amber text without picking the theme-correct value.
+**Bone is a material, not a background.** It appears only where something is a physical card in this
+world — a tag face, the register page. Never use it as a section ground; the field owns the page and
+bone objects sit on it.
 
-Three further hues exist only inside the language-composition chart (`#4FA8AD`, `#7C8B94`,
-`#B4652F`). They are a categorical data series, not part of the brand palette, and must not leak
-into UI chrome.
+**Brass carries structure, oxblood carries state.** A brass element is part of the rack — rail, hook,
+cord, number, the action that hangs from the header. An oxblood element is a status. Do not swap them.
 
 ## Typography
 
-Schibsted Grotesk for everything a person wrote; Geist Mono for everything measured — labels, years,
-specs, status badges, form field names. The split is strict, and mono is never used to make prose
-look technical.
-
-The display ramp is aggressive on purpose. The hero name runs to `9.5rem` at `900` weight with
-`-0.055em` tracking, which is well past a normal heading ceiling; it is earned because the hero
-contains nothing else and the brief asked for minimalist type at scale. Tracking tightens as size
-grows (`-0.025em` on card headings, `-0.055em` on the hero) — that relationship is the system, not
-the individual values.
-
-Prose measure is held to 46–62ch depending on column width.
+Bricolage Grotesque is stamped: names, section heads, tag faces, key numbers, register entries. It
+is set heavy (700–800) with hard negative tracking, tightening as it grows (−0.025em on entries,
+−0.045em on the name). Familjen Grotesk does all the reading, plus every label and stamp, where it
+runs small with wide positive tracking (0.16–0.18em) — the two directions of tracking are what keep
+one voice from blurring into the other. No monospace anywhere; this world stamps and engraves, it
+does not print terminal output.
 
 ## Layout
 
-Content width is `min(100% - 2.5rem, 78rem)`, gutters widening at 48em. Spacing runs a 4px base
-through `--s1`–`--s10`. The nav is fixed at `4.5rem`, and `scroll-padding-top: 6rem` keeps anchored
-sections clear of it.
+Content width is `min(100% - 2.5rem, 74rem)`, gutters widening at 48em. A 4px base runs `--s1`–`--s10`.
 
-**The bento reflows in three stages**, and the span rules are the whole system:
+**The rack is absolutely positioned against a rail.** Each tag carries four custom properties set
+inline — `--x` (position along the rail), `--drop` (cord length), `--w` (face width) and `--tilt`
+(resting angle) — and everything else, including the physics, derives from those.
 
-| Width | Columns | Spans |
-|---|---|---|
-| `< 40em` | 1 | all cells full width, in DOM order |
-| `40em–68em` | 2 | feature, wide and stat span 2; the rest span 1 |
-| `≥ 68em` | 4 | feature spans 2×2; wide and stat span 2; the rest span 1 |
-
-The feature cell switches from stacked to side-by-side at 40em, putting the device demo beside the
-copy rather than under it.
+**Below 48em the rack restages rather than shrinks.** Seven tags cannot share a phone: four are
+hidden, and the three that remain stack *vertically* — two short tags high, the name hanging clear
+beneath them — so nothing competes for the same horizontal band. Scaling all seven down would have
+produced a collision, not a layout.
 
 ## Elevation & Depth
 
-Depth is carried by surface and hairline, not by stacked shadows. There are only three:
+Three shadows, each with real offset and blur; no zero-offset halos anywhere.
 
-- Card and device rest on `0 24px 50px -30px rgba(0,0,0,.9)` (dark) / `0 22px 44px -30px rgba(30,26,18,.4)` (light).
-- The accent button carries a coloured lift, `0 6px 18px -8px` of the accent itself.
-- The device gets `inset 0 1px 0 rgba(255,255,255,.07)` as a top edge highlight.
+- Tag face: `0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25)` — the second layer is the card's own thickness.
+- Compartment: `inset 0 10px 22px -12px rgba(0,0,0,.9)` — an inset, because a compartment is a hole in the wall, not a card on it.
+- Ledger and device: `0 24px 50px -26px rgba(0,0,0,.9)`.
 
-**The grain is the atmosphere and it is a real layer**, not a texture image dropped over a
-screenshot. A 140×140 monochrome noise tile is generated on a canvas at runtime and handed to CSS as
-a data URI; the layer is sized 220% and nudged on an 8-step, 7-second loop. Because only a transform
-animates, nothing repaints. It blends `overlay` at `.085` on dark and `multiply` at `.05` on light —
-the same tile reading as light bloom on black and as paper tooth on white.
-
-The hero also carries one soft radial pool of accent at 12% behind the name, so near-black is never
-flat.
+The compartment's inset shadow plus its brass top lip is the whole recess effect. That is the
+system's one structural trick and it must not be replaced with a raised card.
 
 ## Shapes
 
-Radii climb with the size of the object: `4px` focus rings, `8px` small, `14px` inputs, `22px` bento
-cells, `999px` for pills and buttons. The device illustration has its own scale (`1.85rem` shell,
-`1.5rem` screen, `0.95rem` widget) because it is imitating hardware, not UI.
+Radii are tight and physical: `2px` stamps, `3px` tag faces, `4px` buttons, `8px` compartments and
+the ledger. Only the device illustration (`1.6rem`) and the hooks (`50%`) go round, because those
+objects are round in life. Nothing else is soft.
 
-Icons are authored SVG on a 24×24 box at `stroke-width: 1.7`, round caps. No glyph or emoji icons.
+Icons are authored SVG. The hooks are stroked circles, the punched holes are filled circles in
+`field-lo` — drawn, never glyphs.
 
 ## Components
 
-**Bento cell** — bordered surface, radius `lg`, flex column. Hover lifts the border only; cells do
-not translate, scale, or glow. Nested cards are forbidden.
+**Tag** — a hook, a cord of `--drop` height, and a bone face with a punched hole. `transform-origin`
+is `50% 0` at the hook, so rotating the element swings the cord and the face together, which is why
+the cords visibly lean with their tags. This is the system's atom; anything that can hang should be
+one.
 
-**Status badge** (`.tag`) — pinned to the cell's top-right corner, never stacked above the heading,
-because a label sitting above a title is an eyebrow and this system does not use them. Headings
-reserve a right-hand gutter so the two can never collide. `tag--live` adds an accent dot and is the
-only badge that takes the accent.
+**Compartment** (`.key`) — a recess: `field-lo` ground, brass top lip, inset shadow, square top
+corners and rounded bottom. Explicitly **not** a card, and the page must not reintroduce card-shaped
+containers for content.
 
-**Nav** — fixed, `backdrop-filter: blur(14px) saturate(1.4)`, transparent border until scrolled past
-12px, then a hairline. Contact and the theme toggle sit top right and never scroll away.
+**Stamp** — the status, rendered as a small bone tag with its own punched hole, sitting in the
+compartment's lip row.
 
-**Theme toggle** — a circular icon button. The theme is written to `<html>` by an inline script in
-`<head>` before first paint, so there is no flash of the wrong theme; the toggle persists to
-`localStorage` and the page follows the OS only while the visitor has not chosen for themselves.
-
-**Device demo** — a CSS-drawn phone showing the Hanzi Mind widget cycling real vocabulary. It is the
-product's mechanism running, not a screenshot, and it pauses when scrolled out of view.
+**Ledger** (`.ledger`) — the contact form as a register page: bone ground, fields as ruled lines with
+a bottom border only, no boxes. The submit button reads "Sign in", not "Submit".
 
 ## Do's and Don'ts
 
-- **Do** size bento cells by how real the thing is. That is the page's argument.
-- **Do** pick the accent's text value from the active theme; the fill value is shared, the text
-  value is not.
-- **Do** put status in a corner badge, never as a line above a heading.
-- **Do** gate motion behind `prefers-reduced-motion`, and keep every reveal's content visible by
-  default so nothing depends on an animation firing.
-- **Don't** introduce a second hue. One accent, plus a data series that stays inside its chart.
-- **Don't** add shadow to create hierarchy — use surface level and border weight.
-- **Don't** state anything the product record does not confirm; statuses on the cells are load-bearing.
-- **Don't** let the grain go above `.1` opacity. It is atmosphere; at higher values it reads as dirt.
+- **Do** hang anything that can hang, and give it `--x`, `--drop`, `--w` and `--tilt`.
+- **Do** keep bone for objects only; the field owns the page.
+- **Do** use brass for structure and oxblood for state, never interchangeably.
+- **Do** clamp swing to ±13° — past that a tag stops being readable, and readability outranks the toy.
+- **Do** let the physics loop sleep. It parks when every tag is within 0.02° of rest and wakes on the next disturbance; an idle page must cost nothing.
+- **Don't** imitate materials. No gradient brass, no bevels, no embossing. Depth is shadow and motion.
+- **Don't** reintroduce card containers, project grids, or scroll-triggered fade-ups; the world refuses all three.
+- **Don't** add a second light field. One bone object per region at most.
+- **Don't** state anything PRODUCT.md does not record as confirmed — the tag labels are load-bearing.

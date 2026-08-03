@@ -1,330 +1,113 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-03T13:31:12Z",
-  "title": "Design System: Quiet Machine",
+  "generatedAt": "2026-08-03T14:20:00Z",
+  "title": "Design System: The Rack",
   "extensions": {
     "colorMeta": {
-      "accent": {
-        "role": "primary",
-        "displayName": "Signal Amber",
-        "tonalRamp": [
-          "#F2BC63",
-          "#E8A63C",
-          "#D98E1F",
-          "#8F5B08",
-          "#17120A"
-        ]
-      },
-      "dark-bg": {
-        "role": "surface",
-        "displayName": "Night Ground",
-        "tonalRamp": [
-          "#0A0A0C",
-          "#101014",
-          "#141419",
-          "#1B1B21",
-          "#26262E",
-          "#34343E"
-        ]
-      },
-      "dark-text": {
-        "role": "text",
-        "displayName": "Night Type",
-        "tonalRamp": [
-          "#F2F2F5",
-          "#9B9BA6"
-        ]
-      },
-      "light-bg": {
-        "role": "surface",
-        "displayName": "Paper Ground",
-        "tonalRamp": [
-          "#FFFFFF",
-          "#F7F6F3",
-          "#F4F2ED",
-          "#F1EFEA",
-          "#E2DFD7",
-          "#CFCBC0"
-        ]
-      },
-      "light-text": {
-        "role": "text",
-        "displayName": "Paper Type",
-        "tonalRamp": [
-          "#14141A",
-          "#5C5C66"
-        ]
-      },
-      "series": {
-        "role": "accent",
-        "displayName": "Language Series",
-        "tonalRamp": [
-          "#E8A63C",
-          "#4FA8AD",
-          "#7C8B94",
-          "#B4652F",
-          "#9B9BA6"
-        ]
-      },
-      "device": {
-        "role": "surface",
-        "displayName": "Device Illustration",
-        "tonalRamp": [
-          "#0B0B0F",
-          "#0D0D11",
-          "#131318",
-          "#17171D",
-          "#24242B",
-          "#2E2E38",
-          "#9C9CA8",
-          "#F4F3F7"
-        ]
-      },
-      "error": {
-        "role": "error",
-        "displayName": "Validation",
-        "tonalRamp": [
-          "#E8836A",
-          "#E0755C",
-          "#B33F22"
-        ]
-      },
-      "shadow": {
-        "role": "neutral",
-        "displayName": "Depth & Edge",
-        "tonalRamp": [
-          "#000",
-          "#000000",
-          "rgba(0,0,0,.9)",
-          "rgba(0,0,0,.7)",
-          "rgba(30,26,18,.4)",
-          "rgba(255,255,255,.07)",
-          "rgba(242,242,245,.95)",
-          "rgba(242,242,245,.55)"
-        ]
-      }
+      "field":    { "role": "surface", "displayName": "Petrol Field", "tonalRamp": ["#081F23", "#0C2B30", "#123A40", "#17474E"] },
+      "bone":     { "role": "surface", "displayName": "Tag Bone", "tonalRamp": ["#EDE7D9", "#DBD2BE", "#A9B5B0"] },
+      "ink":      { "role": "text",    "displayName": "Stamped Ink", "tonalRamp": ["#14211F", "#4A5A56"] },
+      "brass":    { "role": "primary", "displayName": "Brass", "tonalRamp": ["#E0BC46", "#C9A227", "#8A6E19", "#7A6116"] },
+      "oxblood":  { "role": "accent",  "displayName": "Oxblood", "tonalRamp": ["#C36A6A", "#8C3131"] },
+      "confirm":  { "role": "success", "displayName": "Signed", "tonalRamp": ["#2F6B4F"] },
+      "shadow":   { "role": "neutral", "displayName": "Depth", "tonalRamp": ["#000", "#000000", "rgba(0,0,0,.9)", "rgba(0,0,0,.85)", "rgba(0,0,0,.7)", "rgba(0,0,0,.6)", "rgba(0,0,0,.5)", "rgba(0,0,0,.25)", "rgba(255,255,255,.03)"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Hero Display",
-        "purpose": "The name, alone in the first viewport. Deliberately past a normal heading ceiling; earned because nothing else shares the space."
-      },
-      "section": {
-        "displayName": "Section",
-        "purpose": "Section titles."
-      },
-      "stat": {
-        "displayName": "Stat",
-        "purpose": "The single numeric cell. Proportional numerals, never tabular — tabular gives the comma a full figure width."
-      },
-      "card": {
-        "displayName": "Feature Card",
-        "purpose": "The feature bento cell's heading."
-      },
-      "card-sm": {
-        "displayName": "Card",
-        "purpose": "Small bento cells and experience-row roles."
-      },
-      "mono": {
-        "displayName": "Mono",
-        "purpose": "Anything measured or labelled — years, specs, field names, badges. Never a costume for prose."
-      },
-      "eyebrow-mono": {
-        "displayName": "Rotator",
-        "purpose": "The hero's rotating role line only."
-      },
-      "hanzi": {
-        "displayName": "Hanzi",
-        "purpose": "The widget demo. Font subset to the ten characters actually used."
-      }
+      "name":     { "displayName": "Name Tag", "purpose": "The largest tag face, centre of the rack. Nothing else uses this size." },
+      "section":  { "displayName": "Section", "purpose": "Section headings, stamped." },
+      "tag-face": { "displayName": "Tag Face", "purpose": "The word stamped on a small hanging tag." },
+      "entry":    { "displayName": "Register Entry", "purpose": "A role in the register." },
+      "stamp":    { "displayName": "Stamp", "purpose": "Status and labels. Small, wide-tracked, never bold." },
+      "hanzi":    { "displayName": "Hanzi", "purpose": "The widget demo. Font subset to the ten characters used." }
     },
     "shadows": [
-      {
-        "name": "rest",
-        "value": "0 24px 50px -30px rgba(0,0,0,.9)",
-        "purpose": "Cards and the device on the dark ground."
-      },
-      {
-        "name": "rest-light",
-        "value": "0 22px 44px -30px rgba(30,26,18,.4)",
-        "purpose": "The same lift on paper, warmer and shallower."
-      },
-      {
-        "name": "accent-lift",
-        "value": "0 6px 18px -8px color-mix(in srgb, var(--accent) 70%, transparent)",
-        "purpose": "The primary button, tinted by its own fill."
-      },
-      {
-        "name": "device-edge",
-        "value": "inset 0 1px 0 rgba(255,255,255,.07)",
-        "purpose": "Top edge highlight on the phone shell."
-      }
+      { "name": "tag",         "value": "0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25)", "purpose": "A tag hanging off the wall; the second layer is the card's own thickness." },
+      { "name": "compartment", "value": "inset 0 10px 22px -12px rgba(0,0,0,.9), inset 0 -1px 0 rgba(255,255,255,.03)", "purpose": "A recess in the rack wall. Inset, because a compartment is a hole, not a card." },
+      { "name": "object",      "value": "0 24px 50px -26px rgba(0,0,0,.9)", "purpose": "The ledger page and the device illustration." },
+      { "name": "stamp",       "value": "0 6px 14px -8px rgba(0,0,0,.9)", "purpose": "The small status tag inside a compartment lip." },
+      { "name": "rail",        "value": "0 2px 6px rgba(0,0,0,.5)", "purpose": "The brass rail casting onto the wall." }
     ],
     "motion": [
-      {
-        "name": "ease",
-        "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Default easing for every transition."
-      },
-      {
-        "name": "grain",
-        "value": "7s steps(1) infinite, 8 discrete offsets under 1.5%",
-        "purpose": "Film grain. Transform only, so nothing repaints."
-      },
-      {
-        "name": "reveal",
-        "value": "expo.out 0.85s, stagger 0.07s, from opacity 0 / y 22px",
-        "purpose": "Scroll reveal, batched, fires once."
-      },
-      {
-        "name": "rotate",
-        "value": "0.32s power2.in out, 0.5s expo.out in, with a 4px blur",
-        "purpose": "The hero role line swapping words."
-      },
-      {
-        "name": "pulse",
-        "value": "2.6s infinite ring expanding to 0.5rem",
-        "purpose": "The availability dot."
-      },
-      {
-        "name": "count",
-        "value": "expo.out 1.8s to the target integer",
-        "purpose": "The single stat counting up once on entry."
-      }
+      { "name": "pendulum",  "value": "a\" = -k(a - rest) - d·a'  with k = 2600/L and d = 1.35 + min(L,260)/460", "purpose": "Every hanging tag. Stiffness falls with cord length, so a long tag swings slower than a short one and the wall never moves in unison." },
+      { "name": "pointer",   "value": "impulse = pointerVx * 0.013 * falloff^2 * (140/L), radius 380px", "purpose": "The cursor is a force, not a trigger. Nearer and lighter tags move further." },
+      { "name": "scroll",    "value": "impulse = clamp(dy, -26, 26) * 1.7 * (140/L)", "purpose": "Scrolling knocks the whole rail at once." },
+      { "name": "clamp",     "value": "±13deg off rest, bouncing at -0.35 velocity", "purpose": "Past 13 degrees a tag stops being readable; the limit bleeds the swing rather than stopping it dead." },
+      { "name": "sleep",     "value": "park below 0.02deg and 0.02deg/s, wake on disturbance", "purpose": "An idle page must cost nothing. The loop stops roughly 8s after load." },
+      { "name": "lift",      "value": "700ms cubic-bezier(.16,1,.3,1), 45ms stagger", "purpose": "The only conventional reveal on the page, used below the fold where physics has nothing to act on." }
     ],
     "breakpoints": [
-      {
-        "name": "xs",
-        "value": "34em"
-      },
-      {
-        "name": "sm",
-        "value": "40em"
-      },
-      {
-        "name": "md",
-        "value": "48em"
-      },
-      {
-        "name": "lg",
-        "value": "52em"
-      },
-      {
-        "name": "xl",
-        "value": "56em"
-      },
-      {
-        "name": "2xl",
-        "value": "68em"
-      },
-      {
-        "name": "3xl",
-        "value": "72em"
-      }
+      { "name": "sm", "value": "48em" },
+      { "name": "md", "value": "52em" },
+      { "name": "lg", "value": "56em" },
+      { "name": "xl", "value": "60em" }
     ]
   },
   "components": [
     {
-      "name": "Bento Cell",
-      "kind": "card",
-      "refersTo": "cell",
-      "description": "The grid unit. Its span states how real the thing is — the feature cell is 2x2 because it is the only project actually running.",
-      "html": "<article class=\"ds-cell\"><span class=\"ds-tag\">Studying</span><h3>Value investing</h3><p>Financial Markets, Yale University via Coursera.</p></article>",
-      "css": ".ds-cell { position: relative; display: flex; flex-direction: column; gap: .75rem; padding: 1.5rem; border: 1px solid #26262E; border-radius: 22px; background: #141419; color: #F2F2F5; overflow: hidden; transition: border-color .3s cubic-bezier(.16,1,.3,1); } .ds-cell:hover { border-color: #34343E; } .ds-cell h3 { margin: 0; font: 700 1.1875rem/1.25 'Schibsted Grotesk', sans-serif; letter-spacing: -.025em; padding-right: 5.5rem; } .ds-cell p { margin: 0; color: #9B9BA6; font-size: .9375rem; }"
-    },
-    {
-      "name": "Status Badge",
-      "kind": "chip",
-      "refersTo": "tag",
-      "description": "Pinned to the cell's top-right corner. Never stacked above a heading — a label above a title is an eyebrow, and this system does not use them.",
-      "html": "<span class=\"ds-tag ds-tag-live\">In development</span>",
-      "css": ".ds-tag { position: absolute; top: 1.5rem; right: 1.5rem; display: inline-flex; align-items: center; gap: .4em; padding: .3em .6em; border: 1px solid #34343E; border-radius: 999px; background: #1B1B21; font: 500 .6875rem/1 'Geist Mono', monospace; color: #9B9BA6; white-space: nowrap; } .ds-tag-live { color: #E8A63C; border-color: rgba(232,166,60,.45); } .ds-tag-live::before { content: \"\"; width: .38em; height: .38em; border-radius: 50%; background: #E8A63C; }"
-    },
-    {
-      "name": "Accent Button",
-      "kind": "button",
-      "refersTo": "button-accent",
-      "description": "The single page action, pinned top right in the nav and repeated at the foot of the contact form.",
-      "html": "<a class=\"ds-btn\" href=\"#contact\">Contact</a>",
-      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .6rem 1.1rem; border: 0; border-radius: 999px; background: #E8A63C; color: #17120A; font: 600 .875rem/1 'Schibsted Grotesk', sans-serif; letter-spacing: -.01em; text-decoration: none; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(232,166,60,.7); transition: transform .2s cubic-bezier(.16,1,.3,1), background .2s; } .ds-btn:hover { background: #F2BC63; transform: translateY(-1px); }"
-    },
-    {
-      "name": "Grain Layer",
+      "name": "Hanging Tag",
       "kind": "custom",
-      "refersTo": "cell",
-      "description": "Runtime-generated noise tile animated by transform only. The same tile reads as light bloom on black and paper tooth on white.",
-      "html": "<div class=\"ds-grain\" aria-hidden=\"true\"></div>",
-      "css": ".ds-grain { position: fixed; top: -60%; left: -60%; width: 220%; height: 220%; z-index: 100; pointer-events: none; opacity: .085; mix-blend-mode: overlay; background-repeat: repeat; will-change: transform; animation: ds-grain 7s steps(1) infinite; } @keyframes ds-grain { 0%,100% { transform: translate(0,0); } 25% { transform: translate(.9%,-1.4%); } 50% { transform: translate(1.4%,.7%); } 75% { transform: translate(1.1%,-1.1%); } } @media (prefers-reduced-motion: reduce) { .ds-grain { animation: none; } }"
+      "refersTo": "tag-face",
+      "description": "The system's atom: a hook, a cord, and a punched bone face. transform-origin sits at the hook so rotation swings cord and face together.",
+      "html": "<div class=\"ds-tag\" style=\"--x:50%;--drop:120px;--w:150px;--tilt:-2deg\"><span class=\"ds-hook\"></span><span class=\"ds-cord\"></span><span class=\"ds-face\"><b>Building</b><i>Hanzi Mind</i></span></div>",
+      "css": ".ds-tag { position: absolute; top: 0; left: var(--x); width: var(--w); margin-left: calc(var(--w) / -2); transform-origin: 50% 0; transform: rotate(var(--tilt)); display: flex; flex-direction: column; align-items: center; will-change: transform; } .ds-hook { width: 13px; height: 13px; border: 2px solid #C9A227; border-radius: 50%; margin-top: -6px; } .ds-cord { width: 2px; height: var(--drop); background: linear-gradient(#C9A227, #7A6116); } .ds-face { position: relative; width: 100%; background: #EDE7D9; color: #14211F; border-radius: 3px; padding: 1.5rem .75rem .7rem; text-align: center; box-shadow: 0 14px 30px -14px rgba(0,0,0,.85), 0 2px 0 rgba(0,0,0,.25); } .ds-face::before { content: \"\"; position: absolute; top: .5rem; left: 50%; translate: -50% 0; width: 9px; height: 9px; border-radius: 50%; background: #081F23; box-shadow: inset 0 1px 2px rgba(0,0,0,.6); } .ds-face b { display: block; font: 800 1.0625rem/1 'Bricolage Grotesque', sans-serif; letter-spacing: -.03em; } .ds-face i { font-style: normal; font-size: .6875rem; color: #4A5A56; }"
     },
     {
-      "name": "Theme Toggle",
-      "kind": "button",
-      "refersTo": "toggle",
-      "description": "Circular icon button beside the CTA. The theme is applied by an inline head script before first paint so there is no flash of the wrong theme.",
-      "html": "<button class=\"ds-toggle\" type=\"button\" aria-label=\"Switch to light theme\"><svg viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/></svg></button>",
-      "css": ".ds-toggle { width: 2.25rem; height: 2.25rem; display: grid; place-items: center; border: 1px solid #26262E; border-radius: 50%; background: transparent; color: #9B9BA6; cursor: pointer; transition: color .2s, border-color .2s, background .2s; } .ds-toggle:hover { color: #F2F2F5; border-color: #34343E; background: #141419; } .ds-toggle svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }"
+      "name": "Compartment",
+      "kind": "card",
+      "refersTo": "compartment",
+      "description": "A recess in the rack wall, not a card. Brass lip on the top edge, inset shadow, square top corners.",
+      "html": "<article class=\"ds-comp\"><div class=\"ds-lip\"><span class=\"ds-no\">01</span><span class=\"ds-stamp\">In development</span></div><h3>Hanzi Mind</h3></article>",
+      "css": ".ds-comp { background: #081F23; border: 1px solid #17474E; border-top: 2px solid #C9A227; border-radius: 0 0 8px 8px; box-shadow: inset 0 10px 22px -12px rgba(0,0,0,.9); padding: 1.5rem; color: #EDE7D9; } .ds-lip { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #17474E; } .ds-no { font: 800 1.25rem/1 'Bricolage Grotesque', sans-serif; color: #C9A227; } .ds-comp h3 { margin: 1rem 0 0; font: 800 1.875rem/1.1 'Bricolage Grotesque', sans-serif; letter-spacing: -.035em; }"
+    },
+    {
+      "name": "Stamp",
+      "kind": "chip",
+      "refersTo": "stamp",
+      "description": "Status as a small bone tag with its own punched hole, hanging in the compartment lip.",
+      "html": "<span class=\"ds-stamp ds-stamp-live\">In development</span>",
+      "css": ".ds-stamp { position: relative; font: 400 .625rem/1 'Familjen Grotesk', sans-serif; letter-spacing: .16em; text-transform: uppercase; padding: .5em .7em .4em; border-radius: 2px; background: #EDE7D9; color: #4A5A56; box-shadow: 0 6px 14px -8px rgba(0,0,0,.9); } .ds-stamp::before { content: \"\"; position: absolute; top: 3px; left: 50%; translate: -50% 0; width: 5px; height: 5px; border-radius: 50%; background: #081F23; } .ds-stamp-live { color: #8C3131; box-shadow: 0 6px 14px -8px rgba(0,0,0,.9), 0 0 0 1.5px #8C3131; }"
+    },
+    {
+      "name": "Ledger",
+      "kind": "input",
+      "refersTo": "ledger",
+      "description": "The contact form as a register page. Fields are ruled lines, not boxes; the button reads 'Sign in'.",
+      "html": "<form class=\"ds-ledger\"><div class=\"ds-line\"><label for=\"n\">Name</label><input id=\"n\"></div><button class=\"ds-sign\">Sign in</button></form>",
+      "css": ".ds-ledger { background: #EDE7D9; border-radius: 8px; padding: 1.5rem; box-shadow: 0 24px 50px -26px rgba(0,0,0,.9); } .ds-line { display: grid; gap: .2rem; padding-bottom: 1rem; } .ds-line label { font: 400 .625rem/1 'Familjen Grotesk', sans-serif; letter-spacing: .18em; text-transform: uppercase; color: #4A5A56; } .ds-line input { font: 400 1rem/1.5 'Familjen Grotesk', sans-serif; color: #14211F; background: transparent; border: 0; border-bottom: 1px solid #DBD2BE; border-radius: 0; padding: .35rem 0; width: 100%; } .ds-line input:focus { outline: 0; border-bottom-color: #8C3131; } .ds-sign { width: 100%; background: #14211F; color: #EDE7D9; border: 0; border-radius: 4px; padding: .8rem 1rem; font: 600 .9375rem/1 'Familjen Grotesk', sans-serif; cursor: pointer; } .ds-sign:hover { background: #8C3131; }"
     }
   ],
   "narrative": {
-    "northStar": "Quiet Machine",
-    "overview": "The page is dark by default and grain-lit throughout, and the visitor can flip it to paper. Both grounds are real designs rather than a filter over one another: each has its own surface ladder, border weights, and accent value. The organising idea is that size is the argument — the work sits in a bento of deliberately unequal cells, and the sizing is the honest claim. Hanzi Mind is the only thing actually running, so it occupies four times the area of a plan; coursework gets a small square. Nothing has to say which item is more real, because the grid already did. Typography is minimal and set hard, and there is exactly one hue on the page: an amber carried over from the subject's existing brand that survives the theme flip, which is what keeps a two-theme site from feeling like two sites.",
+    "northStar": "The Rack",
+    "overview": "The surface is the key rack Justin worked behind for eight years, turned into the index of what he is opening next. The compartments do not hold hotel rooms; they hold his next moves. That inversion is the whole system: hospitality is where the authority came from, never the identity, so the page can lean hard on the operating record without trapping him inside it. Everything descends from one physical fact — a tag hangs, and a hanging thing swings. The first viewport is a brass rail carrying seven bone tags, each a damped pendulum with its own natural frequency, and the visitor's cursor is a force applied to them. Nothing fades up on scroll. The rendering is graphic rather than skeuomorphic: no imitation brass, no bevels, no embossing, because those are the tells of a machine imitating a material it cannot render. Depth comes from two honest sources only — real cast shadow and real motion.",
     "keyCharacteristics": [
-      "Cell size encodes how real the work is — remove the hierarchy and the page starts lying",
-      "Two complete themes, not one theme with a filter over it",
-      "One hue only; the accent's fill is shared across themes, its text value is not",
-      "Grain is a real generated layer animated by transform, never a texture screenshot",
-      "Status lives in a corner badge, because this system has no eyebrows"
+      "A tag hangs, and a hanging thing swings — every other decision descends from that",
+      "The cursor is a force applied to a simulation, not a trigger that plays a timeline",
+      "Graphic, never skeuomorphic: depth is shadow and motion, never imitation material",
+      "Compartments are recesses with inset shadow, explicitly not cards",
+      "Bone is a material for objects; the petrol field owns the page"
     ],
     "rules": [
-      {
-        "name": "Size Is The Argument",
-        "body": "Bento spans are assigned by how real the thing is, not by composition. The only running project is 2x2; plans and coursework are 1x1. Any new cell must earn its span the same way.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Accent Has Two Values",
-        "body": "--accent (#E8A63C) is the fill and is identical in both themes. --accent-tx is the text value and must change: #E8A63C is 9.1:1 on near-black but 2.3:1 on paper, so light drops to #8F5B08 at 5.2:1.",
-        "section": "colors"
-      },
-      {
-        "name": "One Hue",
-        "body": "Amber is the only brand hue. The three chart colours are a categorical data series confined to the language composition bar and must not leak into UI chrome.",
-        "section": "colors"
-      },
-      {
-        "name": "Mono Means Measured",
-        "body": "Geist Mono is for years, specs, labels, badges and field names. Schibsted Grotesk is for anything a person wrote. Mono is never used to make prose look technical.",
-        "section": "typography"
-      },
-      {
-        "name": "No Eyebrows",
-        "body": "Status is a badge pinned to a corner, never a label stacked above a heading. Headings reserve a right-hand gutter so the two cannot collide.",
-        "section": "typography"
-      },
-      {
-        "name": "Theme Before Paint",
-        "body": "An inline script in <head> writes data-theme before first paint. Any future theme work must preserve that ordering or the page flashes the wrong ground.",
-        "section": "colors"
-      },
-      {
-        "name": "Grain Is Atmosphere",
-        "body": "Keep the grain layer at or below .1 opacity and animate transform only. Above that it reads as dirt, and animating anything else forces a repaint every frame.",
-        "section": "elevation"
-      }
+      { "name": "Everything That Hangs Is A Tag", "body": "A hook, a cord of --drop height, a punched bone face, and transform-origin at the hook. Any new hanging element uses this atom and takes --x, --drop, --w and --tilt.", "section": "elevation" },
+      { "name": "Bone Is An Object", "body": "Bone appears only where something is physically a card in this world — a tag face, the register page. Never a section ground. The field owns the page and bone objects sit on it.", "section": "colors" },
+      { "name": "Brass Is Structure, Oxblood Is State", "body": "Brass elements are part of the rack: rail, hook, cord, key number, the primary action. Oxblood elements are statuses. Never swap them.", "section": "colors" },
+      { "name": "Readability Outranks The Toy", "body": "Swing is clamped to ±13 degrees off rest. Past that a tag stops being readable, and the limit bleeds velocity rather than stopping it dead.", "section": "elevation" },
+      { "name": "The Loop Must Sleep", "body": "Physics parks when every tag is within 0.02 degrees of rest and wakes on the next disturbance. An idle page costs nothing; a simulation that runs forever is a battery bug.", "section": "elevation" },
+      { "name": "Restage, Don't Shrink", "body": "Below 48em four tags are hidden and the remaining three stack vertically rather than scaling down. Seven scaled tags on a phone is a collision, not a layout.", "section": "elevation" },
+      { "name": "Two Directions Of Tracking", "body": "Bricolage tightens as it grows (to -0.045em); Familjen labels widen (to 0.18em). The opposing directions are what keep one voice from blurring into the other.", "section": "typography" }
     ],
     "dos": [
-      "Do size bento cells by how real the thing is",
-      "Do pick the accent's text value from the active theme",
-      "Do put status in a corner badge, never above a heading",
-      "Do gate motion behind prefers-reduced-motion and keep revealed content visible by default",
-      "Do draw icons as SVG at stroke-width 1.7 with round caps"
+      "Do hang anything that can hang",
+      "Do keep bone for objects only; the field owns the page",
+      "Do use brass for structure and oxblood for state",
+      "Do clamp the swing and let the loop sleep",
+      "Do draw hooks and holes as real shapes, never glyphs"
     ],
     "donts": [
-      "Don't introduce a second hue",
-      "Don't add shadow to create hierarchy — use surface level and border weight",
-      "Don't nest cards inside bento cells",
-      "Don't state anything the product record does not confirm; the cell statuses are load-bearing",
-      "Don't let the grain go above .1 opacity"
+      "Don't imitate materials — no gradient brass, no bevels, no embossing",
+      "Don't reintroduce card containers, project grids, or scroll-triggered fade-ups",
+      "Don't add a second large light field; one bone object per region at most",
+      "Don't use monospace; this world stamps and engraves",
+      "Don't state anything the product record does not confirm"
     ]
   }
 }
