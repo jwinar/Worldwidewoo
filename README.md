@@ -1,8 +1,9 @@
 # Justin Winartha — personal site
 
-A single-page personal site built as a hotel key rack: bone tags hanging on brass hooks that swing
-under a live pendulum simulation. Static HTML, CSS and JavaScript with **no dependencies at all** —
-no framework, no build step, no libraries to install.
+A single-page personal site built as one night shift. Scroll is time: the page runs 23:00 to 06:00
+and the ground colour moves continuously through the night, with a pinned ledger that reconciles to
+zero under your own scroll and a dawn that arrives at the end. Static HTML, CSS and JavaScript with
+GSAP (ScrollTrigger + SplitText) and Lenis, all vendored locally. No framework, no build step.
 
 ## Run it
 
@@ -26,15 +27,15 @@ Vercel. There is nothing to compile.
 ```
 index.html              the page
 assets/css/site.css     design tokens and all styling
-assets/js/site.js       pendulum physics, widget, reveals, register form
-assets/fonts/           Bricolage Grotesque, Familjen Grotesk, Noto Sans SC (self-hosted, subset)
-assets/img/             portrait, webp + jpg
+assets/js/site.js       the hours, masked reveals, the pinned audit, contact
+assets/fonts/           Bricolage Grotesque, Familjen Grotesk, JetBrains Mono, Noto Sans SC
+assets/vendor/          GSAP + ScrollTrigger + SplitText, Lenis (vendored)
 PRODUCT.md              product truth — who this is for and what is confirmed
 DESIGN.md               the design system, recorded from the built page
 ```
 
-Fonts are self-hosted rather than loaded from a CDN and there is no JavaScript library, so the page
-has no third-party runtime at all and works behind a strict content-security policy.
+Fonts and libraries are self-hosted rather than loaded from a CDN, so the page makes no external
+request at runtime and works behind a strict content-security policy.
 
 ## Before this goes live
 
@@ -50,20 +51,21 @@ has no third-party runtime at all and works behind a strict content-security pol
 The page is hand-written HTML; edit `index.html` directly. Two conventions matter, and `DESIGN.md`
 explains the rest:
 
-- **Anything that hangs is a tag.** A hook, a cord of `--drop` height, and a punched bone face, with
-  four inline custom properties: `--x`, `--drop`, `--w`, `--tilt`. The physics reads those.
-- **Compartments are recesses, not cards.** `.key` has a brass top lip and an inset shadow. Do not
-  turn it back into a raised card — `DESIGN.md` explains why.
+- **Every chapter declares its hour.** A `<section class="ch" data-ch data-bg data-fg data-dim
+  data-accent>` is one stop in the night; the ground is interpolated between consecutive stops.
+  Adding a chapter means adding a stop, and its colours must keep text readable at both ends.
+- **Dawn never crossfades.** It owns an opaque ground, because interpolating background and text
+  through an inversion makes them meet in the middle at 1.3:1. It arrives instead.
 - **Nothing appears here that `PRODUCT.md` does not record as confirmed.** The page's credibility
   rests entirely on its statuses being true — no shipped app, no founded company, no track record
   until those exist.
 
 ## Accessibility
 
-WCAG AA contrast across all thirteen text pairs, keyboard-operable throughout with a brass focus
-ring, and `prefers-reduced-motion` fully honoured — under reduced motion the physics loop never
-starts, the tags hang at their resting angles, and all content is visible without waiting on a
-reveal. Chinese text carries `lang="zh-Hans"` so screen readers pronounce it correctly.
+Contrast was sampled at 44 points across the whole night, since the palette is interpolated rather
+than fixed: worst case is 4.88:1 on secondary text, with primary text never below 11.8:1.
 
-The physics loop parks itself roughly eight seconds after load, once every tag is within 0.02° of
-rest, and wakes only on a disturbance — an idle page costs nothing.
+`prefers-reduced-motion` is honoured by returning before any of it starts — no smooth scroll, no
+scrubbing, no reveals — and the ledger figures render at their final values. The same path runs if
+JavaScript fails, so every chapter keeps its own background and the page reads as a normal document.
+Smooth scroll is also skipped on touch, so phones keep native scrolling.

@@ -1,302 +1,294 @@
-/* THE RACK — spring-pendulum simulation, cycling widget, ledger form. Seed 3caee2fd. */
+/* THE NIGHT AUDIT — scroll is time. Lenis + ScrollTrigger + SplitText. */
 (function () {
   'use strict';
 
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  var root = document.documentElement;
 
-  /* ────────────────────────────────────────────────────
-     Hanging tags
+  var fmt = new Intl.NumberFormat('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function money(n) { return (n < 0 ? '−' : '') + '$' + fmt.format(Math.abs(n)); }
 
-     Each tag is a damped pendulum with its own natural
-     frequency: a real pendulum's period grows with its
-     length, so a tag on a long cord swings slower than one
-     on a short cord and the wall never moves in unison.
+  /* Figures read correctly with no JS and under reduced motion. */
+  var figures = Array.prototype.slice.call(document.querySelectorAll('.fig'));
+  function settleFigures() {
+    figures.forEach(function (f) { f.textContent = money(parseFloat(f.getAttribute('data-to'))); });
+  }
 
-         a" = -k(a - rest) - d·a'
+  if (reduced || !hasGSAP) {
+    settleFigures();
+    return;
+  }
 
-     The visitor's pointer is a force, not a trigger. Moving
-     across the rack transfers horizontal velocity into
-     nearby tags; scrolling knocks the whole rail. The loop
-     sleeps when every tag has settled and wakes on the next
-     disturbance, so an idle page costs nothing.
-     ──────────────────────────────────────────────────── */
+  gsap.registerPlugin(ScrollTrigger);
+  var hasSplit = typeof window.SplitText !== 'undefined';
+  if (hasSplit) gsap.registerPlugin(SplitText);
+
+  /* ────────────────────────────────────────────────
+     Smooth scroll
+     Lenis interpolates the scroll position and GSAP's
+     ticker drives it, so the scrubbed timelines below
+     read the same clock as the scroll itself. Without
+     this the whole page feels like a document; with it,
+     it feels like a thing you are moving through.
+     ──────────────────────────────────────────────── */
+  var lenis = null;
+  if (typeof window.Lenis !== 'undefined' && matchMedia('(pointer: fine)').matches) {
+    lenis = new Lenis({ lerp: 0.095, wheelMultiplier: 0.95 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    root.classList.add('smooth');
+
+    // in-page links have to go through Lenis or they fight it
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var el = document.querySelector(a.getAttribute('href'));
+        if (!el) return;
+        e.preventDefault();
+        lenis.scrollTo(el, { offset: 0 });
+      });
+    });
+  }
+
+  /* ────────────────────────────────────────────────
+     The hours
+     Every chapter declares the colour of its hour. The
+     ground is interpolated continuously between them, so
+     the page never cuts from one background to the next —
+     it gets lighter the way a night does.
+     ──────────────────────────────────────────────── */
   (function () {
-    var nodes = Array.prototype.slice.call(document.querySelectorAll('[data-tag]'));
-    if (!nodes.length || reduced) return;
+    var chapters = Array.prototype.slice.call(document.querySelectorAll('[data-ch]'));
+    if (chapters.length < 2) return;
 
-    var RADIUS = 380;      // px of pointer influence
-    var PUSH   = 0.013;    // pointer velocity -> angular velocity
-    var MAX_V  = 620;      // clamp so a fast flick cannot spin a tag
-    var MAX_A  = 13;       // degrees off rest; past this a tag stops being readable
-    var SLEEP  = 0.02;     // below this the tag is considered still
-
-    var tags = nodes.map(function (el) {
-      var drop = parseFloat(getComputedStyle(el).getPropertyValue('--drop')) || 80;
-      var rest = parseFloat(getComputedStyle(el).getPropertyValue('--tilt')) || 0;
-      var len  = drop + el.offsetHeight * 0.5;
+    function rgb(hex) {
+      var n = parseInt(hex.slice(1), 16);
+      return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+    }
+    var stops = chapters.map(function (el) {
       return {
         el: el,
-        rest: rest,
-        a: rest,
-        v: 0,
-        // omega^2 = g / L  — longer cord, slower swing
-        k: 2600 / Math.max(len, 40),
-        d: 1.35 + Math.min(len, 260) / 460,
-        len: len,
-        cx: 0, cy: 0
+        bg: rgb(el.dataset.bg), fg: rgb(el.dataset.fg),
+        dim: rgb(el.dataset.dim), accent: rgb(el.dataset.accent)
       };
     });
 
-    function measure() {
-      for (var i = 0; i < tags.length; i++) {
-        var r = tags[i].el.getBoundingClientRect();
-        tags[i].cx = r.left + r.width / 2;
-        tags[i].cy = r.top + Math.min(r.height, tags[i].len);
-      }
-    }
-    measure();
-    addEventListener('resize', measure);
-    addEventListener('scroll', measure, { passive: true });
-
-    var running = false, last = 0;
-
-    function wake() {
-      if (running) return;
-      running = true;
-      last = performance.now();
-      requestAnimationFrame(step);
+    function mix(a, b, t) {
+      return 'rgb(' + Math.round(a[0] + (b[0] - a[0]) * t) + ','
+                    + Math.round(a[1] + (b[1] - a[1]) * t) + ','
+                    + Math.round(a[2] + (b[2] - a[2]) * t) + ')';
     }
 
-    function step(now) {
-      var dt = Math.min((now - last) / 1000, 0.032);
-      last = now;
-      var moving = false;
+    var headClock = document.getElementById('clock-head');
+    var heroClock = document.getElementById('clock-hero');
+    var START = 23 * 60, SPAN = 7 * 60; // 23:00 → 06:00
+    var dawn = document.getElementById('dawn');
+    var head = document.querySelector('.head');
+    var headLight = false;
 
-      for (var i = 0; i < tags.length; i++) {
-        var t = tags[i];
-        var off = t.a - t.rest;
-        t.v += (-t.k * off - t.d * t.v) * dt;
-        if (t.v > MAX_V) t.v = MAX_V; else if (t.v < -MAX_V) t.v = -MAX_V;
-        t.a += t.v * dt;
-
-        // Hitting the limit bleeds the swing rather than stopping it dead.
-        var lim = t.rest + MAX_A, lo = t.rest - MAX_A;
-        if (t.a > lim) { t.a = lim; t.v *= -0.35; }
-        else if (t.a < lo) { t.a = lo; t.v *= -0.35; }
-
-        if (Math.abs(t.v) > SLEEP || Math.abs(t.a - t.rest) > SLEEP) moving = true;
-        else { t.a = t.rest; t.v = 0; }
-
-        t.el.style.transform = 'rotate(' + t.a.toFixed(3) + 'deg)';
+    function paint() {
+      var read = scrollY + innerHeight * 0.5;
+      var i = 0;
+      for (var k = 0; k < stops.length; k++) {
+        if (read >= stops[k].el.offsetTop) i = k;
       }
+      var cur = stops[i], nxt = stops[Math.min(i + 1, stops.length - 1)];
+      var top = cur.el.offsetTop;
+      var h = cur.el.offsetHeight || 1;
+      var t = Math.max(0, Math.min(1, (read - top) / h));
 
-      if (moving) requestAnimationFrame(step);
-      else running = false;
+      root.style.setProperty('--bg', mix(cur.bg, nxt.bg, t));
+      root.style.setProperty('--fg', mix(cur.fg, nxt.fg, t));
+      root.style.setProperty('--dim', mix(cur.dim, nxt.dim, t));
+      root.style.setProperty('--accent', mix(cur.accent, nxt.accent, t));
+
+      var doc = document.body.scrollHeight - innerHeight;
+      var p = doc > 0 ? Math.max(0, Math.min(1, scrollY / doc)) : 0;
+      var mins = START + SPAN * p;
+      var hh = Math.floor(mins / 60) % 24, mm = Math.floor(mins % 60);
+      var s = (hh < 10 ? '0' : '') + hh + ':' + (mm < 10 ? '0' : '') + mm;
+      if (headClock) headClock.textContent = s;
+      if (heroClock) heroClock.textContent = s;
+
+      /* Dawn owns an opaque ground, so the header swaps to dark type the
+         moment it slides underneath — a switch, never a fade through a
+         mid-tone where neither colour would be readable. */
+      if (dawn && head) {
+        var under = dawn.getBoundingClientRect().top <= 72;
+        if (under !== headLight) { headLight = under; head.classList.toggle('head--light', under); }
+      }
     }
 
-    function disturb(x, y, vx) {
-      for (var i = 0; i < tags.length; i++) {
-        var t = tags[i];
-        var dx = x - t.cx, dy = y - t.cy;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist > RADIUS) continue;
-        var falloff = 1 - dist / RADIUS;
-        // Short tags are lighter, so the same shove moves them further.
-        t.v += vx * PUSH * falloff * falloff * (140 / t.len);
-      }
-      wake();
-    }
+    paint();
+    ScrollTrigger.create({ start: 0, end: 'max', onUpdate: paint, onRefresh: paint });
+    addEventListener('resize', paint);
 
-    var px = 0, py = 0, pt = 0, primed = false;
-    addEventListener('pointermove', function (e) {
-      var now = performance.now();
-      if (primed) {
-        var dt = now - pt;
-        if (dt > 0 && dt < 120) disturb(e.clientX, e.clientY, (e.clientX - px) / dt * 1000);
-      }
-      px = e.clientX; py = e.clientY; pt = now; primed = true;
-    }, { passive: true });
 
-    // A tap is a shove too, so touch is not left out.
-    addEventListener('pointerdown', function (e) {
-      disturb(e.clientX, e.clientY, (Math.random() - 0.5) * 900);
-    }, { passive: true });
-
-    // Scrolling knocks the whole rail.
-    var lastY = scrollY;
-    addEventListener('scroll', function () {
-      var dy = scrollY - lastY;
-      lastY = scrollY;
-      if (Math.abs(dy) < 1) return;
-      var kick = Math.max(-26, Math.min(26, dy)) * 1.7;
-      for (var i = 0; i < tags.length; i++) tags[i].v += kick * (140 / tags[i].len);
-      wake();
-    }, { passive: true });
-
-    // They arrive swinging rather than fading in.
-    tags.forEach(function (t, i) {
-      t.a = t.rest + (i % 2 ? 7 : -7) - i * 0.6;
-      t.v = (i % 2 ? -30 : 34);
-    });
-    wake();
   })();
 
-  /* ── The role on the name tag ─────────────────────── */
+  /* ── Masked line reveals ──────────────────────────
+     SplitText's own line masking: each line rides up out of
+     a clip. Text stays selectable and screen-reader intact. */
   (function () {
-    var el = document.getElementById('role');
-    if (!el) return;
-    var WORDS = ['Operator', 'Analyst', 'Builder', 'Value investor'];
-    var i = 0;
-    el.textContent = WORDS[0];
-    if (reduced) return;
-
-    el.style.transition = 'opacity .28s ease, transform .28s ease';
-    setInterval(function () {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(-4px)';
-      setTimeout(function () {
-        i = (i + 1) % WORDS.length;
-        el.textContent = WORDS[i];
-        el.style.transform = 'translateY(4px)';
-        requestAnimationFrame(function () {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
+    if (!hasSplit) return;
+    document.fonts.ready.then(function () {
+      document.querySelectorAll('.ln').forEach(function (el) {
+        var split = SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln-line' });
+        gsap.from(split.lines, {
+          yPercent: 115,
+          duration: 1.05,
+          ease: 'expo.out',
+          stagger: 0.075,
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
         });
-      }, 280);
-    }, 3000);
+      });
+      ScrollTrigger.refresh();
+    });
+  })();
+
+  /* ────────────────────────────────────────────────
+     02:30 — the audit
+     The one pinned moment. The visitor's scroll is what
+     posts each line and what settles the balance; the
+     sequence cannot run without them, which is the whole
+     point of scrubbing it rather than playing it.
+     ──────────────────────────────────────────────── */
+  (function () {
+    var section = document.querySelector('.ch--audit');
+    var stage = document.getElementById('audit');
+    if (!section || !stage) return;
+    var rows = Array.prototype.slice.call(section.querySelectorAll('[data-row]'));
+    var seal = document.getElementById('seal');
+
+    function build(trigger) {
+      gsap.set(rows, { opacity: 0.12, y: 10 });
+      if (seal) gsap.set(seal, { opacity: 0 });
+
+      var tl = gsap.timeline({ scrollTrigger: trigger });
+      rows.forEach(function (row, i) {
+        var at = i * 0.9;
+        tl.to(row, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, at);
+        var fig = row.querySelector('.fig');
+        if (!fig) return;
+        var target = parseFloat(fig.getAttribute('data-to'));
+        var o = { v: 0 };
+        tl.to(o, {
+          v: target, duration: 0.8, ease: 'power2.out',
+          onUpdate: function () { fig.textContent = money(o.v); },
+          onComplete: function () { fig.textContent = money(target); }
+        }, at);
+      });
+      if (seal) tl.to(seal, { opacity: 1, duration: 0.6, ease: 'power2.out' }, rows.length * 0.9 - 0.2);
+      return tl;
+    }
+
+    /* The ledger is taller than a phone, so pinning it there would run rows
+       under the fixed header. Wide screens get the scrubbed pin; narrow ones
+       play the same sequence as they scroll past, unpinned. */
+    var mm = gsap.matchMedia();
+
+    mm.add('(min-width: 48em)', function () {
+      var tl = build({
+        trigger: section, start: 'top top', end: '+=2400',
+        pin: stage, scrub: 0.6, anticipatePin: 1
+      });
+      return function () { tl.scrollTrigger && tl.scrollTrigger.kill(); tl.kill(); };
+    });
+
+    mm.add('(max-width: 47.99em)', function () {
+      var tl = build({
+        trigger: section, start: 'top 70%', end: 'bottom 60%', scrub: 0.8
+      });
+      return function () { tl.scrollTrigger && tl.scrollTrigger.kill(); tl.kill(); };
+    });
   })();
 
   /* ── The widget, running ──────────────────────────── */
   (function () {
     var WORDS = [
-      { hz: '你好', py: 'nǐ hǎo',  en: 'hello' },
-      { hz: '谢谢', py: 'xiè xie', en: 'thank you' },
-      { hz: '学习', py: 'xué xí',  en: 'to study' },
       { hz: '耐心', py: 'nài xīn', en: 'patience' },
-      { hz: '复利', py: 'fù lì',   en: 'compound interest' }
+      { hz: '复利', py: 'fù lì',   en: 'compound interest' },
+      { hz: '你好', py: 'nǐ hǎo',  en: 'hello' },
+      { hz: '学习', py: 'xué xí',  en: 'to study' },
+      { hz: '谢谢', py: 'xiè xie', en: 'thank you' }
     ];
     var hz = document.getElementById('w-hz'),
         py = document.getElementById('w-py'),
         en = document.getElementById('w-en');
-    if (!hz || reduced) return;
-    var host = hz.closest('.glass') || hz;
+    if (!hz) return;
     var i = 0, timer = null;
-
-    [hz, py, en].forEach(function (n) { n.style.transition = 'opacity .3s ease'; });
 
     function show() {
       i = (i + 1) % WORDS.length;
       var w = WORDS[i];
-      [hz, py, en].forEach(function (n) { n.style.opacity = '0'; });
-      setTimeout(function () {
-        hz.textContent = w.hz; py.textContent = w.py; en.textContent = w.en;
-        [hz, py, en].forEach(function (n) { n.style.opacity = '1'; });
-      }, 300);
+      gsap.to([hz, py, en], {
+        opacity: 0, y: -5, duration: 0.25, ease: 'power2.in', stagger: 0.03,
+        onComplete: function () {
+          hz.textContent = w.hz; py.textContent = w.py; en.textContent = w.en;
+          gsap.fromTo([hz, py, en], { opacity: 0, y: 5 },
+            { opacity: 1, y: 0, duration: 0.45, ease: 'expo.out', stagger: 0.04 });
+        }
+      });
     }
 
-    if (!('IntersectionObserver' in window)) return;
-    new IntersectionObserver(function (es) {
-      if (es[0].isIntersecting) { if (!timer) timer = setInterval(show, 3200); }
-      else if (timer) { clearInterval(timer); timer = null; }
-    }, { threshold: 0 }).observe(host);
+    ScrollTrigger.create({
+      trigger: hz.closest('.glass') || hz,
+      onEnter: function () { if (!timer) timer = setInterval(show, 3200); },
+      onLeave: function () { clearInterval(timer); timer = null; },
+      onEnterBack: function () { if (!timer) timer = setInterval(show, 3200); },
+      onLeaveBack: function () { clearInterval(timer); timer = null; }
+    });
   })();
 
-  /* ── Reveals ──────────────────────────────────────── */
-  (function () {
-    if (reduced || !('IntersectionObserver' in window)) return;
-    var els = document.querySelectorAll('.sect__h, .sect__note, .key, .reg__row, .about__pic, .about__copy, .sign__copy, .ledger');
-    if (!els.length) return;
-    els.forEach(function (el) { el.classList.add('lift'); });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e, n) {
-        if (!e.isIntersecting) return;
-        var el = e.target;
-        setTimeout(function () { el.classList.add('is-in'); }, n * 45);
-        io.unobserve(el);
-      });
-    }, { rootMargin: '0px 0px -8% 0px' });
-    els.forEach(function (el) { io.observe(el); });
-  })();
-
-  /* ── Sign the register ────────────────────────────
-     No mail service is wired up yet. Rather than pretend to
-     send, the form validates properly and says what it can
-     do. To connect it: set ENDPOINT to a form service URL
-     (Formspree, Basin, Netlify Forms).
-     ────────────────────────────────────────────────── */
+  /* ── Contact ──────────────────────────────────────
+     No mail service is wired up yet. Set ENDPOINT to a form
+     service URL (Formspree, Basin, Netlify Forms) and the
+     POST path takes over. */
   (function () {
     var ENDPOINT = '';
     var form = document.getElementById('contact-form');
     if (!form) return;
-    var status = form.querySelector('.ledger__status');
+    var status = form.querySelector('.form__s');
     var btn = form.querySelector('button[type="submit"]');
     var label = btn.querySelector('[data-btn-label]');
 
     function setErr(input, msg) {
-      var line = input.closest('.ledger__line');
+      var f = input.closest('.fld');
       var slot = form.querySelector('[data-err-for="' + input.id + '"]');
-      if (msg) {
-        line.setAttribute('data-invalid', '');
-        input.setAttribute('aria-invalid', 'true');
-        if (slot) slot.textContent = msg;
-      } else {
-        line.removeAttribute('data-invalid');
-        input.removeAttribute('aria-invalid');
-        if (slot) slot.textContent = '';
-      }
+      if (msg) { f.setAttribute('data-invalid', ''); input.setAttribute('aria-invalid', 'true'); if (slot) slot.textContent = msg; }
+      else { f.removeAttribute('data-invalid'); input.removeAttribute('aria-invalid'); if (slot) slot.textContent = ''; }
       return !msg;
     }
-
     function validate() {
       var n = form.elements.name, e = form.elements.email, m = form.elements.message, ok = true;
-      ok = setErr(n, n.value.trim() ? '' : 'A name for the register.') && ok;
-      ok = setErr(e,
-        !e.value.trim() ? 'An email, so I can come back to you.'
-          : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim()) ? '' : 'That address is missing something.')
-      ) && ok;
-      ok = setErr(m, m.value.trim() ? '' : 'A line or two about what you have in mind.') && ok;
+      ok = setErr(n, n.value.trim() ? '' : 'Your name.') && ok;
+      ok = setErr(e, !e.value.trim() ? 'An email, so I can reply.'
+        : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim()) ? '' : 'That address is missing something.')) && ok;
+      ok = setErr(m, m.value.trim() ? '' : 'A line or two.') && ok;
       return ok;
     }
-
     ['name', 'email', 'message'].forEach(function (k) {
       var el = form.elements[k];
       el.addEventListener('blur', function () { if (el.value.trim()) validate(); });
-      el.addEventListener('input', function () {
-        if (el.closest('.ledger__line').hasAttribute('data-invalid')) validate();
-      });
+      el.addEventListener('input', function () { if (el.closest('.fld').hasAttribute('data-invalid')) validate(); });
     });
-
-    function say(msg, tone) {
-      status.textContent = msg;
-      if (tone) status.setAttribute('data-tone', tone); else status.removeAttribute('data-tone');
-    }
+    function say(m, tone) { status.textContent = m; if (tone) status.setAttribute('data-tone', tone); else status.removeAttribute('data-tone'); }
 
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       if (!validate()) {
-        say('Check the lines marked above.', 'err');
+        say('Check the fields above.', 'err');
         var bad = form.querySelector('[data-invalid] input, [data-invalid] textarea');
         if (bad) bad.focus();
         return;
       }
-      if (!ENDPOINT) {
-        say('The register is not connected to a mail service yet — please reach me on LinkedIn.', 'err');
-        return;
-      }
-      btn.disabled = true;
-      label.textContent = btn.getAttribute('data-busy');
-      say('');
+      if (!ENDPOINT) { say('This form is not connected to a mail service yet — please reach me on LinkedIn.', 'err'); return; }
+      btn.disabled = true; label.textContent = btn.getAttribute('data-busy'); say('');
       fetch(ENDPOINT, { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) })
-        .then(function (res) {
-          if (!res.ok) throw new Error('bad status');
-          form.reset();
-          say('Signed in. I will come back to you shortly.', 'ok');
-        })
+        .then(function (r) { if (!r.ok) throw new Error('bad'); form.reset(); say('Sent. I will come back to you shortly.', 'ok'); })
         .catch(function () { say('That did not send. Please try again, or reach me on LinkedIn.', 'err'); })
-        .then(function () {
-          btn.disabled = false;
-          label.textContent = btn.getAttribute('data-idle');
-        });
+        .then(function () { btn.disabled = false; label.textContent = btn.getAttribute('data-idle'); });
     });
   })();
 })();
