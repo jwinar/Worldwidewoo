@@ -1,0 +1,48 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  top: var(--viewport-margin);
+  right: var(--viewport-margin);
+  background: none;
+  border: none;
+  color: var(--color-text);
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.item {
+  display: block;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+}
+
+a.item {
+  cursor: pointer;
+}
+
+a.item:hover {
+  color: var(--color-gold);
+}

@@ -29,6 +29,9 @@
 
   /* ---- Viewport-edge spacing (safe margins for full-bleed scenes) ---- */
   --viewport-margin: clamp(1.25rem, 4vw, 3rem);
+  /* Reserved band for the fixed Navigation row (see components/layout/Navigation.jsx)
+     — full-bleed scene content must clear this so it never overlaps the brand/menu links. */
+  --nav-clearance: 3.5rem;
 
   /* ---- Typography scale ---- */
   --font-display: 'Editorial Display Placeholder', 'Playfair Display', 'Georgia', serif;
@@ -42,7 +45,7 @@
   --text-lg: 1.75rem;
   --text-xl: clamp(2.5rem, 5vw, 4rem);
   --text-2xl: clamp(4rem, 9vw, 7.5rem);
-  --text-3xl: clamp(6rem, 16vw, 14rem);
+  --text-3xl: clamp(2.5rem, 14vw, 14rem);
 
   --leading-tight: 1.05;
   --leading-normal: 1.4;

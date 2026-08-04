@@ -1,0 +1,23 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  color: var(--color-text);
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.eyebrow {
+  position: absolute;
+  bottom: var(--space-2xl);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}

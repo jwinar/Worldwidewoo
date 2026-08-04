@@ -35,15 +35,26 @@
     border-color 0.3s var(--ease-cinematic);
 }
 
-.cursor[data-state='hover'] .visual,
-.cursor[data-state='interactive'] .visual {
-  transform: scale(1);
+.cursor[data-state='project'] .visual {
+  transform: scale(1.166); /* ~84px — the largest ring, for the primary content action */
+  background-color: transparent;
+  border-color: var(--color-gold);
+}
+
+.cursor[data-state='menu'] .visual {
+  transform: scale(0.889); /* ~64px */
+  background-color: transparent;
+  border-color: var(--color-gold);
+}
+
+.cursor[data-state='link'] .visual {
+  transform: scale(0.667); /* ~48px — the smallest ring */
   background-color: transparent;
   border-color: var(--color-gold);
 }
 
 .cursor[data-state='drag'] .visual {
-  transform: scale(0.778); /* ~56px visual */
+  transform: scale(0.778); /* ~56px, solid */
   background-color: var(--color-red);
 }
 
@@ -61,8 +72,9 @@
   transition: opacity 0.2s var(--ease-standard);
 }
 
-.cursor[data-state='hover'] .label,
-.cursor[data-state='interactive'] .label {
+.cursor[data-state='project'] .label,
+.cursor[data-state='menu'] .label,
+.cursor[data-state='link'] .label {
   opacity: 1;
 }
 

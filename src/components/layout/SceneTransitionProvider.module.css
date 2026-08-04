@@ -1,0 +1,14 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.panel {
+  position: fixed;
+  inset: 0;
+  will-change: transform;
+}

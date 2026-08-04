@@ -1,15 +1,14 @@
 import { useRef, useState } from 'react'
 import { gsap } from '../../animations/core/gsap'
 import { useGsapContext } from '../../animations/core/context'
+import { useIsCoarsePointer } from '../../hooks/useIsCoarsePointer'
 import styles from './CustomCursor.module.css'
-
-const COARSE_POINTER_QUERY = '(pointer: coarse)'
 
 /**
  * Custom cursor foundation.
  *
- * States: 'default' | 'hover' | 'interactive' | 'drag' | 'disabled'.
- * Any element can opt in by setting `data-cursor="hover"` (and optionally
+ * States: 'default' | 'project' | 'menu' | 'link' | 'drag' | 'disabled'.
+ * Any element can opt in by setting `data-cursor="project"` (and optionally
  * `data-cursor-label="VIEW"`); this component listens for those attributes
  * via event delegation rather than requiring every interactive component
  * to know about the cursor.
@@ -21,9 +20,7 @@ export function CustomCursor() {
   const cursorRef = useRef(null)
   const [state, setState] = useState('default')
   const [label, setLabel] = useState('')
-  const [isTouch] = useState(
-    () => typeof window !== 'undefined' && window.matchMedia(COARSE_POINTER_QUERY).matches,
-  )
+  const isTouch = useIsCoarsePointer()
 
   useGsapContext(() => {
     if (isTouch) return

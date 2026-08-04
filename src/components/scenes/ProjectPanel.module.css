@@ -1,0 +1,70 @@
+.panel {
+  position: relative;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.hitArea {
+  all: unset;
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.visualWrap {
+  position: absolute;
+  inset: var(--space-lg);
+  overflow: hidden;
+  will-change: transform;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(16 12 9 / 60%) 0%,
+    transparent 28%,
+    transparent 72%,
+    rgb(16 12 9 / 60%) 100%
+  );
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  inset: var(--viewport-margin);
+  top: calc(var(--viewport-margin) + var(--nav-clearance));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.index {
+  color: var(--color-gold-muted);
+}
+
+.title {
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+}
+
+.meta {
+  color: var(--color-text-muted);
+}
+
+.cue {
+  align-self: center;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,25 @@
+.visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.placeholder {
+  composes: visual;
+  background: linear-gradient(155deg, var(--accent, var(--color-surface)) 0%, var(--color-bg) 100%);
+}
+
+.placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 28% 22%, rgb(201 164 92 / 20%), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.image,
+.video {
+  composes: visual;
+  object-fit: cover;
+}

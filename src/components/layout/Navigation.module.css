@@ -1,0 +1,38 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: var(--z-navigation);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--viewport-margin);
+  pointer-events: none;
+}
+
+.nav > * {
+  pointer-events: auto;
+}
+
+.brand,
+.menuButton {
+  color: var(--color-text);
+  letter-spacing: var(--tracking-wide);
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.indicator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--viewport-margin);
+  z-index: var(--z-navigation);
+  display: flex;
+  justify-content: center;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
