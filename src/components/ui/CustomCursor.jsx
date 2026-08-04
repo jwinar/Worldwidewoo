@@ -68,7 +68,7 @@ export function CustomCursor() {
 
   return (
     <div ref={cursorRef} className={styles.cursor} data-state={state} aria-hidden="true">
-      {label ? <span className={styles.label}>{label}</span> : null}
+      <div className={styles.visual}>{label ? <span className={styles.label}>{label}</span> : null}</div>
     </div>
   )
 }

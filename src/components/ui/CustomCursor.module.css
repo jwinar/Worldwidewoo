@@ -1,36 +1,53 @@
+/* .cursor is positioned via GSAP's inline `transform` (translate x/y in
+   CustomCursor.jsx quickTo calls) — it must never receive a CSS
+   `transform`/`transition: transform`, or the two would fight over the
+   same style property. Sizing/state visuals live on the nested .visual
+   element instead, animated with `transform: scale()` (not width/height)
+   so state changes never trigger layout. */
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-cursor);
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.visual {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--size, 10px);
-  height: var(--size, 10px);
-  margin-left: calc(var(--size, 10px) / -2);
-  margin-top: calc(var(--size, 10px) / -2);
+  width: 72px;
+  height: 72px;
+  margin-left: -36px;
+  margin-top: -36px;
   border-radius: 50%;
+  border: 1px solid transparent;
   background-color: var(--color-gold);
-  pointer-events: none;
+  transform: scale(0.139); /* ~10px visual dot within the 72px box */
+  transform-origin: center;
   will-change: transform;
-  transition: width 0.3s var(--ease-cinematic), height 0.3s var(--ease-cinematic),
-    background-color 0.3s var(--ease-cinematic);
+  transition: transform 0.3s var(--ease-cinematic), background-color 0.3s var(--ease-cinematic),
+    border-color 0.3s var(--ease-cinematic);
 }
 
-.cursor[data-state='hover'],
-.cursor[data-state='interactive'] {
-  --size: 72px;
+.cursor[data-state='hover'] .visual,
+.cursor[data-state='interactive'] .visual {
+  transform: scale(1);
   background-color: transparent;
-  border: 1px solid var(--color-gold);
+  border-color: var(--color-gold);
 }
 
-.cursor[data-state='drag'] {
-  --size: 56px;
+.cursor[data-state='drag'] .visual {
+  transform: scale(0.778); /* ~56px visual */
   background-color: var(--color-red);
 }
 
-.cursor[data-state='disabled'] {
+.cursor[data-state='disabled'] .visual {
   opacity: 0;
 }
 
