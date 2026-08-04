@@ -1,0 +1,43 @@
+.layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glow {
+  composes: layer;
+  background: radial-gradient(45% 40% at 50% 70%, rgb(201 164 92 / 35%) 0%, transparent 70%);
+  will-change: opacity;
+}
+
+.mountain {
+  composes: layer;
+  bottom: 0;
+  top: auto;
+  height: 62%;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+
+.mountainSvg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pagoda {
+  opacity: 0.85;
+}
+
+.mist {
+  composes: layer;
+  filter: blur(22px);
+  will-change: transform, opacity;
+}
+
+.mistInner {
+  position: absolute;
+  inset: -20% -20%;
+  background: radial-gradient(60% 100% at 50% 100%, rgb(150 140 130 / 40%), transparent 72%);
+}

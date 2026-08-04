@@ -9,7 +9,7 @@ import { SceneWrapper } from '../../layout/SceneWrapper'
 import { GateFrame } from './GateFrame'
 import { GateDoor } from './GateDoor'
 import { GateAtmosphere } from './GateAtmosphere'
-import { GateParticles } from './GateParticles'
+import { AtmosphericParticles } from '../../ui/AtmosphericParticles'
 import { cn } from '../../../utils/classNames'
 import styles from './ImperialGateScene.module.css'
 
@@ -19,7 +19,7 @@ const PARTICLE_COUNT = { mobile: 8, tablet: 14, desktop: 22 }
  * Project 01's opening: an ancient imperial gate, closed and still, that
  * the viewer opens by scrolling. See CREATIVE_BRIEF.md and the Phase 2
  * brief for the full creative direction — this component wires the
- * pieces (GateFrame/GateDoor/GateAtmosphere/GateParticles) to the
+ * pieces (GateFrame/GateDoor/GateAtmosphere/AtmosphericParticles) to the
  * gate-opening timeline (animations/transitions/gate.js) via a pinned,
  * scrubbed ScrollTrigger.
  */
@@ -92,41 +92,53 @@ export function ImperialGateScene() {
       end: '+=280%',
       scrub: 1.35,
       pin: true,
+      // Default pinSpacing reserves room for BOTH the scroll distance
+      // (280% of the trigger's own height) AND the trigger's own
+      // natural height again, so the very next section in the document
+      // would start one extra viewport-height later than the pin
+      // actually ends — a dead, unpinned "coast" gap right where the
+      // brief demands a seamless handoff into LandscapeScene. The
+      // `.pinHost` wrapper below already reserves exactly the scroll
+      // distance we want (280svh, matching `end`), so pinSpacing must
+      // be off or that reservation doubles up.
+      pinSpacing: false,
       animation: tl,
     })
   }, { scope: stageRef, dependencies: [reducedMotion, particleCount] })
 
   return (
-    <SceneWrapper as="section" ref={stageRef} className={styles.stage}>
-      <GateAtmosphere elementsRef={atmosphereRef} />
-      <GateParticles count={particleCount} elementsRef={atmosphereRef} />
+    <div className={styles.pinHost}>
+      <SceneWrapper as="section" ref={stageRef} className={styles.stage}>
+        <GateAtmosphere elementsRef={atmosphereRef} />
+        <AtmosphericParticles count={particleCount} elementsRef={atmosphereRef} />
 
-      <div ref={cameraGroupRef} className={styles.cameraGroup}>
-        <div className={styles.architecture}>
-          <GateFrame />
-          <div className={styles.doorsGroup}>
-            <GateDoor ref={doorLeftRef} side="left" />
-            <GateDoor ref={doorRightRef} side="right" />
+        <div ref={cameraGroupRef} className={styles.cameraGroup}>
+          <div className={styles.architecture}>
+            <GateFrame />
+            <div className={styles.doorsGroup}>
+              <GateDoor ref={doorLeftRef} side="left" />
+              <GateDoor ref={doorRightRef} side="right" />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className={styles.titleGroup}>
-        <p className={cn('type-cn', styles.titleCn)} data-gate-title>
-          中国历史
-        </p>
-        <h1 className={cn('type-display', styles.titleEn)} data-gate-title>
-          CHINA / 5000 YEARS
-        </h1>
-        <p className={cn('type-ui', styles.titleSub)} data-gate-title>
-          INTERACTIVE EXPERIENCE
-        </p>
-      </div>
+        <div className={styles.titleGroup}>
+          <p className={cn('type-cn', styles.titleCn)} data-gate-title>
+            中国历史
+          </p>
+          <h1 className={cn('type-display', styles.titleEn)} data-gate-title>
+            CHINA / 5000 YEARS
+          </h1>
+          <p className={cn('type-ui', styles.titleSub)} data-gate-title>
+            INTERACTIVE EXPERIENCE
+          </p>
+        </div>
 
-      <div ref={promptRef} className={styles.prompt}>
-        <span className="type-ui">SCROLL TO ENTER</span>
-        <span className={styles.promptLine} />
-      </div>
-    </SceneWrapper>
+        <div ref={promptRef} className={styles.prompt}>
+          <span className="type-ui">SCROLL TO ENTER</span>
+          <span className={styles.promptLine} />
+        </div>
+      </SceneWrapper>
+    </div>
   )
 }

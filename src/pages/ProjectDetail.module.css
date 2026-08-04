@@ -3,5 +3,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--viewport-margin);
-  background: linear-gradient(180deg, #150a08 0%, var(--color-bg) 100%);
+  /* Continues LandscapeScene's evolved charcoal ending tone rather than
+     jumping back to the gate's dark red. */
+  background: linear-gradient(180deg, #16130f 0%, var(--color-bg) 100%);
 }

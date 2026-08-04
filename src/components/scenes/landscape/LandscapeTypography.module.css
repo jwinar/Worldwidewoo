@@ -1,0 +1,70 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  text-align: center;
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-text-muted);
+  opacity: 0;
+}
+
+.eyebrowLine {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(180deg, transparent, var(--color-gold-muted));
+}
+
+.char {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: clamp(9rem, 34vw, 30rem);
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0;
+  filter: blur(16px);
+  transform: translate(-50%, -50%) scale(0.85);
+  will-change: transform, opacity, filter;
+}
+
+.lines {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  /* Floor tuned so "OF CIVILIZATION" (the longer line) fits within a
+     320-390px viewport without wrapping — see Phase 1's --text-3xl fix
+     for the same class of bug. white-space:nowrap below means the
+     overflow-wrap:break-word safety net on .type-display can't save us
+     here the way it can elsewhere. */
+  font-size: clamp(1.8rem, 9.5vw, 10rem);
+  line-height: 0.95;
+  color: var(--color-parchment);
+  white-space: nowrap;
+  clip-path: inset(0 0 100% 0);
+  filter: blur(10px);
+  transform: translateY(24px);
+  will-change: transform, opacity, clip-path, filter;
+}
+
+.editorial {
+  max-width: 26rem;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transform: translateY(16px);
+  margin-top: var(--space-md);
+}

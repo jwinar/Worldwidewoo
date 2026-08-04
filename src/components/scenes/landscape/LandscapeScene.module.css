@@ -1,0 +1,20 @@
+.pinHost {
+  position: relative;
+  height: 260svh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinHost {
+    height: auto;
+  }
+}
+
+.stage {
+  height: 100svh;
+  min-height: 100svh;
+  /* Continues the gate's ending gradient (dark imperial red) and
+     ProjectDetail's closing-panel tone, then eases toward a more
+     neutral charcoal — the palette shift the mountains/mist carry
+     further as the scene's own timeline progresses. */
+  background: linear-gradient(180deg, #150a08 0%, #1a1210 45%, #16130f 100%);
+}

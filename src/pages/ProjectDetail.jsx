@@ -3,6 +3,7 @@ import { getProjectBySlug } from '../data/projects'
 import { ProjectEntryScene } from '../components/scenes/ProjectEntryScene'
 import { ProjectContinuation } from '../components/scenes/ProjectContinuation'
 import { ImperialGateScene } from '../components/scenes/gate/ImperialGateScene'
+import { LandscapeScene } from '../components/scenes/landscape/LandscapeScene'
 import { SceneWrapper } from '../components/layout/SceneWrapper'
 import { useScrollReset } from '../hooks/useScrollReset'
 import styles from './ProjectDetail.module.css'
@@ -24,6 +25,7 @@ export function ProjectDetail() {
     return (
       <>
         <ImperialGateScene />
+        <LandscapeScene />
         <SceneWrapper as="section" className={styles.closing}>
           <ProjectContinuation />
         </SceneWrapper>

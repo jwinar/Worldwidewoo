@@ -10,6 +10,6 @@
 .mote {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, rgb(201 164 92 / 70%) 0%, transparent 75%);
+  background: radial-gradient(circle, var(--mote-color, rgb(201 164 92 / 70%)) 0%, transparent 75%);
   will-change: transform, opacity;
 }

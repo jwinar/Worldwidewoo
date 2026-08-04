@@ -1,3 +1,20 @@
+/* Reserves exactly the scroll distance the pin needs (matching `end` in
+   ImperialGateScene.jsx) with pinSpacing:false, instead of GSAP's default
+   pinSpacing padding which would ALSO add .stage's own 100svh again —
+   see the comment at the createScrollScene call for why that matters. */
+.pinHost {
+  position: relative;
+  height: 280svh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinHost {
+    /* Reduced motion never pins (see ImperialGateScene.jsx) — .stage's
+       own 100svh is all the room needed. */
+    height: auto;
+  }
+}
+
 .stage {
   height: 100svh;
   min-height: 100svh;
