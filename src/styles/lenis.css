@@ -1,0 +1,16 @@
+/* Recommended Lenis overrides (see animations/scroll/smoothScroll.js).
+   Lenis manages scroll on <html>; these keep our own base styles (which
+   set html/body to height: 100%) from fighting its layout, and stop the
+   browser's native smooth-scroll CSS from double-applying easing. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

@@ -1,5 +1,6 @@
 node_modules/
 .DS_Store
+dist/
 
 # Impeccable live mode: config is project settings and is tracked;
 # the injected script, journal and session state are local artifacts.

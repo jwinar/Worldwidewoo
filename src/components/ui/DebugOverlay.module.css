@@ -1,0 +1,43 @@
+.overlay {
+  position: fixed;
+  bottom: var(--space-2xs);
+  right: var(--space-2xs);
+  z-index: var(--z-debug);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-2xs) var(--space-xs);
+  background: rgb(0 0 0 / 80%);
+  border: 1px solid var(--color-gold-muted);
+  color: var(--color-text);
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  pointer-events: auto;
+}
+
+.row {
+  display: flex;
+  gap: var(--space-2xs);
+  justify-content: space-between;
+}
+
+.value {
+  color: var(--color-gold);
+}
+
+.button {
+  margin-top: 2px;
+  padding: 2px 6px;
+  background: transparent;
+  border: 1px solid var(--color-gold-muted);
+  color: var(--color-text);
+  font-family: monospace;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}

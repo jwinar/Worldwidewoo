@@ -1,0 +1,44 @@
+/**
+ * Typography foundation.
+ *
+ * No custom font files are loaded yet — Phase 1 will introduce:
+ *   1. A Song/serif-inspired Chinese display face      -> --font-cn
+ *   2. A high-contrast editorial Latin display serif    -> --font-display
+ *   3. A restrained modern UI sans-serif                 -> --font-ui
+ *
+ * Each variable already has a sensible system-font fallback chain (see
+ * styles/tokens.css) so real content reads correctly today. When the
+ * final fonts are added, drop the files in src/assets/fonts/, declare
+ * @font-face below, and put the real family name first in each
+ * --font-* variable — no other file should need to change.
+ */
+
+body {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+.type-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.type-cn {
+  font-family: var(--font-cn);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+}
+
+.type-ui {
+  font-family: var(--font-ui);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: var(--text-2xs);
+}
