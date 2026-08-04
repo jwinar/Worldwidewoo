@@ -18,13 +18,3 @@
   color: var(--color-text);
   line-height: var(--leading-tight);
 }
-
-.note {
-  max-width: 32rem;
-  color: var(--color-text-muted);
-}
-
-.back {
-  margin-top: var(--space-lg);
-  color: var(--color-gold);
-}

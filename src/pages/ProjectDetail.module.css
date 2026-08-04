@@ -1,0 +1,7 @@
+.closing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--viewport-margin);
+  background: linear-gradient(180deg, #150a08 0%, var(--color-bg) 100%);
+}

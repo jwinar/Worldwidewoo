@@ -12,6 +12,9 @@
   --color-red-dark: #3d0d0d;
   --color-gold: #c9a45c;
   --color-gold-muted: #8e7440;
+  /* Aged hardware (door studs/rings), distinct from gold ornamentation — darker, more desaturated. */
+  --color-bronze: #6b5637;
+  --color-bronze-dark: #423422;
   --color-parchment: #d8c7a1;
   --color-text: #e8dcc3;
   --color-text-muted: rgb(232 220 195 / 60%);

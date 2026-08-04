@@ -1,0 +1,130 @@
+.door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.left {
+  left: 0;
+  transform-origin: left center;
+}
+
+.right {
+  right: 0;
+  transform-origin: right center;
+}
+
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  background:
+    repeating-linear-gradient(180deg, rgb(0 0 0 / 6%) 0px, rgb(0 0 0 / 6%) 1px, transparent 1px, transparent 4px),
+    radial-gradient(130% 70% at 28% 8%, rgb(255 255 255 / 6%), transparent 55%),
+    linear-gradient(160deg, var(--color-red) 0%, var(--color-red-dark) 58%, #200606 100%);
+  box-shadow:
+    inset 0 0 0 2px rgb(201 164 92 / 32%),
+    inset 0 0 70px rgb(0 0 0 / 45%);
+}
+
+/* bronze stud column near the hinge (outer) edge */
+.face::before {
+  content: '';
+  position: absolute;
+  top: 7%;
+  bottom: 7%;
+  width: 34px;
+  background-image: radial-gradient(circle, var(--color-bronze) 0 3.5px, rgb(0 0 0 / 0%) 3.6px);
+  background-size: 100% 34px;
+  opacity: 0.55;
+}
+
+.left .face::before {
+  left: 9%;
+}
+
+.right .face::before {
+  right: 9%;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  opacity: 0.85;
+}
+
+.left .ring {
+  right: 13%;
+}
+
+.right .ring {
+  left: 13%;
+}
+
+.corner {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  opacity: 0.4;
+}
+
+.corner.tl {
+  top: var(--space-md);
+  left: var(--space-md);
+}
+
+.corner.tr {
+  top: var(--space-md);
+  right: var(--space-md);
+  transform: scaleX(-1);
+}
+
+.corner.bl {
+  bottom: var(--space-md);
+  left: var(--space-md);
+  transform: scaleY(-1);
+}
+
+.corner.br {
+  bottom: var(--space-md);
+  right: var(--space-md);
+  transform: scale(-1);
+}
+
+/* The thin receding side wall that reads as door thickness once open.
+   A near-black-on-near-black gradient here was invisible against the
+   backdrop; a warm glint at the deep/inner end — as if catching the
+   gate's own interior light — is what actually sells the material at
+   this thinness. */
+.edge {
+  position: absolute;
+  top: 0;
+  width: var(--door-thickness, 32px);
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-red-dark) 0%, #170404 55%, rgb(201 164 92 / 35%) 100%);
+  backface-visibility: hidden;
+}
+
+/* CSS rotateY(+θ) moves a point at local +X toward -Z (away from the
+   viewer) — see animations/transitions/gate.js for the derivation. Each
+   edge is pinned at the seam where it meets the front face (that's the
+   real hinge line for the fold) and rotated so its far side recedes to
+   -Z, matching the direction the parent door itself opens. */
+.left .edge {
+  right: 0;
+  transform-origin: right center;
+  transform: rotateY(-90deg);
+}
+
+.right .edge {
+  left: 0;
+  transform-origin: left center;
+  transform: rotateY(90deg);
+}

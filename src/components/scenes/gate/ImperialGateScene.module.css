@@ -1,0 +1,80 @@
+.stage {
+  height: 100svh;
+  min-height: 100svh;
+  background:
+    radial-gradient(70% 55% at 50% 88%, rgb(110 23 23 / 20%) 0%, transparent 70%),
+    linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface) 60%, #150a08 100%);
+  perspective: clamp(900px, 90vw, 2000px);
+}
+
+.cameraGroup {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.architecture {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  width: min(88vw, 1300px);
+  height: min(88svh, 1250px);
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+}
+
+.doorsGroup {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  --door-thickness: clamp(20px, 2.6vw, 40px);
+}
+
+.titleGroup {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  text-align: center;
+  pointer-events: none;
+}
+
+.titleCn {
+  font-size: var(--text-xl);
+  color: var(--color-gold);
+}
+
+.titleEn {
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.titleSub {
+  color: var(--color-text-muted);
+}
+
+.prompt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.promptLine {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(180deg, var(--color-gold-muted), transparent);
+  transform-origin: top center;
+}
